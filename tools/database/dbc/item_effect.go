@@ -160,7 +160,7 @@ func buildBaseStatScalingProps(spellID int, itemSpellID int) *proto.ScalingItemE
 			// TBC ANNI: Items can have "static" ItemEffects that don't have a duration.
 			// We need to parse these into stats just as is done for ItemSparse data.
 			stat := ConvertEffectAuraToStatIndex(se.EffectAura, se.EffectMiscValues[0])
-			if stat >= 0 {
+			if stat >= 0 || stat == -2 {
 				value := float64(se.EffectBasePoints + 1)
 				// Make sure it's not Feral AP
 				if strings.Contains(dbcInstance.Spells[se.SpellID].Description, "forms only") {
@@ -170,7 +170,18 @@ func buildBaseStatScalingProps(spellID int, itemSpellID int) *proto.ScalingItemE
 					// Make these not negative
 					value = math.Abs(value)
 				}
-				total[int32(stat)] += value
+
+				if se.EffectAura == A_MOD_RESISTANCE && stat == -2 {
+					// All Resists
+					total[stats.ArcaneResistance] += value
+					total[stats.FireResistance] += value
+					total[stats.FrostResistance] += value
+					total[stats.NatureResistance] += value
+					total[stats.ShadowResistance] += value
+				} else {
+					total[int32(stat)] += value
+				}
+
 				continue
 			}
 

@@ -107,6 +107,15 @@
         "filter": {
           "type": "string"
         },
+        "elapsed_time": {
+          "type": "string"
+        },
+        "melee": {
+          "type": "string"
+        },
+        "any": {
+          "type": "string"
+        },
         "phases": {
           "type": "object",
           "properties": {
@@ -643,22 +652,22 @@
             "spell_damage": {
               "type": "string"
             },
-            "arcane_power": {
+            "arcane_damage": {
               "type": "string"
             },
-            "fire_power": {
+            "fire_damage": {
               "type": "string"
             },
-            "frost_power": {
+            "frost_damage": {
               "type": "string"
             },
-            "holy_power": {
+            "holy_damage": {
               "type": "string"
             },
-            "nature_power": {
+            "nature_damage": {
               "type": "string"
             },
-            "shadow_power": {
+            "shadow_damage": {
               "type": "string"
             },
             "spell_hit_rating": {
@@ -762,12 +771,12 @@
             "ranged_haste",
             "healing_power",
             "spell_damage",
-            "arcane_power",
-            "fire_power",
-            "frost_power",
-            "holy_power",
-            "nature_power",
-            "shadow_power",
+            "arcane_damage",
+            "fire_damage",
+            "frost_damage",
+            "holy_damage",
+            "nature_damage",
+            "shadow_damage",
             "spell_hit_rating",
             "spell_crit_rating",
             "spell_haste_rating",
@@ -931,6 +940,9 @@
         "name",
         "search",
         "filter",
+        "elapsed_time",
+        "melee",
+        "any",
         "phases",
         "tanks",
         "status",
@@ -2464,6 +2476,18 @@
               "required": [
                 "title"
               ]
+            },
+            "miscellaneous": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "title"
+              ]
             }
           },
           "additionalProperties": false,
@@ -2476,7 +2500,8 @@
             "pet",
             "imbue",
             "drums",
-            "scrolls"
+            "scrolls",
+            "miscellaneous"
           ]
         },
         "encounter": {
@@ -3364,22 +3389,6 @@
             "default_gems": {
               "type": "string"
             },
-            "inherit_upgrades": {
-              "type": "object",
-              "properties": {
-                "label": {
-                  "type": "string"
-                },
-                "tooltip": {
-                  "type": "string"
-                }
-              },
-              "additionalProperties": false,
-              "required": [
-                "label",
-                "tooltip"
-              ]
-            },
             "freeze_ring": {
               "type": "object",
               "properties": {
@@ -3419,7 +3428,6 @@
             "combination_singular",
             "iterations",
             "default_gems",
-            "inherit_upgrades",
             "freeze_ring",
             "freeze_trinket"
           ]
@@ -5353,7 +5361,39 @@
                     "tooltip"
                   ]
                 },
+                "auto_swing_time": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "tooltip": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "tooltip"
+                  ]
+                },
                 "time_to_next_auto": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "tooltip": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "tooltip"
+                  ]
+                },
+                "time_since_last_auto": {
                   "type": "object",
                   "properties": {
                     "label": {
@@ -6396,7 +6436,9 @@
                 "generic_resource",
                 "gcd_is_ready",
                 "gcd_time_to_ready",
+                "auto_swing_time",
                 "time_to_next_auto",
+                "time_since_last_auto",
                 "spell_known",
                 "current_cost",
                 "can_cast",
@@ -8947,9 +8989,6 @@
             "unspent_talent_points": {
               "type": "string"
             },
-            "dual_wield_2h_without_titans_grip": {
-              "type": "string"
-            },
             "shaman_fele_autocast": {
               "type": "string"
             }
@@ -8960,7 +8999,6 @@
             "profession_requirement",
             "too_many_jc_gems",
             "unspent_talent_points",
-            "dual_wield_2h_without_titans_grip",
             "shaman_fele_autocast"
           ]
         },
@@ -9414,6 +9452,9 @@
                 "reforge_optimization_failed": {
                   "type": "string"
                 },
+                "reforge_optimization_cancelled": {
+                  "type": "string"
+                },
                 "use_custom": {
                   "type": "string"
                 },
@@ -9429,16 +9470,10 @@
                 "edit_weights": {
                   "type": "string"
                 },
-                "include_gems": {
-                  "type": "string"
-                },
                 "freeze_item_slots": {
                   "type": "string"
                 },
-                "limit_execution_time": {
-                  "type": "string"
-                },
-                "limit_execution_time_tooltip": {
+                "max_gem_phase": {
                   "type": "string"
                 }
               },
@@ -9461,15 +9496,14 @@
                 "breakpoints_implemented",
                 "post_cap_ep",
                 "reforge_optimization_failed",
+                "reforge_optimization_cancelled",
                 "use_custom",
                 "enable_modification",
                 "modify_in_editor",
                 "hard_cap_info",
                 "edit_weights",
-                "include_gems",
                 "freeze_item_slots",
-                "limit_execution_time",
-                "limit_execution_time_tooltip"
+                "max_gem_phase"
               ]
             }
           },
@@ -9781,6 +9815,9 @@
                 "consumes": {
                   "type": "string"
                 },
+                "debuffs": {
+                  "type": "string"
+                },
                 "bonus": {
                   "type": "string"
                 },
@@ -9816,6 +9853,7 @@
                 "talents",
                 "buffs",
                 "consumes",
+                "debuffs",
                 "bonus",
                 "total",
                 "glancing",

@@ -72,7 +72,7 @@ func main() {
 		panic(fmt.Sprintf("Error loading DBC data %v", err))
 	}
 
-	_, err = database.LoadAndWriteRawItems(helper, "s.OverallQualityId != 7 AND s.Field_1_15_7_59706_054 = 0 AND s.OverallQualityId != 0 AND (i.ClassID = 2 OR i.ClassID = 4) AND s.Display_lang != '' AND (s.ID != 34219 AND s.Display_lang NOT LIKE '%Test%' AND s.Display_lang NOT LIKE 'QA%' AND s.Display_lang != 'unused')", inputsDir)
+	_, err = database.LoadAndWriteRawItems(helper, "s.OverallQualityId != 7 AND s.Field_1_15_7_59706_054 = 0 AND s.OverallQualityId != 0 AND (i.ClassID = 2 OR i.ClassID = 4 OR (i.ClassID = 7 AND i.InventoryType = 12)) AND s.Display_lang != '' AND (s.ID != 34219 AND s.Display_lang NOT LIKE '%Test%' AND s.Display_lang NOT LIKE 'QA%' AND s.Display_lang != 'unused')", inputsDir)
 	if err != nil {
 		panic(fmt.Sprintf("Error loading DBC data %v", err))
 	}
@@ -155,6 +155,10 @@ func main() {
 
 	for _, gem := range instance.Gems {
 		parsed := gem.ToProto()
+		// All BOA gems are unique-equipped, but this isn't indicated in the gamefiles.
+		if gem.Bonding == dbc.BIND_ON_ACQUIRE {
+			parsed.Unique = true
+		}
 		if parsed.Icon == "" {
 			parsed.Icon = strings.ToLower(database.GetIconName(iconsMap, gem.FDID))
 		}
@@ -287,12 +291,6 @@ func main() {
 
 	craftedSpellIds := []int32{}
 	for _, item := range db.Items {
-		// // Manual override for some ToT weapons that drop from shared loot
-		// // and are missing sources in Atlas
-		// if slices.Contains([]int32{95866, 95859, 95860, 95861, 95862, 95867, 95876, 95875, 95877, 97129}, item.Id) {
-		// 	item.Sources = database.InferThroneOfThunderSource(item)
-		// }
-
 		// if item.NameDescription == "Celestial" {
 		// 	item.Sources = database.InferCelestialItemSource(item)
 		// }
@@ -305,6 +303,11 @@ func main() {
 		for _, source := range item.Sources {
 			if crafted := source.GetCrafted(); crafted != nil {
 				craftedSpellIds = append(craftedSpellIds, crafted.SpellId)
+
+				// Manual override for epic crafted items with crafting requirement
+				if instance.Items[int(item.Id)].Bonding == dbc.BIND_ON_ACQUIRE && item.Quality == proto.ItemQuality_ItemQualityEpic && item.RequiredProfession == proto.Profession_ProfessionUnknown {
+					item.RequiredProfession = crafted.Profession
+				}
 			}
 		}
 

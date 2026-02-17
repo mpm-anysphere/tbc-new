@@ -59,6 +59,8 @@ func MapBonusStatIndexToStat(index int) (proto.Stat, bool) {
 		return proto.Stat_StatParryRating, true
 	case ITEM_MOD_BLOCK_RATING:
 		return proto.Stat_StatBlockRating, true
+	case ITEM_MOD_RESILIENCE_RATING:
+		return proto.Stat_StatResilienceRating, true
 
 	// Secondary ratings
 	case ITEM_MOD_HIT_MELEE_RATING, ITEM_MOD_HIT_RANGED_RATING, ITEM_MOD_HIT_RATING:
@@ -316,6 +318,7 @@ func ClassNameFromDBC(dbc DbcClass) string {
 }
 func getMatchingRatingMods(value int) []RatingModType {
 	allMods := []RatingModType{
+		RATING_MOD_DEFENSE,
 		RATING_MOD_DODGE,
 		RATING_MOD_PARRY,
 		RATING_MOD_BLOCK,

@@ -243,7 +243,7 @@ func applyBuffEffects(agent Agent, raidBuffs *proto.RaidBuffs, partyBuffs *proto
 	}
 
 	if individual.BlessingOfSanctuary {
-		BlessingOfSanctuaryAura(char)
+		MakePermanent(BlessingOfSanctuaryAura(char))
 	}
 
 	if individual.BlessingOfWisdom != proto.TristateEffect_TristateEffectMissing {
@@ -658,16 +658,17 @@ func WindfuryTotemAura(char *Character, isImpoved bool) *Aura {
 	wfProcAura := char.NewTemporaryStatsAura("Windfury Totem Proc", ActionID{SpellID: 25584}, stats.Stats{stats.AttackPower: apBonus}, time.Millisecond*1500)
 
 	return char.MakeProcTriggerAura(ProcTrigger{
-		Name:            "Windfury Totem",
-		MetricsActionID: ActionID{SpellID: 25587},
-		ProcChance:      0.2,
-		Outcome:         OutcomeLanded,
-		Callback:        CallbackOnSpellHitDealt,
-		ProcMask:        ProcMaskMeleeMHAuto,
-		ICD:             time.Millisecond * 100, // No procs on procs
+		Name:               "Windfury Totem",
+		MetricsActionID:    ActionID{SpellID: 25587},
+		ProcChance:         0.2,
+		Outcome:            OutcomeLanded,
+		Callback:           CallbackOnSpellHitDealt,
+		ProcMask:           ProcMaskMeleeMHAuto,
+		ICD:                time.Millisecond * 100, // No procs on procs
+		TriggerImmediately: true,
 		Handler: func(sim *Simulation, spell *Spell, result *SpellResult) {
 			wfProcAura.Activate(sim)
-			char.AutoAttacks.mh.swing(sim)
+			char.AutoAttacks.MHAuto().Cast(sim, result.Target)
 		},
 	})
 }
@@ -932,15 +933,10 @@ func BlessingOfSanctuaryAura(char *Character) *Aura {
 		ActionID:    actionID,
 		SpellSchool: SpellSchoolHoly,
 		Flags:       SpellFlagBinary,
+		ProcMask:    ProcMaskEmpty,
 
-		// ApplyEffects: ApplyEffectFuncDirectDamage(SpellEffect{
-		// 	ProcMask:         ProcMaskEmpty,
-		// 	DamageMultiplier: 1,
-		// 	ThreatMultiplier: 1,
+		DamageMultiplier: 1,
 
-		// 	BaseDamage:     BaseDamageConfigFlat(46),
-		// 	OutcomeApplier: character.OutcomeFuncMagicHitBinary(),
-		// }),
 		ApplyEffects: func(sim *Simulation, target *Unit, spell *Spell) {
 			spell.CalcAndDealDamage(sim, target, 46, spell.OutcomeAlwaysHit)
 		},
@@ -949,22 +945,13 @@ func BlessingOfSanctuaryAura(char *Character) *Aura {
 	return char.RegisterAura(Aura{
 		Label:    "Blessing of Sanctuary",
 		ActionID: actionID,
-		Duration: NeverExpires,
-		OnReset: func(aura *Aura, sim *Simulation) {
-			aura.Activate(sim)
-		},
-		OnGain: func(aura *Aura, sim *Simulation) {
-			aura.Unit.PseudoStats.BonusPhysicalDamageTaken -= 80
-		},
-		OnExpire: func(aura *Aura, sim *Simulation) {
-			aura.Unit.PseudoStats.BonusPhysicalDamageTaken += 80
-		},
+		Duration: time.Minute * 10,
 		OnSpellHitTaken: func(aura *Aura, sim *Simulation, spell *Spell, result *SpellResult) {
 			if result.Outcome.Matches(OutcomeBlock) {
 				procSpell.Cast(sim, spell.Unit)
 			}
 		},
-	})
+	}).AttachMultiplicativePseudoStatBuff(&char.PseudoStats.BonusPhysicalDamageTaken, -80)
 }
 
 func BlessingOfWisdomAura(char *Character, improved bool) *Aura {
