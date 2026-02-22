@@ -282,7 +282,8 @@ func (shaman *Shaman) applyUnleashedRage() {
 		Name:               "Unleashed Rage Trigger (Self)",
 		Callback:           core.CallbackOnSpellHitDealt,
 		ProcMask:           core.ProcMaskMeleeOrMeleeProc,
-		Outcome:            core.OutcomeLanded,
+		Outcome:            core.OutcomeCrit,
+		RequireDamageDealt: true,
 		TriggerImmediately: true,
 		Handler: func(sim *core.Simulation, _ *core.Spell, _ *core.SpellResult) {
 			unleashBuffAura.Activate(sim)
