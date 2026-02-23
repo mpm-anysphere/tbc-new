@@ -48,8 +48,10 @@ func (shaman *Shaman) setupItemSwapImbue(imbue proto.ShamanImbue, imbueID int32)
 	}
 }
 
+var WindfuryAPBonus = 475.0
+
 func (shaman *Shaman) newWindfuryImbueSpell(isMH bool) *core.Spell {
-	apBonus := 475.0
+	apBonus := WindfuryAPBonus
 
 	tag := 1
 	procMask := core.ProcMaskMeleeMHSpecial
@@ -88,28 +90,20 @@ func (shaman *Shaman) newWindfuryImbueSpell(isMH bool) *core.Spell {
 }
 
 func (shaman *Shaman) makeWFProcTriggerAura(dpm *core.DynamicProcManager, procMask *core.ProcMask, mhSpell *core.Spell, ohSpell *core.Spell) *core.Aura {
-	icd := &core.Cooldown{
-		Timer:    shaman.NewTimer(),
-		Duration: time.Second * 3,
-	}
-	aura := shaman.RegisterAura(core.Aura{
-		Label:    "Windfury Imbue",
-		Icd:      icd,
-		Dpm:      dpm,
-		Duration: core.NeverExpires,
-		OnSpellHitDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
-			if !aura.Icd.IsReady(sim) || !result.Landed() || !spell.ProcMask.Matches(*procMask) || !dpm.Proc(sim, *procMask, "Windfury Imbue") {
-				return
-			}
-			aura.Icd.Use(sim)
+	aura := shaman.MakeProcTriggerAura(core.ProcTrigger{
+		Name:               "Windfury Imbue",
+		Callback:           core.CallbackOnSpellHitDealt,
+		ProcMask:           *procMask,
+		Outcome:            core.OutcomeLanded,
+		ICD:                time.Second * 3,
+		DPM:                dpm,
+		TriggerImmediately: true,
+		Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
 			if spell.IsMH() {
 				mhSpell.Cast(sim, result.Target)
 			} else {
 				ohSpell.Cast(sim, result.Target)
 			}
-		},
-		OnReset: func(aura *core.Aura, sim *core.Simulation) {
-			aura.Activate(sim)
 		},
 	})
 	return aura
@@ -151,6 +145,10 @@ func (shaman *Shaman) RegisterWindfuryImbue(procMask core.ProcMask) {
 	ohSpell := shaman.newWindfuryImbueSpell(false)
 
 	aura := shaman.makeWFProcTriggerAura(dpm, &mask, mhSpell, ohSpell)
+
+	aura.NewExclusiveEffect(core.WindfuryTotemCategory, false, core.ExclusiveEffect{
+		Priority: WindfuryAPBonus * 2, // Need to be higher than Windfury Totem priority
+	})
 
 	shaman.RegisterOnItemSwapWithImbue(windfuryEnchantID, &mask, aura)
 }
@@ -252,7 +250,12 @@ func (shaman *Shaman) RegisterFlametongueImbue(procMask core.ProcMask) {
 		}
 
 		flameTongueSpell := shaman.newFlametongueImbueSpell(weapon)
-		shaman.makeFTProcTriggerAura(itemSlot, triggerProcMask, flameTongueSpell)
+		aura := shaman.makeFTProcTriggerAura(itemSlot, triggerProcMask, flameTongueSpell)
+		if itemSlot == proto.ItemSlot_ItemSlotMainHand {
+			aura.NewExclusiveEffect(core.WindfuryTotemCategory, false, core.ExclusiveEffect{
+				Priority: WindfuryAPBonus * 2, // Need to be higher than Windfury Totem priority
+			})
+		}
 	}
 
 	shaman.setupItemSwapImbue(proto.ShamanImbue_FlametongueWeapon, flametongueEnchantID)

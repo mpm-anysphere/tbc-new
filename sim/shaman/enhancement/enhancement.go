@@ -81,9 +81,9 @@ func (enh *EnhancementShaman) ApplyTalents() {
 func (enh *EnhancementShaman) Initialize() {
 	enh.Shaman.Initialize()
 	// In the Initialize due to frost brand adding the aura to the enemy
-	// enh.RegisterFrostbrandImbue(enh.GetImbueProcMask(proto.ShamanImbue_FrostbrandWeapon))
-	// enh.RegisterFlametongueImbue(enh.GetImbueProcMask(proto.ShamanImbue_FlametongueWeapon))
-	// enh.RegisterWindfuryImbue(enh.GetImbueProcMask(proto.ShamanImbue_WindfuryWeapon))
+	enh.RegisterFrostbrandImbue(enh.GetImbueProcMask(proto.ShamanImbue_FrostbrandWeapon))
+	enh.RegisterFlametongueImbue(enh.GetImbueProcMask(proto.ShamanImbue_FlametongueWeapon))
+	enh.RegisterWindfuryImbue(enh.GetImbueProcMask(proto.ShamanImbue_WindfuryWeapon))
 
 	if enh.ItemSwap.IsEnabled() {
 		enh.RegisterItemSwapCallback(core.AllWeaponSlots(), func(_ *core.Simulation, slot proto.ItemSlot) {
