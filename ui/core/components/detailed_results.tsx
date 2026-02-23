@@ -23,6 +23,7 @@ import i18n from '../../i18n/config';
 import { ref } from 'tsx-vanilla';
 import { isDevMode } from '../utils';
 import { trackEvent } from '../../tracking/utils';
+import { ThreatMetricsTable } from './detailed_results/threat_metrics';
 
 type Tab = {
 	isActive?: boolean;
@@ -37,6 +38,11 @@ const tabs: Tab[] = [
 		targetId: 'damageTab',
 		label: i18n.t('results_tab.details.tabs.damage'),
 		classes: ['damage-metrics-tab'],
+	},
+	{
+		targetId: 'threatTab',
+		label: i18n.t('results_tab.details.tabs.threat'),
+		classes: ['threat-metrics-tab'],
 	},
 	{
 		targetId: 'healingTab',
@@ -137,6 +143,15 @@ export class DetailedResults extends Component {
 						</div> */}
 						<div className="dr-row dps-histogram" />
 					</div>
+					<div id="threatTab" className="tab-pane dr-tab-content threat-content fade">
+						<div className="dr-row topline-results" />
+						<div className="dr-row all-players-only">
+							<div className="player-threat-metrics" />
+						</div>
+						<div className="dr-row single-player-only">
+							<div className="threat-metrics" />
+						</div>
+					</div>
 					<div id="healingTab" className="tab-pane dr-tab-content healing-content fade">
 						<div className="dr-row topline-results" />
 						<div className="dr-row single-player-only">
@@ -224,6 +239,12 @@ export class DetailedResults extends Component {
 			parent: this.rootElem.querySelector('.cast-metrics')!,
 			resultsEmitter: this.resultsEmitter,
 		});
+
+		new ThreatMetricsTable({
+			parent: this.rootElem.querySelector('.threat-metrics')!,
+			resultsEmitter: this.resultsEmitter,
+		});
+
 		new DamageMetricsTable({
 			parent: this.rootElem.querySelector('.damage-metrics')!,
 			resultsEmitter: this.resultsEmitter,

@@ -48,6 +48,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 			Stat.StatAttackPower,
 			Stat.StatBlockValue,
 			Stat.StatDefenseRating,
+			Stat.StatExpertiseRating,
 			Stat.StatResilienceRating,
 			Stat.StatArcaneResistance,
 			Stat.StatFireResistance,

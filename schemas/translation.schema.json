@@ -7984,6 +7984,9 @@
                 "healing": {
                   "type": "string"
                 },
+                "threat": {
+                  "type": "string"
+                },
                 "damage_taken": {
                   "type": "string"
                 },
@@ -8010,6 +8013,7 @@
               "required": [
                 "damage",
                 "healing",
+                "threat",
                 "damage_taken",
                 "buffs",
                 "debuffs",
@@ -8023,6 +8027,12 @@
               "type": "object",
               "properties": {
                 "damage_done": {
+                  "type": "string"
+                },
+                "threat_done": {
+                  "type": "string"
+                },
+                "healing_done": {
                   "type": "string"
                 },
                 "casts": {
@@ -8049,7 +8059,10 @@
                 "dps": {
                   "type": "string"
                 },
-                "healing_done": {
+                "tpet": {
+                  "type": "string"
+                },
+                "tps": {
                   "type": "string"
                 },
                 "cpm": {
@@ -8176,6 +8189,8 @@
               "additionalProperties": false,
               "required": [
                 "damage_done",
+                "threat_done",
+                "healing_done",
                 "casts",
                 "avg_cast",
                 "hits",
@@ -8184,7 +8199,8 @@
                 "miss_percent",
                 "dpet",
                 "dps",
-                "healing_done",
+                "tpet",
+                "tps",
                 "cpm",
                 "cast_time",
                 "hpm",
@@ -8373,6 +8389,12 @@
                 },
                 "amount": {
                   "type": "string"
+                },
+                "per_cast": {
+                  "type": "string"
+                },
+                "per_hit": {
+                  "type": "string"
                 }
               },
               "additionalProperties": false,
@@ -8380,7 +8402,9 @@
                 "type",
                 "count",
                 "average",
-                "amount"
+                "amount",
+                "per_cast",
+                "per_hit"
               ]
             }
           },

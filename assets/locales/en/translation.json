@@ -1903,6 +1903,7 @@
 			"tabs": {
 				"damage": "Damage",
 				"healing": "Healing",
+				"threat": "Threat",
 				"damage_taken": "Damage Taken",
 				"buffs": "Buffs",
 				"debuffs": "Debuffs",
@@ -1913,6 +1914,8 @@
 			},
 			"columns": {
 				"damage_done": "Damage done",
+				"threat_done": "Threat done",
+				"healing_done": "Healing done",
 				"casts": "Casts",
 				"avg_cast": "Avg Cast",
 				"hits": "Hits",
@@ -1921,7 +1924,8 @@
 				"miss_percent": "Miss %",
 				"dpet": "DPET",
 				"dps": "DPS",
-				"healing_done": "Healing done",
+				"tpet": "TPET",
+				"tps": "TPS",
 				"cpm": "CPM",
 				"cast_time": "Cast Time",
 				"hpm": "HPM",
@@ -2000,7 +2004,9 @@
 				"type": "Type",
 				"count": "Count",
 				"average": "Average",
-				"amount": "Amount"
+				"amount": "Amount",
+				"per_cast": "Per Cast",
+				"per_hit": "Per Hit"
 			}
 		}
 	},

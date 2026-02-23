@@ -63,7 +63,7 @@ func (war *Warrior) registerWhirlwind() {
 			war.CastNormalizedSweepingStrikesAttack(results, sim)
 			spell.DealBatchedAoeDamage(sim)
 
-			if whirlwindOH != nil && war.OffHand() != nil && war.OffHand().WeaponType != proto.WeaponType_WeaponTypeUnknown {
+			if whirlwindOH != nil && war.OffHand() != nil && war.OffHand().WeaponType != proto.WeaponType_WeaponTypeUnknown && war.OffHand().WeaponType != proto.WeaponType_WeaponTypeShield {
 				whirlwindOH.Cast(sim, target)
 			}
 		},
