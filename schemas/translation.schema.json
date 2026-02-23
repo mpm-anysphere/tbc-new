@@ -732,6 +732,9 @@
             },
             "shadow_resistance": {
               "type": "string"
+            },
+            "physical_damage": {
+              "type": "string"
             }
           },
           "additionalProperties": false,
@@ -797,7 +800,8 @@
             "frost_resistance",
             "fire_resistance",
             "nature_resistance",
-            "shadow_resistance"
+            "shadow_resistance",
+            "physical_damage"
           ]
         },
         "currency": {
@@ -1808,6 +1812,22 @@
                 "tooltip"
               ]
             },
+            "inspiration_uptime": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "tooltip": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "tooltip"
+              ]
+            },
             "incoming_hps": {
               "type": "object",
               "properties": {
@@ -2323,6 +2343,7 @@
             "in_front_of_target",
             "distance_from_target",
             "tank_assignment",
+            "inspiration_uptime",
             "incoming_hps",
             "healing_cadence",
             "healing_cadence_variation",
@@ -7980,6 +8001,9 @@
                 "healing": {
                   "type": "string"
                 },
+                "threat": {
+                  "type": "string"
+                },
                 "damage_taken": {
                   "type": "string"
                 },
@@ -8006,6 +8030,7 @@
               "required": [
                 "damage",
                 "healing",
+                "threat",
                 "damage_taken",
                 "buffs",
                 "debuffs",
@@ -8019,6 +8044,12 @@
               "type": "object",
               "properties": {
                 "damage_done": {
+                  "type": "string"
+                },
+                "threat_done": {
+                  "type": "string"
+                },
+                "healing_done": {
                   "type": "string"
                 },
                 "casts": {
@@ -8045,7 +8076,10 @@
                 "dps": {
                   "type": "string"
                 },
-                "healing_done": {
+                "tpet": {
+                  "type": "string"
+                },
+                "tps": {
                   "type": "string"
                 },
                 "cpm": {
@@ -8172,6 +8206,8 @@
               "additionalProperties": false,
               "required": [
                 "damage_done",
+                "threat_done",
+                "healing_done",
                 "casts",
                 "avg_cast",
                 "hits",
@@ -8180,7 +8216,8 @@
                 "miss_percent",
                 "dpet",
                 "dps",
-                "healing_done",
+                "tpet",
+                "tps",
                 "cpm",
                 "cast_time",
                 "hpm",
@@ -8369,6 +8406,12 @@
                 },
                 "amount": {
                   "type": "string"
+                },
+                "per_cast": {
+                  "type": "string"
+                },
+                "per_hit": {
+                  "type": "string"
                 }
               },
               "additionalProperties": false,
@@ -8376,7 +8419,9 @@
                 "type",
                 "count",
                 "average",
-                "amount"
+                "amount",
+                "per_cast",
+                "per_hit"
               ]
             }
           },

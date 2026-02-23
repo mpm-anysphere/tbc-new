@@ -3,7 +3,7 @@ import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_u
 import { Player } from '../../core/player';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation } from '../../core/proto/apl';
-import { Faction, ItemSlot, PseudoStat, Race, RaidBuffs, Spec, Stat, TristateEffect } from '../../core/proto/common';
+import { Debuffs, Faction, IndividualBuffs, ItemSlot, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat, TristateEffect } from '../../core/proto/common';
 import { UnitStat } from '../../core/proto_utils/stats';
 import * as Presets from './presets';
 import * as WarriorPresets from '../presets';
@@ -48,6 +48,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 			Stat.StatAttackPower,
 			Stat.StatBlockValue,
 			Stat.StatDefenseRating,
+			Stat.StatExpertiseRating,
 			Stat.StatResilienceRating,
 			Stat.StatArcaneResistance,
 			Stat.StatFireResistance,
@@ -74,17 +75,37 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 		// Default consumes settings.
 		consumables: Presets.DefaultConsumables,
 		// Default talents.
-		talents: Presets.StandardTalents.data,
+		talents: Presets.DefaultTalents.data,
 		// Default spec-specific settings.
 		specOptions: Presets.DefaultOptions,
+		// Default encounter
+		encounter: "Magtheridon's Lair/Magtheridon 25",
 		// Default raid/party buffs settings.
 		raidBuffs: RaidBuffs.create({
 			...WarriorPresets.DefaultRaidBuffs,
-			thorns: TristateEffect.TristateEffectImproved,
+			thorns: TristateEffect.TristateEffectRegular,
+			shadowProtection: true,
 		}),
-		partyBuffs: WarriorPresets.DefaultPartyBuffs,
-		individualBuffs: WarriorPresets.DefaultIndividualBuffs,
-		debuffs: WarriorPresets.DefaultDebuffs,
+		partyBuffs: PartyBuffs.create({
+			sanctityAura: TristateEffect.TristateEffectImproved,
+			braidedEterniumChain: true,
+			graceOfAirTotem: TristateEffect.TristateEffectImproved,
+			strengthOfEarthTotem: TristateEffect.TristateEffectImproved,
+			windfuryTotem: TristateEffect.TristateEffectImproved,
+			battleShout: TristateEffect.TristateEffectImproved,
+		}),
+		individualBuffs: IndividualBuffs.create({
+			...WarriorPresets.DefaultIndividualBuffs,
+			blessingOfSanctuary: true,
+		}),
+		debuffs: Debuffs.create({
+			...WarriorPresets.DefaultDebuffs,
+			giftOfArthas: false,
+			demoralizingShout: TristateEffect.TristateEffectImproved,
+			thunderClap: TristateEffect.TristateEffectImproved,
+			insectSwarm: true,
+			shadowEmbrace: true,
+		}),
 	},
 
 	// IconInputs to include in the 'Player' section on the settings tab.
@@ -99,10 +120,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 			WarriorInputs.BattleShoutT2(),
 			WarriorInputs.StartingRage(),
 			WarriorInputs.StanceSnapshot(),
-			OtherInputs.DistanceFromTarget,
 			WarriorInputs.QueueDelay(),
 			OtherInputs.InputDelay,
-			OtherInputs.TankAssignment,
+			// OtherInputs.TankAssignment,
+			OtherInputs.InspirationUptime,
 			OtherInputs.IncomingHps,
 			OtherInputs.HealingCadence,
 			OtherInputs.HealingCadenceVariation,
@@ -121,11 +142,12 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 	presets: {
 		epWeights: [Presets.P1_EP_PRESET],
 		// Preset talents that the user can quickly select.
-		talents: [Presets.StandardTalents],
+		talents: [Presets.DefaultTalents],
 		// Preset rotations that the user can quickly select.
 		rotations: [Presets.ROTATION_DEFAULT],
 		// Preset gear configurations that the user can quickly select.
 		gear: [Presets.PRERAID_BALANCED_PRESET, Presets.P1_PRESET],
+		builds: [Presets.P1_PRESET_BUILD],
 	},
 
 	autoRotation: (_player: Player<Spec.SpecProtectionWarrior>): APLRotation => {
@@ -135,7 +157,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 	raidSimPresets: [
 		{
 			spec: Spec.SpecProtectionWarrior,
-			talents: Presets.StandardTalents.data,
+			talents: Presets.DefaultTalents.data,
 			specOptions: Presets.DefaultOptions,
 			consumables: Presets.DefaultConsumables,
 			defaultFactionRaces: {

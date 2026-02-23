@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"github.com/wowsims/tbc/sim/core"
-	"github.com/wowsims/tbc/sim/core/proto"
 )
 
 func (war *Warrior) registerWhirlwind() {
@@ -63,7 +62,7 @@ func (war *Warrior) registerWhirlwind() {
 			war.CastNormalizedSweepingStrikesAttack(results, sim)
 			spell.DealBatchedAoeDamage(sim)
 
-			if whirlwindOH != nil && war.OffHand() != nil && war.OffHand().WeaponType != proto.WeaponType_WeaponTypeUnknown {
+			if war.HasOHWeapon() {
 				whirlwindOH.Cast(sim, target)
 			}
 		},

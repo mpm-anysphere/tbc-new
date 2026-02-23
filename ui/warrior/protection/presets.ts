@@ -28,7 +28,7 @@ export const P1_EP_PRESET = PresetUtils.makePresetEpWeights(
 			[Stat.StatAttackPower]: 0.46,
 			[Stat.StatMeleeHitRating]: 0.57,
 			[Stat.StatMeleeCritRating]: 0.88,
-			[Stat.StatMeleeHasteRating]: 0.90,
+			[Stat.StatMeleeHasteRating]: 0.9,
 			[Stat.StatArmorPenetration]: 0.15,
 			[Stat.StatExpertiseRating]: 0.99,
 		},
@@ -40,17 +40,17 @@ export const P1_EP_PRESET = PresetUtils.makePresetEpWeights(
 
 // Default talents. Uses the wowhead calculator format, make the talents on
 // https://wowhead.com/tbc/talent-calc and copy the numbers in the url.
-export const StandardTalents = {
-	name: 'Standard',
+export const DefaultTalents = {
+	name: 'Default',
 	data: SavedTalents.create({
-		talentsString: '350003011-05-0055511033001103501351',
+		talentsString: '35000301302-03-0055511033001101501351',
 	}),
 };
 
 export const DefaultOptions = ProtectionWarriorOptions.create({
 	classOptions: {
 		queueDelay: 250,
-		startingRage: 0,
+		startingRage: 100,
 		defaultShout: WarriorShout.WarriorShoutCommanding,
 		defaultStance: WarriorStance.WarriorStanceDefensive,
 	},
@@ -58,13 +58,27 @@ export const DefaultOptions = ProtectionWarriorOptions.create({
 
 export const DefaultConsumables = ConsumesSpec.create({
 	...WarriorPresets.DefaultConsumables,
+	conjuredId: 22105,
 	foodId: 27667,
-	flaskId: 22851,
+	flaskId: undefined,
+	battleElixirId: 22831,
+	guardianElixirId: 9088,
 	potId: 22849,
+	nightmareSeed: true,
+	scrollStr: true,
+	scrollAgi: true,
+	scrollArm: true,
 });
 
 export const OtherDefaults = {
 	profession1: Profession.Engineering,
 	profession2: Profession.Blacksmithing,
-	distanceFromTarget: 25,
+	distanceFromTarget: 0,
 };
+
+export const P1_PRESET_BUILD = PresetUtils.makePresetBuild('P1', {
+	gear: P1_PRESET,
+	talents: DefaultTalents,
+	epWeights: P1_EP_PRESET,
+	rotation: ROTATION_DEFAULT,
+});

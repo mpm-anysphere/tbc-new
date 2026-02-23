@@ -78,6 +78,14 @@ export class ActionId {
 					name += ' (Main Hand)';
 				} else if (this.tag == 2) {
 					name += ' (Off Hand)';
+				} else if (this.tag == 12281) {
+					name += ' (Sword Specialization)';
+				} else if (this.tag == 25584) {
+					name += ' (Windfury)';
+				}  else if (this.tag == 31332) {
+					name += ' (Blinkstrike)';
+				} else if (this.tag == 17257) {
+					name += ' (Magtheridon)';
 				} else if (this.tag == 99999) {
 					name += ' (Boss)';
 				} else if (this.tag == 99998) {
@@ -462,7 +470,7 @@ export class ActionId {
 				break;
 			case 'Whirlwind':
 			case 'Windfury Weapon':
-			case 'Berserk':
+			case 'Enchant Weapon - Crusader':
 				if (tag == 1) {
 					name += ' (Main Hand)';
 				} else if (tag == 2) {
@@ -906,12 +914,4 @@ export const resourceTypeToIcon: Record<ResourceType, string> = {
 
 // Use this to connect a buff row to a cast row in the timeline view
 export const buffAuraToSpellIdMap: Record<number, ActionId> = {
-	96228: ActionId.fromSpellId(82174), // Synapse Springs - Agi
-	96229: ActionId.fromSpellId(82174), // Synapse Springs - Str
-	96230: ActionId.fromSpellId(82174), // Synapse Springs - Int
-
-	132403: ActionId.fromSpellId(53600), // Shield of the Righteous
-	138169: ActionId.fromSpellId(85256), // Paladin T15 Ret 4P Templar's Verdict
-
-	131900: ActionId.fromSpellId(131894), // A Murder of Crows
 };

@@ -198,7 +198,8 @@
 			"frost_resistance": "Frost Resistance",
 			"fire_resistance": "Fire Resistance",
 			"nature_resistance": "Nature Resistance",
-			"shadow_resistance": "Shadow Resistance"
+			"shadow_resistance": "Shadow Resistance",
+			"physical_damage": "Bonus Weapon Damage"
 		},
 		"currency": {
 			"valorPoints": "Valor Points",
@@ -440,6 +441,10 @@
 			"tank_assignment": {
 				"label": "Tank Assignment",
 				"tooltip": "Determines which mobs will be tanked. Most mobs default to targeting the Main Tank, but in preset multi-target encounters this is not always true."
+			},
+			"inspiration_uptime": {
+				"label": "Inspiration % Uptime",
+				"tooltip": "<p>% average of Encounter Duration, during which you have the Inspiration buff.</p><p>If set to 0, the buff isn't applied.</p>"
 			},
 			"incoming_hps": {
 				"label": "Incoming HPS",
@@ -1902,6 +1907,7 @@
 			"tabs": {
 				"damage": "Damage",
 				"healing": "Healing",
+				"threat": "Threat",
 				"damage_taken": "Damage Taken",
 				"buffs": "Buffs",
 				"debuffs": "Debuffs",
@@ -1912,6 +1918,8 @@
 			},
 			"columns": {
 				"damage_done": "Damage done",
+				"threat_done": "Threat done",
+				"healing_done": "Healing done",
 				"casts": "Casts",
 				"avg_cast": "Avg Cast",
 				"hits": "Hits",
@@ -1920,7 +1928,8 @@
 				"miss_percent": "Miss %",
 				"dpet": "DPET",
 				"dps": "DPS",
-				"healing_done": "Healing done",
+				"tpet": "TPET",
+				"tps": "TPS",
 				"cpm": "CPM",
 				"cast_time": "Cast Time",
 				"hpm": "HPM",
@@ -1999,7 +2008,9 @@
 				"type": "Type",
 				"count": "Count",
 				"average": "Average",
-				"amount": "Amount"
+				"amount": "Amount",
+				"per_cast": "Per Cast",
+				"per_hit": "Per Hit"
 			}
 		}
 	},

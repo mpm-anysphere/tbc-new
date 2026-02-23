@@ -43,6 +43,7 @@ character_stats_results: {
   final_stats: 33.75
   final_stats: 93.75
   final_stats: 0
+  final_stats: 0
   final_stats: 3
   final_stats: 10.63172
   final_stats: 15.97514
@@ -64,6 +65,10 @@ dps_results: {
  value: {}
 }
 dps_results: {
+ key: "TestArcane-AllItems-Blinkstrike-31332"
+ value: {}
+}
+dps_results: {
  key: "TestArcane-AllItems-DarkmoonCard:Crusade-31856"
  value: {}
 }
@@ -73,6 +78,10 @@ dps_results: {
 }
 dps_results: {
  key: "TestArcane-AllItems-DarkmoonCard:Wrath-31857"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-AllItems-EnchantWeapon-Crusader-1900"
  value: {}
 }
 dps_results: {
@@ -101,6 +110,14 @@ dps_results: {
 }
 dps_results: {
  key: "TestArcane-AllItems-TheLightningCapacitor-28785"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-AllItems-TheTwinBladesofAzzinoth"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-AllItems-Thunderfury,BlessedBladeoftheWindseeker-19019"
  value: {}
 }
 dps_results: {

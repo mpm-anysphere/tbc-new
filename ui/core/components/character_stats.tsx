@@ -383,7 +383,7 @@ export class CharacterStats extends Component {
 			);
 
 			const capDelta = critImmunityInfo.delta;
-			if (capDelta === 0) {
+			if (capDelta.toFixed(2) === '0.00') {
 				valueElem.classList.add('text-white');
 			} else if (capDelta > 0) {
 				valueElem.classList.add('text-danger');
@@ -487,6 +487,13 @@ export class CharacterStats extends Component {
 		if (debuffs.exposeWeaknessUptime && debuffs.exposeWeaknessHunterAgility) {
 			debuffStats = debuffStats.addStat(Stat.StatAttackPower, debuffs.exposeWeaknessHunterAgility * 0.25);
 		}
+		if (debuffs.huntersMark != TristateEffect.TristateEffectMissing) {
+			debuffStats = debuffStats.addStat(Stat.StatRangedAttackPower, 440);
+
+			if (debuffs.huntersMark == TristateEffect.TristateEffectImproved) {
+				debuffStats = debuffStats.addStat(Stat.StatAttackPower, 110);
+			}
+		}
 
 		return debuffStats;
 	}
@@ -541,7 +548,7 @@ export class CharacterStats extends Component {
 	private critImmunityCapDisplayString(player: Player<any>, _finalStats: Stats): string {
 		const critImmuneDelta = player.getCritImmunity();
 
-		if (critImmuneDelta === 0.0) {
+		if (critImmuneDelta.toFixed(2) === '0.00') {
 			return i18n.t('sidebar.character_stats.crit_cap.exact');
 		}
 

@@ -507,6 +507,10 @@ export class UnitMetrics {
 		return this.getActionsForDisplay().filter(e => e.dps !== 0 && e.hps === 0);
 	}
 
+	getThreatActions(): Array<ActionMetrics> {
+		return this.getActionsForDisplay().filter(e => e.tps !== 0 && e.hps === 0);
+	}
+
 	getHealingActions(): Array<ActionMetrics> {
 		return this.getActionsForDisplay();
 	}

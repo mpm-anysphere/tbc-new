@@ -19,17 +19,17 @@ func addMovementAI() {
 			TankIndex: 0,
 
 			Stats: stats.Stats{
-				stats.Health:      4_552_800,
+				stats.Health:      6_070_400,
 				stats.Armor:       7685,
-				stats.AttackPower: 0,
+				stats.AttackPower: 320,
 			}.ToProtoArray(),
 
 			SpellSchool:      proto.SpellSchool_SpellSchoolPhysical,
 			SwingSpeed:       2,
-			MinBaseDamage:    3000,
-			DamageSpread:     0.4,
+			MinBaseDamage:    15113,
+			DamageSpread:     0.5,
 			SuppressDodge:    false,
-			ParryHaste:       false,
+			ParryHaste:       true,
 			DualWield:        false,
 			DualWieldPenalty: false,
 			TargetInputs: []*proto.TargetInput{
