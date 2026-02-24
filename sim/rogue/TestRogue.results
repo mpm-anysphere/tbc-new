@@ -53,6 +53,13 @@ character_stats_results: {
  }
 }
 dps_results: {
+ key: "TestRogue-AllItems-ArgussianCompass-27770"
+ value: {
+  dps: 2219.38476
+  tps: 1575.76318
+ }
+}
+dps_results: {
  key: "TestRogue-AllItems-AssassinationArmor"
  value: {
   dps: 1950.52277
@@ -131,6 +138,27 @@ dps_results: {
 }
 dps_results: {
  key: "TestRogue-AllItems-EyeofMagtheridon-28789"
+ value: {
+  dps: 2219.38476
+  tps: 1575.76318
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-Figurine-DawnstoneCrab-24125"
+ value: {
+  dps: 2219.38476
+  tps: 1575.76318
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-Figurine-EmpyreanTortoise-35693"
+ value: {
+  dps: 2219.38476
+  tps: 1575.76318
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-FigurineoftheColossus-27529"
  value: {
   dps: 2219.38476
   tps: 1575.76318

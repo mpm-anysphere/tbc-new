@@ -1559,12 +1559,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		27529, // Figurine of the Colossus
-		[
-			"Each successful block heals you for 120. Effect lasts 20s.", // 33089 - https://www.wowhead.com/tbc/spell=33089
-		]
-	],
-	[
 		27544, // Totem of Spontaneous Regrowth
 		[
 			"Increases healing done by Healing Wave by up to 88.", // 34294 - https://www.wowhead.com/tbc/spell=34294
@@ -1586,12 +1580,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		27744, // Idol of Ursoc
 		[
 			"Increases initial and per application periodic damage done by Lacerate by 8.", // 34253 - https://www.wowhead.com/tbc/spell=34253
-		]
-	],
-	[
-		27770, // Argussian Compass
-		[
-			"Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20s.", // 39228 - https://www.wowhead.com/tbc/spell=39228
 		]
 	],
 	[

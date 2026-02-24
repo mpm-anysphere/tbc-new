@@ -61,13 +61,12 @@ func init() {
 			RelatedSelfBuff: arpAura.Aura,
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(21670)
+		character.AddStatProcBuff(26481, arpAura, false, eligibleSlots)
 		character.AddMajorCooldown(core.MajorCooldown{
 			Spell:    spell,
 			Type:     core.CooldownTypeDPS,
 			BuffAura: arpAura,
 		})
-
-		character.ItemSwap.RegisterProc(21670, procAura)
-		character.ItemSwap.RegisterActive(21670)
 	})
 }
