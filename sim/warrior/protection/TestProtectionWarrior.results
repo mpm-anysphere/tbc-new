@@ -53,6 +53,14 @@ character_stats_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-ArgussianCompass-27770"
+ value: {
+  dps: 614.87723
+  tps: 974.97421
+  dtps: 1557.76801
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-BadgeoftheSwarmguard-21670"
  value: {
   dps: 614.90446
@@ -170,6 +178,30 @@ dps_results: {
   dps: 614.90446
   tps: 975.29158
   dtps: 1558.37052
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-Figurine-DawnstoneCrab-24125"
+ value: {
+  dps: 619.45445
+  tps: 982.10994
+  dtps: 1530.56278
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-Figurine-EmpyreanTortoise-35693"
+ value: {
+  dps: 619.11368
+  tps: 981.27256
+  dtps: 1523.3539
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-FigurineoftheColossus-27529"
+ value: {
+  dps: 614.94633
+  tps: 975.29575
+  dtps: 1558.17085
  }
 }
 dps_results: {

@@ -57,6 +57,10 @@ dps_results: {
  value: {}
 }
 dps_results: {
+ key: "TestArcane-AllItems-ArgussianCompass-27770"
+ value: {}
+}
+dps_results: {
  key: "TestArcane-AllItems-BadgeoftheSwarmguard-21670"
  value: {}
 }
@@ -86,6 +90,18 @@ dps_results: {
 }
 dps_results: {
  key: "TestArcane-AllItems-EyeofMagtheridon-28789"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-AllItems-Figurine-DawnstoneCrab-24125"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-AllItems-Figurine-EmpyreanTortoise-35693"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-AllItems-FigurineoftheColossus-27529"
  value: {}
 }
 dps_results: {

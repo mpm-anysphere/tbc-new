@@ -53,6 +53,14 @@ character_stats_results: {
  }
 }
 dps_results: {
+ key: "TestDpsWarrior-AllItems-ArgussianCompass-27770"
+ value: {
+  dps: 2182.48162
+  tps: 1648.44962
+  dtps: 8.36948
+ }
+}
+dps_results: {
  key: "TestDpsWarrior-AllItems-BlackenedNaaruSliver-34427"
  value: {
   dps: 2384.64271
@@ -118,6 +126,30 @@ dps_results: {
 }
 dps_results: {
  key: "TestDpsWarrior-AllItems-EyeofMagtheridon-28789"
+ value: {
+  dps: 2182.48162
+  tps: 1648.44962
+  dtps: 8.36948
+ }
+}
+dps_results: {
+ key: "TestDpsWarrior-AllItems-Figurine-DawnstoneCrab-24125"
+ value: {
+  dps: 2182.48162
+  tps: 1648.44962
+  dtps: 8.36948
+ }
+}
+dps_results: {
+ key: "TestDpsWarrior-AllItems-Figurine-EmpyreanTortoise-35693"
+ value: {
+  dps: 2182.48162
+  tps: 1648.44962
+  dtps: 8.36948
+ }
+}
+dps_results: {
+ key: "TestDpsWarrior-AllItems-FigurineoftheColossus-27529"
  value: {
   dps: 2182.48162
   tps: 1648.44962
