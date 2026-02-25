@@ -52,7 +52,9 @@ export const Talents = {
 };
 
 export const DefaultOptions = MageOptions.create({
-	classOptions: {},
+	classOptions: {
+		defaultMageArmor: MageArmor.MageArmorMageArmor
+	},
 });
 
 export const OtherDefaults = {
