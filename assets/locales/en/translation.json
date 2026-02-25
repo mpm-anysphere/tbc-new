@@ -232,7 +232,8 @@
 			"class_spec_options": "Class/Spec Options",
 			"consumables": "Consumables",
 			"other_settings": "Other Settings",
-			"buffs": "Buffs"
+			"buffs": "Buffs",
+			"reforge_settings": "Suggest Gem Settings"
 		}
 	},
 	"sim": {

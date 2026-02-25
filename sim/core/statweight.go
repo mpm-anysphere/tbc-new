@@ -321,7 +321,14 @@ func computeStatWeights(swcr *proto.StatWeightsCalcRequest) *proto.StatWeightsRe
 		calcWeightResults(baselinePlayer.Tmi, modPlayerLow.Tmi, modPlayerHigh.Tmi, &result.Tmi)
 		meanLow := (modPlayerLow.ChanceOfDeath - baselinePlayer.ChanceOfDeath) / statResult.StatData.ModLow
 		meanHigh := (modPlayerHigh.ChanceOfDeath - baselinePlayer.ChanceOfDeath) / statResult.StatData.ModHigh
-		result.PDeath.Weights.AddStat(stat, (meanLow+meanHigh)/2)
+
+		pDeathAvg := meanHigh
+		if hasLowMeasurement {
+			pDeathAvg += meanLow
+			pDeathAvg /= 2
+		}
+
+		result.PDeath.Weights.AddStat(stat, pDeathAvg)
 		result.PDeath.WeightsStdev.AddStat(stat, 0)
 	}
 

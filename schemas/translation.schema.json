@@ -918,6 +918,9 @@
             },
             "buffs": {
               "type": "string"
+            },
+            "reforge_settings": {
+              "type": "string"
             }
           },
           "additionalProperties": false,
@@ -933,7 +936,8 @@
             "class_spec_options",
             "consumables",
             "other_settings",
-            "buffs"
+            "buffs",
+            "reforge_settings"
           ]
         }
       },

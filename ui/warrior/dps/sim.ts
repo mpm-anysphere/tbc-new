@@ -100,7 +100,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecDpsWarrior, {
 	},
 
 	presets: {
-		epWeights: [Presets.P1_FURY_EP_PRESET, Presets.P2_FURY_EP_PRESET, Presets.P1_ARMS_EP_PRESET, Presets.P2_ARMS_EP_PRESET],
+		epWeights: [Presets.P1_FURY_EP_PRESET, Presets.P2_FURY_EP_PRESET, Presets.P1_ARMS_EP_PRESET, Presets.P3_ARMS_EP_PRESET],
 		// Preset talents that the user can quickly select.
 		talents: [Presets.FuryTalents, Presets.ArmsTalents],
 		// Preset rotations that the user can quickly select.
@@ -120,7 +120,18 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecDpsWarrior, {
 			Presets.P35_BIS_ARMS_PRESET,
 			Presets.P4_BIS_ARMS_PRESET,
 		],
-		builds: [Presets.P1_PRESET_BUILD_FURY, Presets.P1_PRESET_BUILD_ARMS],
+		builds: [
+			Presets.P1_PRESET_BUILD_FURY,
+			Presets.P2_PRESET_BUILD_FURY,
+			Presets.P3_PRESET_BUILD_FURY,
+			Presets.P35_PRESET_BUILD_FURY,
+			Presets.P4_PRESET_BUILD_FURY,
+			Presets.P1_PRESET_BUILD_ARMS,
+			Presets.P2_PRESET_BUILD_ARMS,
+			Presets.P3_PRESET_BUILD_ARMS,
+			Presets.P35_PRESET_BUILD_ARMS,
+			Presets.P4_PRESET_BUILD_ARMS,
+		],
 	},
 
 	autoRotation: (_player: Player<Spec.SpecDpsWarrior>): APLRotation => {
