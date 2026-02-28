@@ -106,6 +106,7 @@ func (warlock *Warlock) registerAmplifyCurse() {
 		Label:    "Amplify Curse",
 		Tag:      "Affliction",
 		ActionID: actionID,
+		Duration: time.Second * 30,
 		OnApplyEffects: func(aura *core.Aura, sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			if spell.Matches(WarlockSpellCurseOfAgony | WarlockSpellCurseOfDoom) {
 				spell.DamageMultiplier *= 1.5
