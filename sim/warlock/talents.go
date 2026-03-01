@@ -532,11 +532,16 @@ func (warlock *Warlock) applyImprovedFirebolt() {
 		return
 	}
 
-	warlock.ActivePet.AddStaticMod(core.SpellModConfig{
-		Kind:      core.SpellMod_CastTime_Flat,
-		TimeValue: time.Millisecond * time.Duration(-250*warlock.Talents.ImprovedFirebolt),
-		ClassMask: WarlockSpellImpFireBolt,
-	})
+	for _, pet := range warlock.Pets {
+		if pet == warlock.Imp.GetPet() {
+			pet.AddStaticMod(core.SpellModConfig{
+				Kind:      core.SpellMod_CastTime_Flat,
+				TimeValue: time.Millisecond * time.Duration(-250*warlock.Talents.ImprovedFirebolt),
+				ClassMask: WarlockSpellImpFireBolt,
+			})
+		}
+	}
+
 }
 
 func (warlock *Warlock) applyImprovedLashOfPain() {
@@ -544,11 +549,15 @@ func (warlock *Warlock) applyImprovedLashOfPain() {
 		return
 	}
 
-	warlock.ActivePet.AddStaticMod(core.SpellModConfig{
-		Kind:      core.SpellMod_Cooldown_Flat,
-		TimeValue: time.Second * time.Duration(-3*warlock.Talents.ImprovedLashOfPain),
-		ClassMask: WarlockSpellSuccubusLashOfPain,
-	})
+	for _, pet := range warlock.Pets {
+		if pet == warlock.Succubus.GetPet() {
+			pet.AddStaticMod(core.SpellModConfig{
+				Kind:      core.SpellMod_Cooldown_Flat,
+				TimeValue: time.Second * time.Duration(-3*warlock.Talents.ImprovedLashOfPain),
+				ClassMask: WarlockSpellSuccubusLashOfPain,
+			})
+		}
+	}
 }
 
 func (warlock *Warlock) applyDevastation() {
