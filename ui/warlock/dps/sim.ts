@@ -1,12 +1,10 @@
-import * as BuffDebuffInputs from '../../core/components/inputs/buffs_debuffs';
 import * as OtherInputs from '../../core/components/inputs/other_inputs';
 import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_ui';
 import { Player } from '../../core/player';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation } from '../../core/proto/apl';
-import { Debuffs, Faction, IndividualBuffs, ItemSlot, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat } from '../../core/proto/common';
+import { Faction, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
 import { DEFAULT_CASTER_GEM_STATS, Stats, UnitStat } from '../../core/proto_utils/stats';
-import { defaultRaidBuffMajorDamageCooldowns } from '../../core/proto_utils/utils';
 import { TypedEvent } from '../../core/typed_event';
 import * as WarlockInputs from './inputs';
 import * as Presets from './presets';
@@ -32,10 +30,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	cssClass: 'warlock-sim-ui',
 	cssScheme: PlayerClasses.getCssClass(PlayerClasses.Warlock),
 	// List any known bugs / issues here and they'll be shown on the site.
-	knownIssues: [],
+	knownIssues: ['Alpha preview: baseline rotation and presets are implemented, pet specialization modeling is still in progress.'],
 
 	// All stats for which EP should be calculated.
-	epStats: [Stat.StatIntellect, Stat.StatSpellDamage],
+	epStats: [Stat.StatIntellect, Stat.StatSpirit, Stat.StatSpellDamage, Stat.StatSpellHitRating, Stat.StatSpellCritRating, Stat.StatSpellHasteRating],
 	// Reference stat against which to calculate EP. DPS classes use either spell power or attack power.
 	epReferenceStat: Stat.StatSpellDamage,
 	// Which stats to display in the Character Stats section, at the bottom of the left-hand sidebar.
@@ -55,7 +53,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	modifyDisplayStats,
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.BLANK_GEARSET.gear,
+		gear: Presets.PREBIS_GEAR.gear,
 
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Presets.P1_EP_PRESET.epWeights,
@@ -68,18 +66,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 		specOptions: Presets.DefaultOptions,
 
 		// Default buffs and debuffs settings.
-		raidBuffs: RaidBuffs.create({
-			...defaultRaidBuffMajorDamageCooldowns(),
-		}),
-		partyBuffs: PartyBuffs.create({
-
-		}),
-		individualBuffs: IndividualBuffs.create({
-
-		}),
-		debuffs: Debuffs.create({
-
-		}),
+		raidBuffs: Presets.DefaultRaidBuffs,
+		partyBuffs: Presets.DefaultPartyBuffs,
+		individualBuffs: Presets.DefaultIndividualBuffs,
+		debuffs: Presets.DefaultDebuffs,
 
 		other: Presets.OtherDefaults,
 	},
@@ -102,19 +92,19 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	},
 
 	presets: {
-		epWeights: [],
+		epWeights: [Presets.P1_EP_PRESET],
 		// Preset talents that the user can quickly select.
-		talents: [],
+		talents: [Presets.Talents],
 		// Preset rotations that the user can quickly select.
-		rotations: [],
+		rotations: [Presets.WARLOCK_DEFAULT_APL],
 
 		// Preset gear configurations that the user can quickly select.
-		gear: [],
+		gear: [Presets.PREBIS_GEAR, Presets.P1_BIS_GEAR],
 		itemSwaps: [],
 	},
 
 	autoRotation: (_player: Player<Spec.SpecWarlock>): APLRotation => {
-		return Presets.BLANK_APL.rotation.rotation!;
+		return Presets.WARLOCK_DEFAULT_APL.rotation.rotation!;
 	},
 
 	raidSimPresets: [
@@ -131,10 +121,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 			defaultGear: {
 				[Faction.Unknown]: {},
 				[Faction.Alliance]: {
-					1: Presets.BLANK_GEARSET.gear,
+					1: Presets.PREBIS_GEAR.gear,
 				},
 				[Faction.Horde]: {
-					1: Presets.BLANK_GEARSET.gear,
+					1: Presets.PREBIS_GEAR.gear,
 				},
 			},
 			otherDefaults: Presets.OtherDefaults,
@@ -145,5 +135,15 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 export class WarlockSimUI extends IndividualSimUI<Spec.SpecWarlock> {
 	constructor(parentElem: HTMLElement, player: Player<Spec.SpecWarlock>) {
 		super(parentElem, player, SPEC_CONFIG);
+
+		// Migration guard: older saved Warlock settings may keep an empty scaffold APL,
+		// which causes idle 0 DPS sims. Run after settings load and seed a default APL.
+		this.sim.waitForInit().then(() => {
+			const resolvedRotation = this.player.getResolvedAplRotation(true);
+			const hasNoAplActions = (resolvedRotation.prepullActions?.length ?? 0) === 0 && (resolvedRotation.priorityList?.length ?? 0) === 0;
+			if (hasNoAplActions) {
+				this.player.setAplRotation(TypedEvent.nextEventID(), Presets.WARLOCK_DEFAULT_APL.rotation.rotation!);
+			}
+		});
 	}
 }
