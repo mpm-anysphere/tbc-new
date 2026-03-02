@@ -155,10 +155,10 @@ func (unit *Unit) ManaRegenPerSecondWhileCasting() float64 {
 	regenRate := unit.MP5ManaRegenPerSecond()
 
 	spiritRegenRate := 0.0
-	if unit.PseudoStats.SpiritRegenRateCombat != 0 || unit.PseudoStats.ForceFullSpiritRegen {
+	if unit.PseudoStats.SpiritRegenRateCasting != 0 || unit.PseudoStats.ForceFullSpiritRegen {
 		spiritRegenRate = unit.SpiritManaRegenPerSecond() * unit.PseudoStats.SpiritRegenMultiplier
 		if !unit.PseudoStats.ForceFullSpiritRegen {
-			spiritRegenRate *= unit.PseudoStats.SpiritRegenRateCombat
+			spiritRegenRate *= unit.PseudoStats.SpiritRegenRateCasting
 		}
 	}
 	regenRate += spiritRegenRate
@@ -170,7 +170,7 @@ func (unit *Unit) ManaRegenPerSecondWhileCasting() float64 {
 
 // Returns the rate of mana regen per second, assuming this unit is
 // considered to be not casting.
-func (unit *Unit) ManaRegenPerSecondWhileNotCombat() float64 {
+func (unit *Unit) ManaRegenPerSecondWhileNotCasting() float64 {
 	regenRate := unit.MP5ManaRegenPerSecond()
 
 	regenRate += unit.SpiritManaRegenPerSecond() * unit.PseudoStats.SpiritRegenMultiplier
@@ -182,7 +182,7 @@ func (unit *Unit) ManaRegenPerSecondWhileNotCombat() float64 {
 
 func (unit *Unit) UpdateManaRegenRates() {
 	unit.manaTickWhileCasting = unit.ManaRegenPerSecondWhileCasting() * 2
-	unit.manaTickWhileNotCasting = unit.ManaRegenPerSecondWhileNotCombat() * 2
+	unit.manaTickWhileNotCasting = unit.ManaRegenPerSecondWhileNotCasting() * 2
 }
 
 func (unit *Unit) MultiplyManaRegenSpeed(sim *Simulation, multiplier float64) {
@@ -223,7 +223,7 @@ func (unit *Unit) TimeUntilManaRegen(desiredMana float64) time.Duration {
 		regenTime = time.Second * 5
 		manaNeeded -= regenWhileCasting * 5
 		// now we move into spirit based regen.
-		regenTime += DurationFromSeconds(manaNeeded / unit.ManaRegenPerSecondWhileNotCombat())
+		regenTime += DurationFromSeconds(manaNeeded / unit.ManaRegenPerSecondWhileNotCasting())
 	}
 
 	return regenTime

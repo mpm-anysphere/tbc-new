@@ -197,7 +197,7 @@ func (mage *Mage) registerArcaneMeditation() {
 		return
 	}
 
-	mage.PseudoStats.SpiritRegenRateCombat += float64(mage.Talents.ArcaneMeditation) * 0.1
+	mage.PseudoStats.SpiritRegenRateCasting += float64(mage.Talents.ArcaneMeditation) * 0.1
 	mage.UpdateManaRegenRates()
 }
 
