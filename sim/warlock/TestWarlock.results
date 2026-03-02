@@ -55,7 +55,14 @@ character_stats_results: {
 dps_results: {
  key: "TestWarlock-AverageDps"
  value: {
-  dps: 177.62317
-  tps: 200.81079
+  dps: 1057.38291
+  tps: 1084.0307
+ }
+}
+dps_results: {
+ key: "TestWarlock-AverageDpsP1"
+ value: {
+  dps: 1116.01531
+  tps: 1119.8659
  }
 }

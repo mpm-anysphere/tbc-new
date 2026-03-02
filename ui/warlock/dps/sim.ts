@@ -135,5 +135,15 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 export class WarlockSimUI extends IndividualSimUI<Spec.SpecWarlock> {
 	constructor(parentElem: HTMLElement, player: Player<Spec.SpecWarlock>) {
 		super(parentElem, player, SPEC_CONFIG);
+
+		// Migration guard: older saved Warlock settings may keep an empty scaffold APL,
+		// which causes idle 0 DPS sims. Run after settings load and seed a default APL.
+		this.sim.waitForInit().then(() => {
+			const resolvedRotation = this.player.getResolvedAplRotation(true);
+			const hasNoAplActions = (resolvedRotation.prepullActions?.length ?? 0) === 0 && (resolvedRotation.priorityList?.length ?? 0) === 0;
+			if (hasNoAplActions) {
+				this.player.setAplRotation(TypedEvent.nextEventID(), Presets.WARLOCK_DEFAULT_APL.rotation.rotation!);
+			}
+		});
 	}
 }

@@ -27,6 +27,9 @@ func TestWarlock(t *testing.T) {
 		DefaultOptions,
 	)
 	raid := core.SinglePlayerRaidProto(player, nil, nil, nil)
+	p1Player := googleProto.Clone(player).(*proto.Player)
+	p1Player.Equipment = core.GetGearSet("../../ui/warlock/dps/gear_sets", "p1").GearSet
+	p1Raid := core.SinglePlayerRaidProto(p1Player, nil, nil, nil)
 
 	core.RunTestSuite(t, t.Name(), []core.TestGenerator{
 		&core.SingleCharacterStatsTestGenerator{
@@ -39,6 +42,14 @@ func TestWarlock(t *testing.T) {
 			Name: "AverageDps",
 			Request: &proto.RaidSimRequest{
 				Raid:       googleProto.Clone(raid).(*proto.Raid),
+				Encounter:  core.MakeSingleTargetEncounter(20),
+				SimOptions: core.AverageDefaultSimTestOptions,
+			},
+		},
+		&core.SingleDpsTestGenerator{
+			Name: "AverageDpsP1",
+			Request: &proto.RaidSimRequest{
+				Raid:       googleProto.Clone(p1Raid).(*proto.Raid),
 				Encounter:  core.MakeSingleTargetEncounter(20),
 				SimOptions: core.AverageDefaultSimTestOptions,
 			},
