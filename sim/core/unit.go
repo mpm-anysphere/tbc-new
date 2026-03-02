@@ -162,8 +162,8 @@ type Unit struct {
 	hardcastAction *PendingAction
 
 	// Cached mana return values per tick.
-	manaTickWhileCombat    float64
-	manaTickWhileNotCombat float64
+	manaTickWhileCasting    float64
+	manaTickWhileNotCasting float64
 
 	CastSpeed           float64
 	meleeAttackSpeed    float64

@@ -238,7 +238,7 @@ func makePotionActivationSpellInternal(potion Consumable, character *Character) 
 		for _, config := range gains {
 			switch config.resType {
 			case proto.ResourceType_ResourceTypeMana:
-				totalRegen := character.ManaRegenPerSecondWhileCombat() * 5
+				totalRegen := character.ManaRegenPerSecondWhileCasting() * 5
 				manaGain := config.min + config.spread
 				manaGain *= stoneMul
 				shouldActivate = character.MaxMana()-(character.CurrentMana()+totalRegen) >= manaGain
@@ -397,7 +397,7 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 			Type:  CooldownTypeMana,
 			ShouldActivate: func(sim *Simulation, character *Character) bool {
 				// Only pop if we have less than the max mana provided by the potion minus 1mp5 tick.
-				totalRegen := character.ManaRegenPerSecondWhileCombat() * 5
+				totalRegen := character.ManaRegenPerSecondWhileCasting() * 5
 				return character.MaxMana()-(character.CurrentMana()+totalRegen) >= 1500
 			},
 		})

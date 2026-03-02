@@ -55,184 +55,321 @@ character_stats_results: {
 dps_results: {
  key: "TestArcane-AllItems-AldorRegalia"
  value: {
+<<<<<<< HEAD
   dps: 2384.90906
   tps: 1599.98207
+=======
+  dps: 2266.61078
+  tps: 1521.47017
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-ArgussianCompass-27770"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-BadgeoftheSwarmguard-21670"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-BlackenedNaaruSliver-34427"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-Blinkstrike-31332"
  value: {
+<<<<<<< HEAD
   dps: 2593.40125
   tps: 1733.44788
+=======
+  dps: 2462.69222
+  tps: 1646.07371
+ }
+}
+dps_results: {
+ key: "TestArcane-AllItems-CommendationofKael'thas-34473"
+ value: {
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-DarkmoonCard:Crusade-31856"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-DarkmoonCard:Vengeance-31858"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-DarkmoonCard:Wrath-31857"
  value: {
+<<<<<<< HEAD
   dps: 2557.7773
   tps: 1742.22984
+=======
+  dps: 2429.46637
+  tps: 1658.11658
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-EnchantWeapon-Crusader-1900"
  value: {
+<<<<<<< HEAD
   dps: 2557.49568
   tps: 1711.90453
+=======
+  dps: 2428.53018
+  tps: 1625.57649
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-EyeofMagtheridon-28789"
  value: {
+<<<<<<< HEAD
   dps: 2601.03033
   tps: 1771.4596
+=======
+  dps: 2468.98508
+  tps: 1684.7285
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-Figurine-DawnstoneCrab-24125"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-Figurine-EmpyreanTortoise-35693"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-FigurineoftheColossus-27529"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-HandofJustice-11815"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-HourglassoftheUnraveller-28034"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-PrismofInnerCalm-30621"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-SextantofUnstableCurrents-30626"
  value: {
+<<<<<<< HEAD
   dps: 2622.52622
   tps: 1783.21912
+=======
+  dps: 2497.50271
+  tps: 1701.61106
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-SpyglassoftheHiddenFleet-30620"
  value: {
+<<<<<<< HEAD
   dps: 2538.76812
   tps: 1729.91908
+=======
+  dps: 2410.44464
+  tps: 1645.83983
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
   hps: 14.44444
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-SwiftWindfireDiamond"
  value: {
+<<<<<<< HEAD
   dps: 2503.18988
   tps: 1676.33412
+=======
+  dps: 2374.36484
+  tps: 1589.28091
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-TempestRegalia"
  value: {
+<<<<<<< HEAD
   dps: 2852.90504
   tps: 1884.5214
+=======
+  dps: 2711.89214
+  tps: 1793.63914
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-TheTwinBladesofAzzinoth"
  value: {
+<<<<<<< HEAD
   dps: 2272.75747
   tps: 1536.425
+=======
+  dps: 2165.013
+  tps: 1465.42518
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-Thunderfury,BlessedBladeoftheWindseeker-19019"
  value: {
+<<<<<<< HEAD
   dps: 2593.40125
   tps: 1733.44788
+=======
+  dps: 2462.69222
+  tps: 1646.07371
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-TirisfalRegalia"
  value: {
+<<<<<<< HEAD
   dps: 2783.31184
   tps: 1903.57004
+=======
+  dps: 2648.1334
+  tps: 1810.66172
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-Average-Default"
  value: {
+<<<<<<< HEAD
   dps: 2601.65528
   tps: 1747.18324
+=======
+  dps: 2476.53733
+  tps: 1663.51877
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-FullBuffs-0.0yards-LongMultiTarget"
  value: {
+<<<<<<< HEAD
   dps: 2810.8905
   tps: 3248.63735
+=======
+  dps: 2658.43917
+  tps: 3146.10625
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-FullBuffs-0.0yards-LongSingleTarget"
  value: {
+<<<<<<< HEAD
   dps: 2586.58276
   tps: 1726.06688
+=======
+  dps: 2467.82499
+  tps: 1648.9201
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
@@ -245,15 +382,15 @@ dps_results: {
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 807.76604
-  tps: 1168.964
+  dps: 830.09771
+  tps: 1185.71446
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 807.76604
-  tps: 548.18805
+  dps: 830.09771
+  tps: 563.38751
  }
 }
 dps_results: {
@@ -266,15 +403,25 @@ dps_results: {
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-FullBuffs-0.0yards-LongMultiTarget"
  value: {
+<<<<<<< HEAD
   dps: 2819.16432
   tps: 3255.51793
+=======
+  dps: 2682.32866
+  tps: 3165.1383
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-FullBuffs-0.0yards-LongSingleTarget"
  value: {
+<<<<<<< HEAD
   dps: 2593.40125
   tps: 1733.44788
+=======
+  dps: 2462.69222
+  tps: 1646.07371
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }
 dps_results: {
@@ -287,15 +434,15 @@ dps_results: {
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 809.79929
-  tps: 1173.10155
+  dps: 827.81851
+  tps: 1184.90108
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 809.79929
-  tps: 552.33672
+  dps: 827.81851
+  tps: 563.66133
  }
 }
 dps_results: {
@@ -308,7 +455,12 @@ dps_results: {
 dps_results: {
  key: "TestArcane-SwitchInFrontOfTarget-Default"
  value: {
+<<<<<<< HEAD
   dps: 2593.40125
   tps: 1733.44788
+=======
+  dps: 2462.69222
+  tps: 1646.07371
+>>>>>>> 06f52bed7c3591a6a322aa439aa0b7588de0f79a
  }
 }

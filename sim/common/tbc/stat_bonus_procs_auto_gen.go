@@ -6221,21 +6221,6 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// When struck in combat has a 2% chance of increasing your Armor by 2000 for 10 secs.
-	// https://www.wowhead.com/tbc/spell=40408
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 32375, ItemName: "Bulwark of Azzinoth"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
 	// Increases the healing granted by the Tree of Life form aura by 44, adds 20 critical strike rating to the
 	// Leader of the Pack aura, and adds 20 spell critical strike rating to the Moonkin form aura.
 	// https://www.wowhead.com/tbc/spell=39926
@@ -7309,22 +7294,6 @@ func RegisterAllProcs() {
 	// }, []shared.ItemVariant{
 	//	{ItemID: 34471, ItemName: "Vial of the Sunwell"},
 	//	{ItemID: 34471, ItemName: "Vial of the Sunwell"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
-	// Melee attacks which reduce you below 35% health cause you to gain 152 dodge rating for 10s. Cannot occur
-	// more than once every 30 sec.
-	// https://www.wowhead.com/tbc/spell=45058
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 34473, ItemName: "Commendation of Kael'thas"},
 	// })
 
 	// TODO: Manual implementation required

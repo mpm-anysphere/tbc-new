@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"strings"
+	"time"
 
 	"github.com/wowsims/tbc/sim/core/proto"
 )
@@ -437,7 +438,8 @@ type PseudoStats struct {
 	RangedHasteMultiplier float64
 	AttackSpeedMultiplier float64 // Used for real haste effects like Bloodlust that modify resoruce regen and are used for RPPM effects
 
-	SpiritRegenRateCombat float64 // percentage of spirit regen allowed during combat
+	FiveSecondRuleRefreshTime time.Duration // last time a spell was cast
+	SpiritRegenRateCasting    float64       // percentage of spirit regen allowed during casting
 
 	// Both of these are currently only used for innervate.
 	ForceFullSpiritRegen  bool    // If set, automatically uses full spirit regen regardless of FSR refresh time.

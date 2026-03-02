@@ -77,6 +77,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDpsWarrior-AllItems-CommendationofKael'thas-34473"
+ value: {
+  dps: 1957.34706
+  tps: 1481.57953
+  dtps: 8.36948
+ }
+}
+dps_results: {
  key: "TestDpsWarrior-AllItems-DarkmoonCard:Crusade-31856"
  value: {
   dps: 2023.18433

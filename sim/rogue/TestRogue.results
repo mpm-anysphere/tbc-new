@@ -88,6 +88,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestRogue-AllItems-CommendationofKael'thas-34473"
+ value: {
+  dps: 1939.42467
+  tps: 1376.99152
+ }
+}
+dps_results: {
  key: "TestRogue-AllItems-DarkmoonCard:Crusade-31856"
  value: {
   dps: 1985.56388
