@@ -61,7 +61,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 		consumables: Presets.DefaultConsumables,
 
 		// Default talents.
-		talents: Presets.Talents.data,
+		talents: Presets.DESTRUCTION_DS_RUIN_TALENTS.data,
 		// Default spec-specific settings.
 		specOptions: Presets.DefaultOptions,
 
@@ -94,23 +94,31 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	presets: {
 		epWeights: [Presets.P1_EP_PRESET],
 		// Preset talents that the user can quickly select.
-		talents: [Presets.Talents],
+		talents: [Presets.DESTRUCTION_DS_RUIN_TALENTS, Presets.AFFLICTION_UA_TALENTS, Presets.AFFLICTION_RUIN_TALENTS],
 		// Preset rotations that the user can quickly select.
-		rotations: [Presets.WARLOCK_DEFAULT_APL],
+		rotations: [Presets.ROTATION_PRESET_DESTRUCTION, Presets.ROTATION_PRESET_AFFLICTION_UA, Presets.ROTATION_PRESET_AFFLICTION_RUIN],
 
 		// Preset gear configurations that the user can quickly select.
-		gear: [Presets.PREBIS_GEAR, Presets.P1_BIS_GEAR],
+		gear: [Presets.PREBIS_GEAR, Presets.PREBIS_SHADOW_GEAR, Presets.P1_BIS_GEAR, Presets.P1_CRAFTED_GEAR],
 		itemSwaps: [],
+		builds: [Presets.PREBIS_DESTRUCTION_BUILD, Presets.PREBIS_AFFLICTION_UA_BUILD, Presets.P1_DESTRUCTION_BUILD, Presets.P1_AFFLICTION_RUIN_BUILD],
 	},
 
-	autoRotation: (_player: Player<Spec.SpecWarlock>): APLRotation => {
+	autoRotation: (player: Player<Spec.SpecWarlock>): APLRotation => {
+		const [afflictionPoints, , destructionPoints] = player.getTalentTreePoints();
+		if (afflictionPoints >= 40) {
+			return Presets.ROTATION_PRESET_AFFLICTION_UA.rotation.rotation!;
+		}
+		if (destructionPoints >= 30) {
+			return Presets.ROTATION_PRESET_DESTRUCTION.rotation.rotation!;
+		}
 		return Presets.WARLOCK_DEFAULT_APL.rotation.rotation!;
 	},
 
 	raidSimPresets: [
 		{
 			spec: Spec.SpecWarlock,
-			talents: Presets.Talents.data,
+			talents: Presets.DESTRUCTION_DS_RUIN_TALENTS.data,
 			specOptions: Presets.DefaultOptions,
 			consumables: Presets.DefaultConsumables,
 			defaultFactionRaces: {
