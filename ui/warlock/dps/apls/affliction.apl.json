@@ -1,0 +1,36 @@
+{
+	"type": "TypeAPL",
+	"priorityList": [
+		{ "action": { "autocastOtherCooldowns": {} } },
+		{
+			"action": {
+				"condition": {
+					"auraIsInactive": {
+						"sourceUnit": { "type": "CurrentTarget" },
+						"auraId": { "spellId": 1490 }
+					}
+				},
+				"castSpell": { "spellId": { "spellId": 1490 } }
+			}
+		},
+		{
+			"action": {
+				"condition": { "not": { "val": { "dotIsActive": { "spellId": { "spellId": 172 } } } } },
+				"castSpell": { "spellId": { "spellId": 172 } }
+			}
+		},
+		{
+			"action": {
+				"condition": {
+					"cmp": {
+						"op": "OpLe",
+						"lhs": { "currentManaPercent": {} },
+						"rhs": { "const": { "val": "30%" } }
+					}
+				},
+				"castSpell": { "spellId": { "spellId": 1454 } }
+			}
+		},
+		{ "action": { "castSpell": { "spellId": { "spellId": 689 } } } }
+	]
+}

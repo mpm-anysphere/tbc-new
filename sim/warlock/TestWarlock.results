@@ -4,9 +4,9 @@ character_stats_results: {
   final_stats: 52
   final_stats: 66
   final_stats: 347.6
-  final_stats: 477.3825
-  final_stats: 711
-  final_stats: 732
+  final_stats: 444.3075
+  final_stats: 687
+  final_stats: 788
   final_stats: 272
   final_stats: 222
   final_stats: 0
@@ -14,10 +14,10 @@ character_stats_results: {
   final_stats: 0
   final_stats: 0
   final_stats: 92
-  final_stats: 286
+  final_stats: 262
   final_stats: 0
   final_stats: 0
-  final_stats: 233
+  final_stats: 203
   final_stats: 42
   final_stats: 0
   final_stats: 0
@@ -35,7 +35,7 @@ character_stats_results: {
   final_stats: 1254
   final_stats: 0
   final_stats: 7255.6
-  final_stats: 9775.7375
+  final_stats: 9279.6125
   final_stats: 10
   final_stats: 10
   final_stats: 0
@@ -46,7 +46,7 @@ character_stats_results: {
   final_stats: 0
   final_stats: 7.29268
   final_stats: 2
-  final_stats: 20.47877
+  final_stats: 18.98815
   final_stats: 0
   final_stats: 0
   final_stats: 0
@@ -55,14 +55,28 @@ character_stats_results: {
 dps_results: {
  key: "TestWarlock-AverageDps"
  value: {
-  dps: 1057.38291
-  tps: 1084.0307
+  dps: 1085.44784
+  tps: 1113.11008
  }
 }
 dps_results: {
  key: "TestWarlock-AverageDpsP1"
  value: {
-  dps: 1116.01531
-  tps: 1119.8659
+  dps: 1144.06687
+  tps: 1150.70462
+ }
+}
+dps_results: {
+ key: "TestWarlock-AverageDpsP1Crafted"
+ value: {
+  dps: 1168.53176
+  tps: 1177.19387
+ }
+}
+dps_results: {
+ key: "TestWarlock-AverageDpsPrebisShadow"
+ value: {
+  dps: 1033.68291
+  tps: 1063.14664
  }
 }
