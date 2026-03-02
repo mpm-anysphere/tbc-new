@@ -13,33 +13,27 @@ type Warlock struct {
 	Talents *proto.WarlockTalents
 	Options *proto.WarlockOptions
 
+	ShadowBolt           *core.Spell
 	Corruption           *core.Spell
+	CurseOfAgony         *core.Spell
 	CurseOfElementsAuras core.AuraArray
 	Immolate             *core.Spell
-	Metamorphosis        *core.Spell
-	Seed                 *core.Spell
-	ShadowEmbraceAuras   core.AuraArray
-	Shadowburn           *core.Spell
+	Incinerate           *core.Spell
+	UnstableAffliction   *core.Spell
 	Hellfire             *core.Spell
 	DrainLife            *core.Spell
 	SiphonLife           *core.Spell
+	LifeTap              *core.Spell
 
-	// ActivePet *WarlockPet
-	// Felhunter *WarlockPet
-	// // Felguard  *WarlockPet
-	// Imp        *WarlockPet
-	// Succubus   *WarlockPet
-	// Voidwalker *WarlockPet
+	NightfallProcAura  *core.Aura
+	ImpShadowboltAuras core.AuraArray
 
-	// Doomguard *DoomguardPet
-	// Infernal  *InfernalPet
-
-	serviceTimer *core.Timer
-
-	// Item sets
-	T15_2pc      *core.Aura
-	T15_4pc      *core.Aura
-	T16_2pc_buff *core.Aura
+	ActivePet  *WarlockPet
+	Felhunter  *WarlockPet
+	Felguard   *WarlockPet
+	Imp        *WarlockPet
+	Succubus   *WarlockPet
+	Voidwalker *WarlockPet
 }
 
 func (warlock *Warlock) GetCharacter() *core.Character {
@@ -60,7 +54,7 @@ func RegisterWarlock() {
 		func(player *proto.Player, spec interface{}) {
 			playerSpec, ok := spec.(*proto.Player_Warlock)
 			if !ok {
-				panic("Invalid spec value for Survival Hunter!")
+				panic("Invalid spec value for Warlock!")
 			}
 			player.Spec = playerSpec
 		},
@@ -68,41 +62,48 @@ func RegisterWarlock() {
 }
 
 func (warlock *Warlock) ApplyTalents() {
-	// warlock.registerHarvestLife()
-	// warlock.registerArchimondesDarkness()
-	// warlock.registerKilJaedensCunning()
-	// warlock.registerMannarothsFury()
-	// warlock.registerGrimoireOfSupremacy()
-	// warlock.registerGrimoireOfSacrifice()
+	warlock.applyTalents()
 }
 
 func (warlock *Warlock) Initialize() {
-
 	warlock.registerCurseOfElements()
-	// doomguardInfernalTimer := warlock.NewTimer()
-	// warlock.registerSummonDoomguard(doomguardInfernalTimer)
-	// warlock.registerSummonInfernal(doomguardInfernalTimer)
+	warlock.registerCurseOfAgony()
 	warlock.registerLifeTap()
+	warlock.registerShadowBolt()
+	warlock.registerImmolate()
+	warlock.registerIncinerate()
 	warlock.RegisterCorruption()
-	warlock.RegisterFelflame()
+	warlock.registerUnstableAffliction()
+	warlock.registerSiphonLife()
 	warlock.RegisterDrainLife()
 	warlock.RegisterHellfire()
+	warlock.applyTalentsPostSpellRegistration()
 
-	// Fel Armor 10% Stamina
+	// Fel Armor passive.
 	core.MakePermanent(
 		warlock.RegisterAura(core.Aura{
 			Label:    "Fel Armor",
-			ActionID: core.ActionID{SpellID: 104938},
+			ActionID: core.ActionID{SpellID: 28189},
 		}))
 	warlock.MultiplyStat(stats.Stamina, 1.1)
 	warlock.MultiplyStat(stats.Health, 1.1)
 
-	// 5% int passive
+	// 5% Intellect passive.
 	warlock.MultiplyStat(stats.Intellect, 1.05)
 }
 
 func (warlock *Warlock) AddRaidBuffs(raidBuffs *proto.RaidBuffs) {
 
+}
+
+func (warlock *Warlock) AddPartyBuffs(partyBuffs *proto.PartyBuffs) {
+	bloodPact := core.MakeTristateValue(
+		warlock.Options.GetSummon() == proto.WarlockOptions_Imp && !warlock.Talents.GetDemonicSacrifice(),
+		warlock.Talents.GetImprovedImp() == 3,
+	)
+	if bloodPact > partyBuffs.BloodPact {
+		partyBuffs.BloodPact = bloodPact
+	}
 }
 
 func (warlock *Warlock) Reset(sim *core.Simulation) {
@@ -112,6 +113,10 @@ func (warlock *Warlock) OnEncounterStart(_ *core.Simulation) {
 }
 
 func NewWarlock(character *core.Character, options *proto.Player, warlockOptions *proto.WarlockOptions) *Warlock {
+	if warlockOptions == nil {
+		warlockOptions = &proto.WarlockOptions{}
+	}
+
 	warlock := &Warlock{
 		Character: *character,
 		Talents:   &proto.WarlockTalents{},
@@ -121,12 +126,8 @@ func NewWarlock(character *core.Character, options *proto.Player, warlockOptions
 	warlock.EnableManaBar()
 	warlock.AddStatDependency(stats.Strength, stats.AttackPower, 1)
 
-	// warlock.Infernal = warlock.NewInfernalPet()
-	// warlock.Doomguard = warlock.NewDoomguardPet()
-
-	// warlock.serviceTimer = character.NewTimer()
-	// warlock.registerPets()
-	// warlock.registerGrimoireOfService()
+	warlock.registerPets()
+	warlock.setupDemonicSacrifice()
 
 	return warlock
 }

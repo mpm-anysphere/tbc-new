@@ -21,16 +21,48 @@
 		},
 		{
 			"action": {
+				"condition": { "not": { "val": { "dotIsActive": { "spellId": { "spellId": 27218 } } } } },
+				"castSpell": { "spellId": { "spellId": 27218 } }
+			}
+		},
+		{
+			"action": {
+				"condition": {
+					"and": {
+						"vals": [
+							{ "spellIsKnown": { "spellId": { "spellId": 30405 } } },
+							{ "not": { "val": { "dotIsActive": { "spellId": { "spellId": 30405 } } } } }
+						]
+					}
+				},
+				"castSpell": { "spellId": { "spellId": 30405 } }
+			}
+		},
+		{
+			"action": {
+				"condition": {
+					"and": {
+						"vals": [
+							{ "spellIsKnown": { "spellId": { "spellId": 30911 } } },
+							{ "not": { "val": { "dotIsActive": { "spellId": { "spellId": 30911 } } } } }
+						]
+					}
+				},
+				"castSpell": { "spellId": { "spellId": 30911 } }
+			}
+		},
+		{
+			"action": {
 				"condition": {
 					"cmp": {
 						"op": "OpLe",
 						"lhs": { "currentManaPercent": {} },
-						"rhs": { "const": { "val": "30%" } }
+						"rhs": { "const": { "val": "35%" } }
 					}
 				},
 				"castSpell": { "spellId": { "spellId": 1454 } }
 			}
 		},
-		{ "action": { "castSpell": { "spellId": { "spellId": 689 } } } }
+		{ "action": { "castSpell": { "spellId": { "spellId": 27209 } } } }
 	]
 }

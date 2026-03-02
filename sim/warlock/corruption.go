@@ -6,11 +6,9 @@ import (
 	"github.com/wowsims/tbc/sim/core"
 )
 
-const corruptionScale = 0.165
-const corruptionCoeff = 0.165
-
 func (warlock *Warlock) RegisterCorruption() *core.Spell {
-	resultSlice := make(core.SpellResultSlice, 1)
+	empoweredCorruptionBonus := 0.02 * float64(warlock.Talents.GetEmpoweredCorruption())
+	bonusCoefficient := 0.156 + empoweredCorruptionBonus
 
 	warlock.Corruption = warlock.RegisterSpell(core.SpellConfig{
 		ActionID:       core.ActionID{SpellID: 172},
@@ -19,33 +17,29 @@ func (warlock *Warlock) RegisterCorruption() *core.Spell {
 		Flags:          core.SpellFlagAPL,
 		ClassSpellMask: WarlockSpellCorruption,
 
-		ManaCost: core.ManaCostOptions{BaseCostPercent: 1.25},
-		Cast:     core.CastConfig{DefaultCast: core.Cast{GCD: core.GCDDefault}},
+		ManaCost: core.ManaCostOptions{FlatCost: 370},
+		Cast: core.CastConfig{DefaultCast: core.Cast{
+			GCD:      core.GCDDefault,
+			CastTime: 2 * time.Second,
+		}},
 
 		DamageMultiplierAdditive: 1,
-		CritMultiplier:           warlock.DefaultSpellCritMultiplier(),
 		ThreatMultiplier:         1,
 
 		Dot: core.DotConfig{
 			Aura: core.Aura{
 				Label: "Corruption",
 			},
-			NumberOfTicks:       9,
-			TickLength:          2 * time.Second,
-			AffectedByCastSpeed: true,
-			BonusCoefficient:    corruptionCoeff,
+			NumberOfTicks:       6,
+			TickLength:          3 * time.Second,
+			AffectedByCastSpeed: false,
+			BonusCoefficient:    bonusCoefficient,
 
 			OnSnapshot: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				dot.Snapshot(target, 900)
+				dot.Snapshot(target, 150)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				resultSlice[0] = dot.CalcSnapshotDamage(sim, target, dot.OutcomeTick)
-
-				if warlock.SiphonLife != nil {
-					warlock.SiphonLife.Cast(sim, &warlock.Unit)
-				}
-
-				dot.Spell.DealPeriodicDamage(sim, resultSlice[0])
+				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
 			},
 		},
 
@@ -63,8 +57,8 @@ func (warlock *Warlock) RegisterCorruption() *core.Spell {
 				result.Damage /= dot.TickPeriod().Seconds()
 				return result
 			} else {
-				result := spell.CalcPeriodicDamage(sim, target, 900, spell.OutcomeExpectedMagicCrit)
-				result.Damage /= dot.CalcTickPeriod().Round(time.Millisecond).Seconds()
+				result := spell.CalcPeriodicDamage(sim, target, 150, spell.OutcomeExpectedMagicAlwaysHit)
+				result.Damage /= dot.TickPeriod().Seconds()
 				return result
 			}
 		},

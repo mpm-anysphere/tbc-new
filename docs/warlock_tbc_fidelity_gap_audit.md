@@ -20,6 +20,14 @@ This document defines what is currently implemented vs missing for TBC Warlock f
 5. Warlock set bonus file exists, but all item set logic is commented and targets non-TBC tier sets.  
 6. Existing Warlock tests are baseline DPS/stat checks; spec-level tests are placeholders.
 
+## Execution update snapshot (this branch)
+
+1. Active Warlock path now includes TBC core filler/DoT spells (Shadow Bolt, Immolate, Incinerate, Curse of Agony, Unstable Affliction, Siphon Life) and no longer relies on Fel Flame as the default filler.
+2. `ApplyTalents()` now applies TBC-relevant Affliction/Demonology/Destruction effects (including Nightfall and Ruin-critical multipliers) in the active path.
+3. Active pet registration/summon handling is re-enabled for Imp/Voidwalker/Succubus/Felhunter/Felguard with executable autocast rotations.
+4. Demonic Sacrifice support is active in the core path and validated with summon-selection tests.
+5. `sim/warlock/items.go` now contains active TBC set/proc wiring (Voidheart/Corruptor/Malefic/Felshroud + Ashtongue proc).
+
 ## External references used for expected TBC behavior
 
 - Wowhead TBC Warlock talent calculator (canonical tree/point layout): `https://www.wowhead.com/tbc/talent-calc/warlock`
@@ -44,29 +52,29 @@ Status legend:
 | Feature | Status | Source | Test coverage | Notes |
 |---|---|---|---|---|
 | Register base Warlock agent | DONE-ACTIVE | `sim/register_all.go`, `sim/warlock/warlock.go` | `sim/warlock/warlock_test.go` | Active spec entrypoint is only base Warlock. |
-| Register Affliction/Destruction/Demonology agents in global path | MISSING | TBC class guide + repo architecture | None | Spec packages exist but are not globally registered. |
+| Register Affliction/Destruction/Demonology agents in global path | PARTIAL | TBC class guide + repo architecture | N/A (single-spec proto model) | Repo currently exposes only `SpecWarlock`; spec identity is talent/APL-driven under one active agent. |
 | Curse of Elements (1490) | DONE-ACTIVE | TBC guide + `sim/warlock/curse_of_elements.go` | Indirect via DPS tests | Active and usable in current APL. |
-| Corruption (172) | DONE-ACTIVE | TBC guide + `sim/warlock/corruption.go` | Indirect via DPS tests | Snapshot logic exists, coefficients need TBC verification pass. |
-| Life Tap (1454) mana economy | PARTIAL | TBC guides + `sim/warlock/lifetap.go` | Indirect via DPS tests | No dedicated sustain/economy tests yet. |
-| Shadow Bolt filler | MISSING (active) / PARKED | TBC guide + parked spec code | None | Core TBC filler absent in active base path. |
-| Immolate/Incinerate/Conflagrate (Destruction core) | MISSING (active) / PARKED | TBC guides + parked `_destruction` code | None | Not reachable in active package flow. |
-| Unstable Affliction, Curse of Agony, Siphon Life (Affliction core) | MISSING (active) / PARKED | TBC guides + parked `_affliction` code | None | Not reachable in active package flow. |
+| Corruption (172) | DONE-ACTIVE | TBC guide + `sim/warlock/corruption.go` | DPS + cast-profile tests | Active with TBC tick cadence and empowered coefficient scaling. |
+| Life Tap (1454) mana economy | DONE-ACTIVE | TBC guides + `sim/warlock/lifetap.go` | DPS + cast-profile tests | Active with improved life tap scaling, spellpower contribution, and mana-feed transfer. |
+| Shadow Bolt filler | DONE-ACTIVE | TBC guide + `sim/warlock/shadowbolt.go` | `TestWarlockRotationCastsShadowBoltFiller` | Active default filler in DS/Ruin profile. |
+| Immolate/Incinerate/Conflagrate (Destruction core) | PARTIAL | TBC guides + active `sim/warlock/immolate.go`, `sim/warlock/incinerate.go` | DPS + cast-profile tests | Immolate/Incinerate active; Conflagrate still pending. |
+| Unstable Affliction, Curse of Agony, Siphon Life (Affliction core) | DONE-ACTIVE | TBC guides + active spell files | `TestWarlockAfflictionCastProfile` | Active and talent/APL gated in current compile path. |
 | Seed of Corruption (AoE identity) | MISSING (active) / PARKED | TBC guides + parked `_affliction/seed_of_corruption.go` | None | Needed for multi-target fidelity. |
-| Fel Flame filler in default APL | PARTIAL / out-of-era | Current `ui/warlock/dps/apls/default.apl.json` | Indirect via DPS tests | Not a TBC baseline rotational filler. |
-| Talent parsing from talents string | DONE-ACTIVE | `proto/warlock.proto`, `sim/warlock/warlock.go` | Indirect | Trees parse, effects mostly not applied. |
-| TBC Affliction tree effects | MISSING | `proto/warlock.proto` + TBC references | None | No active `register*` talent effects for TBC tree. |
-| TBC Demonology tree effects (including DS/sac utility) | MISSING | `proto/warlock.proto` + TBC references | None | No active implementation in base package path. |
-| TBC Destruction tree effects (Ruin/Backlash/etc) | MISSING | `proto/warlock.proto` + TBC references | None | No active implementation in base package path. |
-| Active pet registration / summon selection from options | MISSING (active) / PARKED | `proto/warlock.proto`, UI pet input | None | Pet fields/calls commented out in active `warlock.go`. |
-| Pet AI/autocast priorities | PARKED | `_pets.go` | None | Exists in parked code only. |
-| Pet stat scaling from owner/talents/buffs | PARKED | `_pets.go` + TBC guides | None | Needs TBC validation and activation. |
-| DS / Demonic Sacrifice build support | MISSING (active) | TBC guides + talent list | None | Critical for DS/Ruin fidelity. |
-| Warlock-specific TBC set bonuses | MISSING | TBC item sets + sim itemset pattern | None | `sim/warlock/items.go` is commented and non-TBC oriented. |
-| Warlock trinket/proc timing interactions | PARTIAL | TBC trinkets + core proc patterns | No targeted warlock proc tests | Needs deterministic trigger coverage on warlock spell events. |
+| Fel Flame filler in default APL | DONE-ACTIVE | `ui/warlock/dps/apls/default.apl.json` | `TestWarlockRotationCastsShadowBoltFiller` | Removed from default TBC profile. |
+| Talent parsing from talents string | DONE-ACTIVE | `proto/warlock.proto`, `sim/warlock/warlock.go` | Multiple warlock tests | Trees parse and active talent effects now drive spells/auras/modifiers. |
+| TBC Affliction tree effects | PARTIAL | `proto/warlock.proto` + TBC references | Cast-profile + DPS tests | Core damage/economy talents active; full utility/tuning pass still pending. |
+| TBC Demonology tree effects (including DS/sac utility) | PARTIAL | `proto/warlock.proto` + TBC references | Pet/sac tests + DPS tests | DS/sac and core pet hooks active; full demonology-depth modeling pending. |
+| TBC Destruction tree effects (Ruin/Backlash/etc) | PARTIAL | `proto/warlock.proto` + TBC references | Cast-profile + DPS tests | Core DS/Ruin multipliers and cast-time/cost hooks active; remaining talents pending. |
+| Active pet registration / summon selection from options | DONE-ACTIVE | `proto/warlock.proto`, `sim/warlock/pet.go`, UI pet input | `TestWarlockPetSummonSelection` | Active summon options now map to registered pets/autocast. |
+| Pet AI/autocast priorities | DONE-ACTIVE | `sim/warlock/pet.go`, `sim/warlock/pet_abilities.go` | `TestWarlockPetSummonSelection` | Active priority-based autocast loop in compile path. |
+| Pet stat scaling from owner/talents/buffs | PARTIAL | `sim/warlock/pet.go` + TBC guides | Pet summon tests + DPS tests | Active inheritance restored; deep validation/calibration still pending. |
+| DS / Demonic Sacrifice build support | DONE-ACTIVE | `sim/warlock/talents.go` | `TestWarlockPetSummonSelection` | DS aura handling and pet suppression are active in current path. |
+| Warlock-specific TBC set bonuses | PARTIAL | TBC item sets + `sim/warlock/items.go` | Indirect via warlock suite | Active T4/T6 + Ashtongue hooks implemented; full T5 behavior still pending. |
+| Warlock trinket/proc timing interactions | PARTIAL | TBC trinkets + core proc patterns | Indirect via warlock suite | Ashtongue proc path is active; broader proc timing coverage still pending. |
 | Warlock APL value support for TBC rotation logic | MISSING | APL architecture + TBC rotation needs | None | Active TBC-specific custom APL values are absent. |
-| Preset APLs for DS/Ruin, Affliction UA, Affliction/Ruin | PARTIAL | `ui/warlock/dps/presets.ts`, `ui/warlock/dps/apls/*.json` | Indirect via DPS tests | Presets exist, but behavior is currently baseline/alpha-level. |
-| Cast distribution / DoT uptime assertions | MISSING | Regression harness goal | None | Needed for calibration confidence. |
-| Multi-target and pet scenario regression tests | MISSING | Regression harness goal | None | Current suite is mostly single-target baseline DPS. |
+| Preset APLs for DS/Ruin, Affliction UA, Affliction/Ruin | DONE-ACTIVE | `ui/warlock/dps/presets.ts`, `ui/warlock/dps/apls/*.json` | Cast-profile + DPS tests | Presets/APLs now route to TBC filler/DoT priorities. |
+| Cast distribution / DoT uptime assertions | PARTIAL | Regression harness goal | `TestWarlockRotationCastsShadowBoltFiller`, `TestWarlockAfflictionCastProfile` | Cast-distribution assertions added; explicit uptime assertions still pending. |
+| Multi-target and pet scenario regression tests | PARTIAL | Regression harness goal | `TestWarlockPetSummonSelection` | Pet regression coverage added; dedicated multi-target suite still pending. |
 
 ## Phase-to-PR implementation order (signed-off proposal)
 

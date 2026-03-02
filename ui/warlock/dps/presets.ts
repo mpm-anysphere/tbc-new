@@ -1,6 +1,6 @@
 import * as PresetUtils from '../../core/preset_utils';
 import { ConsumesSpec, Debuffs, IndividualBuffs, PartyBuffs, Profession, RaidBuffs, Stat, TristateEffect } from '../../core/proto/common';
-import { Warlock_Options as WarlockOptions } from '../../core/proto/warlock';
+import { Warlock_Options as WarlockOptions, WarlockOptions_Summon as WarlockSummon } from '../../core/proto/warlock';
 import { defaultRaidBuffMajorDamageCooldowns } from '../../core/proto_utils/utils';
 import { SavedTalents } from '../../core/proto/ui';
 import { Stats } from '../../core/proto_utils/stats';
@@ -77,7 +77,7 @@ export const Talents = DESTRUCTION_DS_RUIN_TALENTS;
 
 export const DefaultOptions = WarlockOptions.create({
 	classOptions: {
-		summon: 0,
+		summon: WarlockSummon.Succubus,
 	},
 });
 
