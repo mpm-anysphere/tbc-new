@@ -7,9 +7,11 @@ import (
 )
 
 func (warlock *Warlock) registerCurseOfElements() {
+	improved := warlock.Talents.GetMalediction() > 0
+
 	warlock.CurseOfElementsAuras = warlock.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		// Keep cast/action ID aligned with APL (1490), while reusing shared debuff mechanics.
-		aura := core.CurseOfElementsAura(target, false)
+		aura := core.CurseOfElementsAura(target, improved)
 		aura.ActionID = core.ActionID{SpellID: 1490}
 		return aura
 	})

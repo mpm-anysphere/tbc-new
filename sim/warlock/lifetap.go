@@ -7,12 +7,21 @@ import (
 
 func (warlock *Warlock) registerLifeTap() {
 	actionID := core.ActionID{SpellID: 1454}
-	manaMetrics := warlock.NewManaMetrics(actionID)
+	baseRestore := 582.0 * (1 + 0.1*float64(warlock.Talents.GetImprovedLifeTap()))
+	petRestoreFraction := 0.3333 * float64(warlock.Talents.GetManaFeed())
 
-	warlock.RegisterSpell(core.SpellConfig{
+	manaMetrics := warlock.NewManaMetrics(actionID)
+	petManaMetrics := make(map[*core.Pet]*core.ResourceMetrics, len(warlock.Pets))
+	if warlock.Talents.GetManaFeed() > 0 {
+		for _, pet := range warlock.Pets {
+			petManaMetrics[pet] = pet.NewManaMetrics(actionID)
+		}
+	}
+
+	warlock.LifeTap = warlock.RegisterSpell(core.SpellConfig{
 		ActionID:       actionID,
 		SpellSchool:    core.SpellSchoolShadow,
-		ProcMask:       core.ProcMaskSpellDamage,
+		ProcMask:       core.ProcMaskEmpty,
 		Flags:          core.SpellFlagAPL,
 		ClassSpellMask: WarlockSpellLifeTap,
 
@@ -25,8 +34,22 @@ func (warlock *Warlock) registerLifeTap() {
 		ThreatMultiplier: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			restore := 0.15 * warlock.GetStat(stats.Health)
+			restore := baseRestore + (warlock.GetStat(stats.SpellDamage)+warlock.GetStat(stats.ShadowDamage))*0.8
+
+			healthLoss := min(restore, max(warlock.CurrentHealth()-1, 0))
+			warlock.RemoveHealth(sim, healthLoss)
 			warlock.AddMana(sim, restore, manaMetrics)
+
+			if warlock.Talents.GetManaFeed() == 0 {
+				return
+			}
+
+			for _, pet := range warlock.Pets {
+				if !pet.IsActive() {
+					continue
+				}
+				pet.AddMana(sim, restore*petRestoreFraction, petManaMetrics[pet])
+			}
 		},
 	})
 }

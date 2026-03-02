@@ -14,6 +14,7 @@ export const PetInput = <SpecType extends WarlockSpecs>() =>
 		fieldName: 'summon',
 		values: [
 			{ value: Summon.NoSummon, tooltip: 'No Pet' },
+			{ actionId: ActionId.fromSpellId(30146), value: Summon.Felguard },
 			{ actionId: ActionId.fromSpellId(691), value: Summon.Felhunter },
 			{ actionId: ActionId.fromSpellId(688), value: Summon.Imp },
 			{ actionId: ActionId.fromSpellId(712), value: Summon.Succubus },
