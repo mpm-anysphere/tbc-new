@@ -5,6 +5,7 @@
         {"action":{"castSpell":{"spellId":{"spellId":33697}}},"doAtValue":{"const":{"val":"-1s"}}}
       ],
       "priorityList": [
+		{"action":{"autocastOtherCooldowns":{}}},
         {"action":{"condition":{"not":{"val":{"warlockAssignedCurseIsActive":{}}}},"castWarlockAssignedCurse":{}}},
         {"action":{"condition":{"not":{"val":{"dotIsActive":{"spellId":{"spellId":27215}}}}},"castSpell":{"spellId":{"spellId":27215}}}},
         {"action":{"condition":{"not":{"val":{"dotIsActive":{"spellId":{"spellId":30405}}}}},"castSpell":{"spellId":{"spellId":30405}}}},

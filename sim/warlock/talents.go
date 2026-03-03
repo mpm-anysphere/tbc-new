@@ -109,10 +109,13 @@ func (warlock *Warlock) registerAmplifyCurse() {
 		Duration: time.Second * 30,
 		OnApplyEffects: func(aura *core.Aura, sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			if spell.Matches(WarlockSpellCurseOfAgony | WarlockSpellCurseOfDoom) {
-				spell.DamageMultiplier *= 1.5
 				warlock.AmplifyCurseAura.Deactivate(sim)
 			}
 		},
+	}).AttachSpellMod(core.SpellModConfig{
+		Kind:       core.SpellMod_DamageDone_Pct,
+		FloatValue: 0.5,
+		ClassMask:  WarlockSpellCurseOfAgony | WarlockSpellCurseOfDoom,
 	})
 
 	warlock.AmplifyCurse = warlock.RegisterSpell(core.SpellConfig{
