@@ -62,7 +62,7 @@ func (rogue *Rogue) registerRupture() {
 			result := spell.CalcOutcome(sim, target, spell.OutcomeMeleeSpecialHit)
 			if result.Landed() {
 				dot := spell.Dot(target)
-				dot.BaseTickCount = 2 + (2 * rogue.ComboPoints())
+				dot.BaseTickCount = 3 + rogue.ComboPoints()
 				dot.Apply(sim)
 				rogue.ApplyFinisher(sim, spell)
 				spell.DealOutcome(sim, result)

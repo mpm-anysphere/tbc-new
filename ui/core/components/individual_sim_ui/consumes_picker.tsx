@@ -40,7 +40,7 @@ export class ConsumesPicker extends Component {
 		}
 		return [
 			...consumables,
-			...this.db.getConsumablesByTypeAndStats(type, this.simUI.individualConfig.consumableStats ?? this.simUI.individualConfig.epStats),
+			...this.db.getConsumablesByTypeAndStats(type, [...(this.simUI.individualConfig.consumableStats ?? this.simUI.individualConfig.epStats)]),
 		];
 	}
 
@@ -118,7 +118,6 @@ export class ConsumesPicker extends Component {
 		const guardianElixirOptions = ConsumablesInputs.makeConsumableInput(guardianElixirs, { consumesFieldName: 'guardianElixirId' }, '');
 
 		buildIconInput(battleElixirsElem, this.simUI.player, battleElixirOptions);
-
 		buildIconInput(guardianElixirsElem, this.simUI.player, guardianElixirOptions);
 	}
 
@@ -188,7 +187,7 @@ export class ConsumesPicker extends Component {
 			i18n.t('settings_tab.consumables.imbue.mhImbue'),
 		);
 
-		const ohImbueOptions = ConsumablesInputs.makeOHImbueinput(
+		const ohImbueOptions = ConsumablesInputs.makeOHImbueInput(
 			relevantStatOptions(ConsumablesInputs.IMBUE_CONFIG_OH, this.simUI),
 			i18n.t('settings_tab.consumables.imbue.ohImbue'),
 		);

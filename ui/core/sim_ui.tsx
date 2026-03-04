@@ -211,22 +211,22 @@ export abstract class SimUI extends Component {
 				<div className="sim-ui-unlaunched-container d-flex flex-column align-items-center text-center mt-auto mb-auto ms-auto me-auto">
 					<i className="fas fa-ban fa-3x mb-2" />
 					<h6>{i18n.t('sim.unlaunched.title')}</h6>
-					<p>
-						{i18n.t('sim.unlaunched.contribute_message')}
-						<br />
+					{config.simStatus?.oldSimLink && (
+						<>
+							<p className="mb-2">{i18n.t('sim.unlaunched.old_sim_message')}</p>
+							<a href={config.simStatus.oldSimLink} className="btn btn-outline-common mb-4" target="_blank">
+								Original TBC Sim
+							</a>
+						</>
+					)}
+					<p className="mb-2">{i18n.t('sim.unlaunched.contribute_message')}</p>
+					<p className="mb-2">
 						{i18n.t('sim.unlaunched.discord_message')}{' '}
 						<a href="https://discord.gg/p3DgvmnDCS" target="_blank">
 							Discord
 						</a>
 						!
 					</p>
-					{this.config.spec?.isHealingSpec && (
-						<p>
-							{i18n.t('sim.unlaunched.healing_message')}
-							<br />
-							{i18n.t('sim.unlaunched.qe_live_message')} <a href="https://questionablyepic.com/live/">QE Live</a>!
-						</p>
-					)}
 				</div>,
 			);
 		}

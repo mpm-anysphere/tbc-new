@@ -86,6 +86,12 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			&:has(.sim-ui-unlaunched-container) {
+				.results-viewer {
+					display: none;
+				}
+			}
 		}
 
 		.sim-sidebar-stats {

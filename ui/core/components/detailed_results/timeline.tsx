@@ -16,6 +16,7 @@ import { bucket, distinct, fragmentToString, maxIndex, stringComparator } from '
 import { actionColors } from './color_settings';
 import i18n from '../../../i18n/config';
 import { ResultComponent, ResultComponentConfig, SimResultData } from './result_component';
+import { APLActionItemSwap_SwapSet } from '../../proto/apl';
 
 type TooltipHandler = (dataPointIndex: number) => Element;
 
@@ -575,8 +576,8 @@ export class Timeline extends ResultComponent {
 			debuffsByTargetById[0],
 		);
 
-		auraAsResource.forEach(auraId => {
-			const auraIndex = buffsById.findIndex(auraUptimeLogs => auraUptimeLogs?.[0].actionId!.spellId === auraId);
+		auraAsResource.forEach(actionId => {
+			const auraIndex = buffsById.findIndex(auraUptimeLogs => auraUptimeLogs?.[0].actionId!.equals(actionId));
 			if (auraIndex !== -1) {
 				this.addAuraRow(buffsById[auraIndex], duration);
 			}
@@ -611,11 +612,10 @@ export class Timeline extends ResultComponent {
 
 		// Don't add a row for buffs that were already visualized in a cast row or are prioritized.
 		const buffsToShow = buffsById.filter(auraUptimeLogs =>
-			playerCastsByAbility.findIndex(
-				casts =>
-					auraUptimeLogs[0].actionId &&
-					(casts[0].actionId!.equalsIgnoringTag(auraUptimeLogs[0].actionId) || auraAsResource.includes(auraUptimeLogs[0].actionId.anyId())),
-			),
+			playerCastsByAbility.findIndex(casts => {
+				const actionId = auraUptimeLogs[0].actionId;
+				return actionId && (casts[0].actionId!.equalsIgnoringTag(actionId) || auraAsResource.find(auraId => auraId.equals(actionId)));
+			}),
 		);
 		if (buffsToShow.length > 0) {
 			this.addSeparatorRow(duration);
@@ -1300,11 +1300,15 @@ const MELEE_ACTION_CATEGORY = 1;
 const SPELL_ACTION_CATEGORY = 2;
 const DEFAULT_ACTION_CATEGORY = 3;
 
-const auraAsResource: number[] = [];
+const auraAsResource: ActionId[] = [
+	ActionId.fromOtherId(OtherAction.OtherActionItemSwap, APLActionItemSwap_SwapSet.Main),
+	ActionId.fromOtherId(OtherAction.OtherActionItemSwap, APLActionItemSwap_SwapSet.Swap1),
+];
 
 // Hard-coded spell categories for controlling rotation ordering.
 const idToCategoryMap: Record<number, number> = {
 	[OtherAction.OtherActionMove]: 0,
+	[OtherAction.OtherActionItemSwap]: 0.015,
 	[OtherAction.OtherActionAttack]: 0.01,
 	[OtherAction.OtherActionShoot]: 0.5,
 
@@ -1462,31 +1466,44 @@ const idToCategoryMap: Record<number, number> = {
 	[12536]: SPELL_ACTION_CATEGORY + 0.61, // Clearcasting
 
 	// Warrior
-	[47520]: 0.1, // Cleave
-	[47450]: 0.1, // Heroic Strike
-	[47475]: MELEE_ACTION_CATEGORY + 0.05, // Slam
-	[23881]: MELEE_ACTION_CATEGORY + 0.1, // Bloodthirst
-	[47486]: MELEE_ACTION_CATEGORY + 0.1, // Mortal Strike
+	[25231]: 0.01 - 0.001, // Cleave
+	[30324]: 0.01 - 0.001, // Heroic Strike
+	[12723]: SPELL_ACTION_CATEGORY + 0.04, // Sweeping Strikes
+	[25242]: MELEE_ACTION_CATEGORY + 0.05, // Slam
+	[30335]: MELEE_ACTION_CATEGORY + 0.1, // Bloodthirst
+	[30330]: MELEE_ACTION_CATEGORY + 0.1, // Mortal Strike
 	[30356]: MELEE_ACTION_CATEGORY + 0.1, // Shield Slam
-	[47498]: MELEE_ACTION_CATEGORY + 0.21, // Devastate
-	[47467]: MELEE_ACTION_CATEGORY + 0.22, // Sunder Armor
-	[57823]: MELEE_ACTION_CATEGORY + 0.23, // Revenge
+	[30022]: MELEE_ACTION_CATEGORY + 0.21, // Devastate
+	[30357]: MELEE_ACTION_CATEGORY + 0.23, // Revenge
 	[1680]: MELEE_ACTION_CATEGORY + 0.24, // Whirlwind
-	[7384]: MELEE_ACTION_CATEGORY + 0.25, // Overpower
-	[47471]: MELEE_ACTION_CATEGORY + 0.42, // Execute
+	[11585]: MELEE_ACTION_CATEGORY + 0.25, // Overpower
+	[25236]: MELEE_ACTION_CATEGORY + 0.42, // Execute
+	[25225]: MELEE_ACTION_CATEGORY + 0.43, // Sunder Armor
 	[12867]: SPELL_ACTION_CATEGORY + 0.51, // Deep Wounds
-	[58874]: SPELL_ACTION_CATEGORY + 0.52, // Damage Shield
 	[2565]: SPELL_ACTION_CATEGORY + 0.62, // Shield Block
+	[12292]: SPELL_ACTION_CATEGORY + 0.63, // CD - Death Wish
+	[1719]: SPELL_ACTION_CATEGORY + 0.63, // CD - Recklnessness
+	[30033]: SPELL_ACTION_CATEGORY + 0.63, // CD - Rampage
+	[871]: SPELL_ACTION_CATEGORY + 0.63, // CD - Shield Wall
+	[20230]: SPELL_ACTION_CATEGORY + 0.63, // CD - Retaliation
+	[2687]: SPELL_ACTION_CATEGORY + 0.63, // CD - Bloodrage
+	[18499]: SPELL_ACTION_CATEGORY + 0.63, // CD - Berserker Rage
+	[12975]: SPELL_ACTION_CATEGORY + 0.63, // CD - Last Stand
+
 	[71]: DEFAULT_ACTION_CATEGORY + 0.1, // Defensive Stance
 	[2457]: DEFAULT_ACTION_CATEGORY + 0.1, // Battle Stance
-	[6673]: DEFAULT_ACTION_CATEGORY + 0.1, // Battle Shout
+	[2458]: DEFAULT_ACTION_CATEGORY + 0.1, // Berserker Stance
+	[2048]: DEFAULT_ACTION_CATEGORY + 0.1, // Battle Shout
 	[469]: DEFAULT_ACTION_CATEGORY + 0.1, // Commanding Shout
 
 	// Generic
 	[53307]: SPELL_ACTION_CATEGORY + 0.931, // Thorns
-	[54043]: SPELL_ACTION_CATEGORY + 0.932, // Retribution Aura
-	[42641]: SPELL_ACTION_CATEGORY + 0.941, // Sapper
-	[40536]: SPELL_ACTION_CATEGORY + 0.942, // Explosive Decoy
+	[27150]: SPELL_ACTION_CATEGORY + 0.932, // Retribution Aura
+	[23827]: SPELL_ACTION_CATEGORY + 0.941, // Super Sapper
+	[10646]: SPELL_ACTION_CATEGORY + 0.941, // Goblin Sapper
+	[23736]: SPELL_ACTION_CATEGORY + 0.942, // Fel Iron Bomb
+	[23737]: SPELL_ACTION_CATEGORY + 0.943, // Adamantite Grenade
+	[23841]: SPELL_ACTION_CATEGORY + 0.944, // Gnomish Flame Turret
 };
 
 const idsToGroupForRotation: Array<number> = [

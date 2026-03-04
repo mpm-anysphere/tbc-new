@@ -8,6 +8,158 @@ import (
 )
 
 func init() {
+	// Figurine - Dawnstone Crab
+	core.NewItemEffect(24125, func(agent core.Agent) {
+		character := agent.GetCharacter()
+		actionId := core.ActionID{SpellID: 31039, ItemID: 24125}
+
+		aura := character.NewTemporaryStatsAura(
+			"Dawnstone Crab",
+			core.ActionID{SpellID: 31039},
+			stats.Stats{stats.DodgeRating: 125},
+			time.Second*20,
+		)
+
+		spell := character.RegisterSpell(core.SpellConfig{
+			ActionID:    actionId,
+			SpellSchool: core.SpellSchoolNature,
+			ProcMask:    core.ProcMaskEmpty,
+
+			Cast: core.CastConfig{
+				CD: core.Cooldown{
+					Timer:    character.NewTimer(),
+					Duration: time.Minute * 2,
+				},
+			},
+
+			ApplyEffects: func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
+				aura.Activate(sim)
+			},
+		})
+
+		character.AddMajorCooldown(core.MajorCooldown{
+			Spell:    spell,
+			Type:     core.CooldownTypeSurvival,
+			BuffAura: aura,
+			ShouldActivate: func(_ *core.Simulation, character *core.Character) bool {
+				return character.CurrentHealthPercent() < 0.4
+			},
+		})
+	})
+
+	// Figurine of the Colossus
+	core.NewItemEffect(27529, func(agent core.Agent) {
+		character := agent.GetCharacter()
+		actionId := core.ActionID{ItemID: 27529}
+
+		healSpell := character.RegisterSpell(core.SpellConfig{
+			ActionID:    core.ActionID{SpellID: 33090},
+			ProcMask:    core.ProcMaskEmpty,
+			SpellSchool: core.SpellSchoolHoly,
+			Flags:       core.SpellFlagIgnoreTargetModifiers | core.SpellFlagIgnoreAttackerModifiers,
+
+			Cast: core.CastConfig{
+				DefaultCast: core.Cast{
+					NonEmpty: true,
+				},
+			},
+
+			DamageMultiplier: 1,
+			CritMultiplier:   character.DefaultHealingCritMultiplier(),
+			ThreatMultiplier: 0.5,
+
+			ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+				spell.CalcAndDealHealing(sim, target, 120, spell.OutcomeHealing)
+			},
+		})
+
+		procAura := character.MakeProcTriggerAura(core.ProcTrigger{
+			Name:            "Vigilance of the Colossus",
+			MetricsActionID: actionId,
+			Duration:        time.Second * 20,
+			Outcome:         core.OutcomeBlock,
+			Callback:        core.CallbackOnSpellHitTaken,
+			Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+				healSpell.Cast(sim, &character.Unit)
+			},
+		})
+
+		spell := character.RegisterSpell(core.SpellConfig{
+			ActionID:    actionId,
+			SpellSchool: core.SpellSchoolHoly,
+			ProcMask:    core.ProcMaskEmpty,
+
+			Cast: core.CastConfig{
+				CD: core.Cooldown{
+					Timer:    character.NewTimer(),
+					Duration: time.Minute * 2,
+				},
+			},
+
+			ApplyEffects: func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
+				procAura.Activate(sim)
+			},
+		})
+
+		character.AddMajorCooldown(core.MajorCooldown{
+			Spell: spell,
+			Type:  core.CooldownTypeSurvival,
+			BuffAura: &core.StatBuffAura{
+				Aura:            procAura,
+				BuffedStatTypes: []stats.Stat{stats.Health},
+			},
+			ShouldActivate: func(_ *core.Simulation, character *core.Character) bool {
+				return character.CurrentHealthPercent() < 0.4
+			},
+		})
+	})
+
+	// Argussian Compass
+	core.NewItemEffect(27770, func(agent core.Agent) {
+		character := agent.GetCharacter()
+
+		damageAbsorptionAura := character.NewDamageAbsorptionAura(core.AbsorptionAuraConfig{
+			Aura: core.Aura{
+				Label:    "Argussian Compass",
+				ActionID: core.ActionID{SpellID: 39228},
+				Duration: time.Second * 20,
+			},
+			MaxAbsorbPerHit: 68,
+			ShieldStrengthCalculator: func(_ *core.Unit) float64 {
+				return 1150
+			},
+		})
+
+		spell := character.RegisterSpell(core.SpellConfig{
+			ActionID:    core.ActionID{ItemID: 27770},
+			SpellSchool: core.SpellSchoolHoly,
+			ProcMask:    core.ProcMaskEmpty,
+
+			Cast: core.CastConfig{
+				CD: core.Cooldown{
+					Timer:    character.NewTimer(),
+					Duration: time.Minute * 2,
+				},
+			},
+
+			ApplyEffects: func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
+				damageAbsorptionAura.Activate(sim)
+			},
+		})
+
+		character.AddMajorCooldown(core.MajorCooldown{
+			Spell: spell,
+			Type:  core.CooldownTypeSurvival,
+			BuffAura: &core.StatBuffAura{
+				Aura:            damageAbsorptionAura.Aura,
+				BuffedStatTypes: []stats.Stat{stats.Health},
+			},
+			ShouldActivate: func(_ *core.Simulation, character *core.Character) bool {
+				return character.CurrentHealthPercent() < 0.4
+			},
+		})
+	})
+
 	// Hourglass of the Unraveller
 	core.NewItemEffect(28034, func(agent core.Agent) {
 		character := agent.GetCharacter()
@@ -34,6 +186,8 @@ func init() {
 			},
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(28034)
+		character.AddStatProcBuff(28034, aura, false, eligibleSlots)
 		character.ItemSwap.RegisterProc(28034, procAura)
 	})
 
@@ -114,6 +268,8 @@ func init() {
 			},
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(28789)
+		character.AddStatProcBuff(34747, aura, false, eligibleSlots)
 		character.ItemSwap.RegisterProc(28789, procAura)
 	})
 
@@ -169,8 +325,6 @@ func init() {
 			Spell: spell,
 			Type:  core.CooldownTypeSurvival,
 		})
-
-		character.ItemSwap.RegisterActive(30620)
 	})
 
 	// Prism of Inner Calm
@@ -222,6 +376,8 @@ func init() {
 			},
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(30626)
+		character.AddStatProcBuff(38348, aura, false, eligibleSlots)
 		character.ItemSwap.RegisterProc(30626, procAura)
 	})
 
@@ -262,6 +418,9 @@ func init() {
 			},
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(31856)
+		character.AddStatProcBuff(39438, meleeAura, false, eligibleSlots)
+		character.AddStatProcBuff(39441, casterAura, false, eligibleSlots)
 		character.ItemSwap.RegisterProc(31856, procAura)
 	})
 
@@ -295,6 +454,8 @@ func init() {
 			},
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(31857)
+		character.AddStatProcBuff(39442, aura, false, eligibleSlots)
 		character.ItemSwap.RegisterProc(31857, procAura)
 	})
 
@@ -375,7 +536,76 @@ func init() {
 			},
 		})
 
+		eligibleSlots := character.ItemSwap.EligibleSlotsForItem(34427)
+		character.AddStatProcBuff(45041, aura, false, eligibleSlots)
 		character.ItemSwap.RegisterProc(34427, triggerAura)
 	})
 
+	// Commendation of Kael'thas
+	core.NewItemEffect(34473, func(agent core.Agent) {
+		character := agent.GetCharacter()
+
+		aura := character.NewTemporaryStatsAura(
+			"Evasive Maneuvers",
+			core.ActionID{SpellID: 45058},
+			stats.Stats{stats.DodgeRating: 152},
+			time.Second*10,
+		)
+
+		procAura := character.MakeProcTriggerAura(core.ProcTrigger{
+			Name:               "Evasive Maneuvers",
+			ActionID:           core.ActionID{ItemID: 34473},
+			ProcMask:           core.ProcMaskMelee,
+			ICD:                time.Second * 30,
+			RequireDamageDealt: true,
+			TriggerImmediately: true,
+			Outcome:            core.OutcomeLanded,
+			Callback:           core.CallbackOnSpellHitTaken,
+			Handler: func(sim *core.Simulation, _ *core.Spell, result *core.SpellResult) {
+				if character.CurrentHealthPercent() < 0.35 {
+					aura.Activate(sim)
+				}
+			},
+		})
+
+		character.ItemSwap.RegisterProc(34473, procAura)
+	})
+
+	// Figurine - Empyrean Tortoise
+	core.NewItemEffect(35693, func(agent core.Agent) {
+		character := agent.GetCharacter()
+
+		aura := character.NewTemporaryStatsAura(
+			"Empyrean Tortoise",
+			core.ActionID{SpellID: 46780},
+			stats.Stats{stats.DodgeRating: 165},
+			time.Second*20,
+		)
+
+		spell := character.RegisterSpell(core.SpellConfig{
+			ActionID:    core.ActionID{ItemID: 35693},
+			SpellSchool: core.SpellSchoolNature,
+			ProcMask:    core.ProcMaskEmpty,
+
+			Cast: core.CastConfig{
+				CD: core.Cooldown{
+					Timer:    character.NewTimer(),
+					Duration: time.Minute * 2,
+				},
+			},
+
+			ApplyEffects: func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
+				aura.Activate(sim)
+			},
+		})
+
+		character.AddMajorCooldown(core.MajorCooldown{
+			Spell:    spell,
+			Type:     core.CooldownTypeSurvival,
+			BuffAura: aura,
+			ShouldActivate: func(_ *core.Simulation, character *core.Character) bool {
+				return character.CurrentHealthPercent() < 0.4
+			},
+		})
+	})
 }

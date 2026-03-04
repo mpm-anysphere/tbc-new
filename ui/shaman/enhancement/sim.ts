@@ -86,7 +86,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecEnhancementShaman, {
 		// Preset talents that the user can quickly select.
 		talents: [Presets.SubRestoIWT, Presets.SubRestoILS, Presets.SubEle],
 		// Preset rotations that the user can quickly select.
-		rotations: [Presets.ROTATION_PRESET_DEFAULT, Presets.ROTATION_PRESET_P3],
+		rotations: [Presets.ROTATION_PRESET_DEFAULT],
 		// Preset gear configurations that the user can quickly select.
 		gear: [Presets.PRERAID_PRESET, Presets.P1_PRESET, Presets.P2_PRESET, Presets.P3_PRESET, Presets.P4_PRESET, Presets.P5_PRESET],
 	},

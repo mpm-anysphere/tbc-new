@@ -4,7 +4,7 @@ import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_u
 import { Player } from '../../core/player';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation } from '../../core/proto/apl';
-import { Faction, IndividualBuffs, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
+import { Faction, HandType, IndividualBuffs, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
 import { StatCapType } from '../../core/proto/ui';
 import { DEFAULT_MELEE_GEM_STATS, StatCap, Stats, UnitStat } from '../../core/proto_utils/stats';
 
@@ -54,7 +54,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecDpsWarrior, {
 			const meleeHitSoftCapConfig = StatCap.fromPseudoStat(PseudoStat.PseudoStatMeleeHitPercent, {
 				breakpoints: [9, 28],
 				capType: StatCapType.TypeSoftCap,
-				postCapEPs: [0, 0],
+				postCapEPs: [0.57 * Mechanics.PHYSICAL_HIT_RATING_PER_HIT_PERCENT, 0],
 			});
 
 			return [meleeHitSoftCapConfig];
@@ -100,9 +100,9 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecDpsWarrior, {
 	},
 
 	presets: {
-		epWeights: [Presets.P1_FURY_EP_PRESET, Presets.P2_FURY_EP_PRESET, Presets.P1_ARMS_EP_PRESET],
+		epWeights: [Presets.P1_FURY_EP_PRESET, Presets.P2_FURY_EP_PRESET, Presets.P1_ARMS_EP_PRESET, Presets.P3_ARMS_EP_PRESET],
 		// Preset talents that the user can quickly select.
-		talents: [Presets.FuryTalents, Presets.ArmsTalents],
+		talents: [Presets.FuryTalents, Presets.ArmsTalents, Presets.ArmsKebabTalents],
 		// Preset rotations that the user can quickly select.
 		rotations: [Presets.FURY_DEFAULT_ROTATION, Presets.ARMS_DEFAULT_ROTATION],
 		// Preset gear configurations that the user can quickly select.
@@ -115,39 +115,63 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecDpsWarrior, {
 			Presets.P4_BIS_FURY_PRESET,
 			Presets.P1_PRERAID_ARMS_PRESET,
 			Presets.P1_BIS_ARMS_PRESET,
+			Presets.P2_BIS_ARMS_PRESET,
+			Presets.P3_BIS_ARMS_PRESET,
+			Presets.P35_BIS_ARMS_PRESET,
+			Presets.P4_BIS_ARMS_PRESET,
 		],
-		builds: [Presets.P1_PRESET_BUILD_FURY, Presets.P1_PRESET_BUILD_ARMS],
+		builds: [
+			Presets.PRESET_BUILD_FURY,
+			Presets.PRESET_BUILD_ARMS,
+			Presets.PRESET_BUILD_ARMS_KEBAB,
+			Presets.P1_PRESET_BUILD_FURY,
+			Presets.P2_PRESET_BUILD_FURY,
+			Presets.P3_PRESET_BUILD_FURY,
+			Presets.P35_PRESET_BUILD_FURY,
+			Presets.P4_PRESET_BUILD_FURY,
+			Presets.P1_PRESET_BUILD_ARMS,
+			Presets.P2_PRESET_BUILD_ARMS,
+			Presets.P3_PRESET_BUILD_ARMS,
+			Presets.P35_PRESET_BUILD_ARMS,
+			Presets.P4_PRESET_BUILD_ARMS,
+		],
 	},
 
 	autoRotation: (_player: Player<Spec.SpecDpsWarrior>): APLRotation => {
 		return Presets.FURY_DEFAULT_ROTATION.rotation.rotation!;
 	},
 
-	raidSimPresets: [
-		{
-			spec: Spec.SpecDpsWarrior,
-			talents: Presets.FuryTalents.data,
-			specOptions: Presets.DefaultOptions,
-			consumables: Presets.DefaultConsumables,
-			defaultFactionRaces: {
-				[Faction.Unknown]: Race.RaceUnknown,
-				[Faction.Alliance]: Race.RaceHuman,
-				[Faction.Horde]: Race.RaceOrc,
-			},
-			defaultGear: {
-				[Faction.Unknown]: {},
-				[Faction.Alliance]: {},
-				[Faction.Horde]: {},
-			},
-			otherDefaults: Presets.OtherDefaults,
-		},
-	],
+	raidSimPresets: [],
 });
 
 export class DpsWarriorSimUI extends IndividualSimUI<Spec.SpecDpsWarrior> {
 	constructor(parentElem: HTMLElement, player: Player<Spec.SpecDpsWarrior>) {
 		super(parentElem, player, SPEC_CONFIG);
 
-		this.reforger = new ReforgeOptimizer(this);
+		this.reforger = new ReforgeOptimizer(this, {
+			updateSoftCaps: softCaps => {
+				const gear = player.getGear();
+				const mainHandType = gear.getEquippedItem(ItemSlot.ItemSlotMainHand)?.item.handType;
+				const offHandType = gear.getEquippedItem(ItemSlot.ItemSlotOffHand)?.item.handType;
+				const isFury =
+					mainHandType &&
+					[HandType.HandTypeOneHand, HandType.HandTypeMainHand].includes(mainHandType) &&
+					offHandType &&
+					[HandType.HandTypeOneHand, HandType.HandTypeOffHand].includes(offHandType);
+
+				const softCapToModify = softCaps.find(sc => sc.unitStat.equalsPseudoStat(PseudoStat.PseudoStatMeleeHitPercent));
+				if (softCapToModify) {
+					if (isFury) {
+						softCapToModify.breakpoints = this.individualConfig.defaults.softCapBreakpoints?.[0].breakpoints || [];
+						softCapToModify.postCapEPs = this.individualConfig.defaults.softCapBreakpoints?.[0].postCapEPs || [];
+					} else {
+						softCapToModify.breakpoints = [9];
+						softCapToModify.postCapEPs = [0];
+					}
+				}
+
+				return softCaps;
+			},
+		});
 	}
 }

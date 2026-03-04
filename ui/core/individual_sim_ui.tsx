@@ -45,6 +45,7 @@ import {
 	Encounter as EncounterProto,
 	EquipmentSpec,
 	Faction,
+	HealingModel,
 	IndividualBuffs,
 	ItemSlot,
 	ItemSwap,
@@ -94,6 +95,7 @@ export interface OtherDefaults {
 	highHpThreshold?: number;
 	iterationCount?: number;
 	race?: Race;
+	healingModel?: HealingModel;
 }
 
 export interface RaidSimPreset<SpecType extends Spec> {
@@ -122,9 +124,11 @@ export interface IndividualSimUIConfig<SpecType extends Spec> extends PlayerConf
 	warnings?: Array<(simUI: IndividualSimUI<SpecType>) => SimWarning>;
 	consumableStats?: Array<Stat>;
 	gemStats?: Array<Stat>;
+	epRatios?: number[];
 	epStats: Array<Stat>;
 	epPseudoStats?: Array<PseudoStat>;
 	epReferenceStat: Stat;
+	tankRefStat?: Stat;
 	displayStats: Array<UnitStat>;
 	modifyDisplayStats?: CharacterStats['modifyDisplayStats'];
 	overwriteDisplayStats?: CharacterStats['overwriteDisplayStats'];
@@ -575,6 +579,8 @@ export abstract class IndividualSimUI<SpecType extends Spec> extends SimUI {
 
 			this.reforger?.applyDefaults(eventID);
 
+			this.tankRefStat = this.individualConfig.tankRefStat;
+
 			if (this.isWithinRaidSim) {
 				this.sim.raid.setTargetDummies(eventID, 0);
 			} else {
@@ -593,6 +599,10 @@ export abstract class IndividualSimUI<SpecType extends Spec> extends SimUI {
 					this.sim.encounter.applyDefaults(eventID);
 				}
 				this.sim.encounter.setExecuteProportion90(eventID, this.individualConfig.defaults.other?.highHpThreshold || 0.9);
+				if (this.individualConfig.defaults.other?.healingModel) {
+					this.player.setHealingModel(eventID, this.individualConfig.defaults.other?.healingModel);
+				}
+
 				this.sim.raid.setDebuffs(eventID, this.individualConfig.defaults.debuffs);
 				this.sim.applyDefaults(eventID, tankSpec, healingSpec);
 
@@ -715,9 +725,8 @@ export abstract class IndividualSimUI<SpecType extends Spec> extends SimUI {
 				if (settings.healRefStat) {
 					this.healRefStat = settings.healRefStat;
 				}
-				if (settings.tankRefStat) {
-					this.tankRefStat = settings.tankRefStat;
-				}
+
+				this.tankRefStat = settings.tankRefStat || this.individualConfig.tankRefStat;
 
 				if (settings.settings) {
 					this.sim.fromProto(eventID, settings.settings);

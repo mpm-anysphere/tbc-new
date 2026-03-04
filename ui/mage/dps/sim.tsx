@@ -9,6 +9,7 @@ import { DEFAULT_CASTER_GEM_STATS, UnitStat } from '../../core/proto_utils/stats
 import { DefaultDebuffs, DefaultRaidBuffs, DefaultPartyBuffs, DefaultIndividualBuffs, DefaultConsumables } from './presets';
 import * as Presets from './presets';
 import * as MageInputs from './inputs';
+import { Mage_Rotation } from '../../core/proto/mage';
 
 const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 	requiredTalentRows: [],
@@ -42,19 +43,24 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 			Stat.StatFireDamage,
 			Stat.StatArcaneDamage,
 		],
-		[PseudoStat.PseudoStatSpellHitPercent, PseudoStat.PseudoStatSpellCritPercent, PseudoStat.PseudoStatSpellHastePercent],
+		[
+			PseudoStat.PseudoStatSpellHitPercent,
+			PseudoStat.PseudoStatSpellCritPercent,
+			PseudoStat.PseudoStatSpellHastePercent,
+			PseudoStat.PseudoStatSchoolHitArcane,
+		],
 	),
 	gemStats: DEFAULT_CASTER_GEM_STATS,
 
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.BLANK_GEARSET.gear,
+		gear: Presets.P1_BIS_ARCANE.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Presets.P1_EP_PRESET.epWeights,
 		// Default consumes settings.
-		consumables: DefaultConsumables,
+		consumables: Presets.DefaultConsumables,
 		// Default talents.
-		talents: Presets.Talents.data,
+		talents: Presets.ARCANE_TALENTS.data,
 		// Default spec-specific settings.
 		specOptions: Presets.DefaultOptions,
 		other: Presets.OtherDefaults,
@@ -84,11 +90,11 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 	presets: {
 		epWeights: [],
 		// Preset rotations that the user can quickly select.
-		rotations: [],
+		rotations: [Presets.ROTATION_PRESET_ARCANE],
 		// Preset talents that the user can quickly select.
-		talents: [],
+		talents: [Presets.ARCANE_TALENTS],
 		// Preset gear configurations that the user can quickly select.
-		gear: [],
+		gear: [Presets.PREBIS_ARCANE, Presets.P1_BIS_ARCANE],
 
 		builds: [],
 	},
@@ -98,7 +104,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 		// if (numTargets >= 2) {
 		// 	return Presets.ROTATION_PRESET_CLEAVE.rotation.rotation!;
 		// } else {
-		return Presets.BLANK_APL.rotation.rotation!;
+		return Presets.ROTATION_PRESET_ARCANE.rotation.rotation!;
 		// }
 	},
 

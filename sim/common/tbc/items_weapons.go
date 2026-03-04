@@ -1,8 +1,11 @@
 package tbc
 
 import (
+	"time"
+
 	"github.com/wowsims/tbc/sim/core"
 	"github.com/wowsims/tbc/sim/core/proto"
+	"github.com/wowsims/tbc/sim/core/stats"
 )
 
 func init() {
@@ -44,4 +47,67 @@ func init() {
 
 		character.ItemSwap.RegisterProc(31332, procTrigger)
 	})
+
+	core.NewItemSet(core.ItemSet{
+		Name: "The Twin Blades of Azzinoth",
+		Bonuses: map[int32]core.ApplySetBonus{
+			2: func(agent core.Agent, setBonusAura *core.Aura) {
+				character := agent.GetCharacter()
+
+				if character.Class != proto.Class_ClassRogue && character.Class != proto.Class_ClassWarrior {
+					return
+				}
+
+				aura := character.NewTemporaryStatsAura(
+					"The Twin Blades of Azzinoth",
+					core.ActionID{SpellID: 41435},
+					stats.Stats{stats.MeleeHasteRating: 450},
+					time.Second*10,
+				)
+
+				hasteDPM := func() *core.DynamicProcManager {
+					return character.NewStaticLegacyPPMManager(
+						1,
+						character.GetProcMaskForTypes(proto.WeaponType_WeaponTypeSword),
+					)
+				}
+
+				dpm := hasteDPM()
+
+				setBonusAura.
+					AttachProcTrigger(core.ProcTrigger{
+						Name:     "The Twin Blades of Azzinoth - Trigger",
+						DPM:      dpm,
+						ICD:      time.Second * 45,
+						Outcome:  core.OutcomeLanded,
+						Callback: core.CallbackOnSpellHitDealt,
+						Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+							aura.Activate(sim)
+						},
+					}).
+					ApplyOnGain(func(aura *core.Aura, sim *core.Simulation) {
+						for _, at := range character.AttackTables {
+							at.MobTypeBonusStats[proto.MobType_MobTypeDemon] = at.MobTypeBonusStats[proto.MobType_MobTypeDemon].Add(stats.Stats{
+								stats.AttackPower:       200,
+								stats.RangedAttackPower: 200,
+							})
+						}
+					}).
+					ApplyOnExpire(func(aura *core.Aura, sim *core.Simulation) {
+						for _, at := range character.AttackTables {
+							at.MobTypeBonusStats[proto.MobType_MobTypeDemon] = at.MobTypeBonusStats[proto.MobType_MobTypeDemon].Subtract(stats.Stats{
+								stats.AttackPower:       200,
+								stats.RangedAttackPower: 200,
+							})
+						}
+					}).
+					ExposeToAPL(41434)
+
+				character.RegisterItemSwapCallback(core.AllMeleeWeaponSlots(), func(sim *core.Simulation, slot proto.ItemSlot) {
+					dpm = hasteDPM()
+				})
+			},
+		},
+	})
+
 }

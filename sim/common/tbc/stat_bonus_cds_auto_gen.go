@@ -66,8 +66,6 @@ func RegisterAllOnUseCds() {
 	// shared.NewSimpleStatActive(25829) // Talisman of the Alliance - https://www.wowhead.com/tbc/spell=33828
 	// shared.NewSimpleStatActive(26055) // Oculus of the Hidden Eye - https://www.wowhead.com/tbc/spell=33012
 	// shared.NewSimpleStatActive(27416) // Fetish of the Fallen - https://www.wowhead.com/tbc/spell=33014
-	// shared.NewSimpleStatActive(27529) // Figurine of the Colossus - https://www.wowhead.com/tbc/spell=33089
-	// shared.NewSimpleStatActive(27770) // Argussian Compass - https://www.wowhead.com/tbc/spell=39228
 	// shared.NewSimpleStatActive(27900) // Jewel of Charismatic Mystique - https://www.wowhead.com/tbc/spell=33486
 	// shared.NewSimpleStatActive(28590) // Ribbon of Sacrifice - https://www.wowhead.com/tbc/spell=38332
 	// shared.NewSimpleStatActive(28727) // Pendant of the Violet Eye - https://www.wowhead.com/tbc/spell=29601

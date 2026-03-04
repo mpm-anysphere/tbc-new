@@ -232,7 +232,8 @@
 			"class_spec_options": "Class/Spec Options",
 			"consumables": "Consumables",
 			"other_settings": "Other Settings",
-			"buffs": "Buffs"
+			"buffs": "Buffs",
+			"reforge_settings": "Suggest Gem Settings"
 		}
 	},
 	"sim": {
@@ -253,8 +254,7 @@
 			"title": "This sim is currently not supported.",
 			"contribute_message": "Want to contribute?",
 			"discord_message": "Make sure to join our Discord!",
-			"healing_message": "Looking for healing simulations?",
-			"qe_live_message": "Check out QE Live!"
+			"old_sim_message": "You can find the old Sim for this spec here:"
 		},
 		"notifications": {
 			"raid_sim_cancelled": "Raid sim cancelled.",
@@ -1221,6 +1221,10 @@
 					"label": "Current Mana (%)",
 					"tooltip": "Amount of currently available Mana, as a percentage."
 				},
+				"max_mana": {
+					"label": "Max Mana",
+					"tooltip": "Maximum mana of the unit"
+				},
 				"current_rage": {
 					"label": "Current Rage",
 					"tooltip": "Amount of currently available Rage."
@@ -1888,6 +1892,7 @@
 			"tabs": {
 				"damage": "Damage",
 				"healing": "Healing",
+				"threat": "Threat",
 				"damage_taken": "Damage Taken",
 				"buffs": "Buffs",
 				"debuffs": "Debuffs",
@@ -1898,6 +1903,8 @@
 			},
 			"columns": {
 				"damage_done": "Damage done",
+				"threat_done": "Threat done",
+				"healing_done": "Healing done",
 				"casts": "Casts",
 				"avg_cast": "Avg Cast",
 				"hits": "Hits",
@@ -1906,7 +1913,8 @@
 				"miss_percent": "Miss %",
 				"dpet": "DPET",
 				"dps": "DPS",
-				"healing_done": "Healing done",
+				"tpet": "TPET",
+				"tps": "TPS",
 				"cpm": "CPM",
 				"cast_time": "Cast Time",
 				"hpm": "HPM",
@@ -1985,7 +1993,9 @@
 				"type": "Type",
 				"count": "Count",
 				"average": "Average",
-				"amount": "Amount"
+				"amount": "Amount",
+				"per_cast": "Per Cast",
+				"per_hit": "Per Hit"
 			}
 		}
 	},

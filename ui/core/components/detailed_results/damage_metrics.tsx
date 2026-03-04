@@ -134,9 +134,14 @@ export class DamageMetricsTable extends MetricsTable<ActionMetrics> {
 									totalPercentage: 100,
 									data: [
 										{
-											name: i18n.t('results_tab.details.attack_types.hit') + 's',
-											value: metric.landedHits || metric.casts - metric.totalMisses,
+											name: i18n.t('results_tab.details.attack_types.hit'),
+											value: metric.landedHits || metric.casts - metric.totalMisses - metric.blocks - metric.blockedCrits,
 											percentage: relativeHitPercent,
+										},
+										{
+											name: i18n.t('results_tab.details.attack_types.blocked_hit'),
+											value: metric.blocks + metric.blockedCrits,
+											percentage: metric.blockPercent + metric.blockedCritPercent,
 										},
 										{
 											name: i18n.t('results_tab.details.attack_types.miss'),

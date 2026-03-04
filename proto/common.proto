@@ -784,6 +784,7 @@ enum OtherAction {
 	OtherActionMove = 20; // Used by movement to be able to show it in timeline
 	OtherActionPrepull = 21; // Indicated prepull specific action
 	OtherActionEncounterStart = 22; // Indicated resources gained or lost at the start of an encounter
+	OtherActionItemSwap = 23; // Used by APL to show current swap set
 }
 
 message ActionID {
@@ -797,6 +798,8 @@ message ActionID {
 	// Distinguishes between different versions of the same action.
 	// Currently the only use for this is Shaman Lightning Overload.
 	int32 tag = 4;
+	// Various ranks of spells
+	int32 rank = 5;
 }
 
 // Custom options for a particular cooldown.

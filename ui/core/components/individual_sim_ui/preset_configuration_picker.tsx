@@ -108,6 +108,9 @@ export class PresetConfigurationPicker extends Component {
 				if (build.settings?.buffs || build.settings?.raidBuffs) {
 					categories.push(i18n.t('common.preset.buffs'));
 				}
+				if (build.settings?.reforgeSettings) {
+					categories.push(i18n.t('common.preset.reforge_settings'));
+				}
 
 				categories = [...new Set(categories)].sort();
 
@@ -173,7 +176,8 @@ export class PresetConfigurationPicker extends Component {
 				if (typeof settings.playerOptions?.distanceFromTarget === 'number')
 					simUI.player.setDistanceFromTarget(eventID, settings.playerOptions.distanceFromTarget);
 				if (typeof settings.playerOptions?.reactionTimeMs === 'number') simUI.player.setReactionTime(eventID, settings.playerOptions.reactionTimeMs);
-				if (typeof settings.playerOptions?.channelClipDelayMs === 'number') simUI.player.setChannelClipDelay(eventID, settings.playerOptions.channelClipDelayMs);
+				if (typeof settings.playerOptions?.channelClipDelayMs === 'number')
+					simUI.player.setChannelClipDelay(eventID, settings.playerOptions.channelClipDelayMs);
 				if (typeof settings.playerOptions?.inFrontOfTarget === 'boolean')
 					simUI.player.setInFrontOfTarget(eventID, settings.playerOptions.inFrontOfTarget);
 				if (settings.playerOptions?.enableItemSwap !== undefined && settings.playerOptions?.itemSwap) {
@@ -194,6 +198,18 @@ export class PresetConfigurationPicker extends Component {
 				if (settings.raidBuffs) simUI.sim.raid.setBuffs(eventID, settings.raidBuffs);
 				if (settings.buffs) simUI.player.setBuffs(eventID, settings.buffs);
 				if (settings.debuffs) simUI.sim.raid.setDebuffs(eventID, settings.debuffs);
+				if (simUI.reforger && settings.reforgeSettings) {
+					const { useCustomEpValues, statCaps, useSoftCapBreakpoints, freezeItemSlots, frozenItemSlots, breakpointLimits, maxGemPhase } =
+						settings.reforgeSettings;
+
+					if (useCustomEpValues) simUI.reforger.setUseCustomEPValues(eventID, useCustomEpValues);
+					if (statCaps) simUI.reforger.setStatCaps(eventID, Stats.fromProto(statCaps));
+					if (useSoftCapBreakpoints) simUI.reforger.setUseSoftCapBreakpoints(eventID, useSoftCapBreakpoints);
+					if (freezeItemSlots) simUI.reforger.setFreezeItemSlots(eventID, freezeItemSlots);
+					if (frozenItemSlots) simUI.reforger.setFrozenItemSlots(eventID, frozenItemSlots);
+					if (breakpointLimits) simUI.reforger.setBreakpointLimits(eventID, Stats.fromProto(breakpointLimits));
+					if (maxGemPhase) simUI.reforger.setMaxGemPhase(eventID, maxGemPhase);
+				}
 			}
 			if (encounter) {
 				if (encounter.encounter) simUI.sim.encounter.fromProto(eventID, encounter.encounter);

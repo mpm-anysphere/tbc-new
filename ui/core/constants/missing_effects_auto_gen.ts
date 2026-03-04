@@ -1559,12 +1559,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		27529, // Figurine of the Colossus
-		[
-			"Each successful block heals you for 120. Effect lasts 20s.", // 33089 - https://www.wowhead.com/tbc/spell=33089
-		]
-	],
-	[
 		27544, // Totem of Spontaneous Regrowth
 		[
 			"Increases healing done by Healing Wave by up to 88.", // 34294 - https://www.wowhead.com/tbc/spell=34294
@@ -1586,12 +1580,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		27744, // Idol of Ursoc
 		[
 			"Increases initial and per application periodic damage done by Lacerate by 8.", // 34253 - https://www.wowhead.com/tbc/spell=34253
-		]
-	],
-	[
-		27770, // Argussian Compass
-		[
-			"Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20s.", // 39228 - https://www.wowhead.com/tbc/spell=39228
 		]
 	],
 	[
@@ -2552,12 +2540,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		32375, // Bulwark of Azzinoth
-		[
-			"When struck in combat has a 2% chance of increasing your Armor by 2000 for 10 secs.", // 40408 - https://www.wowhead.com/tbc/spell=40408
-		]
-	],
-	[
 		32387, // Idol of the Raven Goddess
 		[
 			"Increases the healing granted by the Tree of Life form aura by 44, adds 20 critical strike rating to the Leader of the Pack aura, and adds 20 spell critical strike rating to the Moonkin form aura.", // 39926 - https://www.wowhead.com/tbc/spell=39926
@@ -2989,12 +2971,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		[
 			"Collects 100 Holy Energy from healing spells you cast. Cannot collect more than 2000 Holy Energy.", // 45062 - https://www.wowhead.com/tbc/spell=45062
 			"Release all accumulated Holy Energy to instantly heal current friendly target by the amount of Holy Energy accumulated.", // 45064 - https://www.wowhead.com/tbc/spell=45064
-		]
-	],
-	[
-		34473, // Commendation of Kael'thas
-		[
-			"Melee attacks which reduce you below 35% health cause you to gain 152 dodge rating for 10s. Cannot occur more than once every 30 sec.", // 45058 - https://www.wowhead.com/tbc/spell=45058
 		]
 	],
 	[

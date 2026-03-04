@@ -22,7 +22,7 @@ import {
 	Spec,
 	UnitReference,
 } from './proto/common';
-import { IndividualSimSettings, SavedRotation, SavedTalents } from './proto/ui';
+import { IndividualSimSettings, ReforgeSettings, SavedRotation, SavedTalents } from './proto/ui';
 import { Stats } from './proto_utils/stats';
 import { SpecOptions, SpecRotation, specTypeFunctions } from './proto_utils/utils';
 
@@ -94,6 +94,7 @@ export interface PresetSettings extends PresetBase {
 	consumables?: ConsumesSpec;
 	specOptions?: Partial<SpecOptions<any>>;
 	playerOptions?: PresetPlayerOptions;
+	reforgeSettings?: Partial<ReforgeSettings>;
 }
 
 export interface PresetBuild {
@@ -179,8 +180,7 @@ export const makePresetSimpleRotation = <SpecType extends Spec>(
 	simpleRotation: SpecRotation<SpecType>,
 	options?: PresetRotationOptions,
 ): PresetRotation => {
-	const isTankSpec =
-		spec == Spec.SpecFeralBearDruid || spec == Spec.SpecProtectionPaladin || spec == Spec.SpecProtectionWarrior;
+	const isTankSpec = spec == Spec.SpecFeralBearDruid || spec == Spec.SpecProtectionPaladin || spec == Spec.SpecProtectionWarrior;
 	const rotation = SavedRotation.create({
 		rotation: {
 			type: APLRotationType.TypeSimple,
@@ -293,6 +293,10 @@ const makePresetSettingsHelper = (name: string, spec: Spec, simSettings: Individ
 		settings.debuffs = simSettings.debuffs;
 	}
 
+	if (simSettings.reforgeSettings) {
+		settings.reforgeSettings = simSettings.reforgeSettings;
+	}
+
 	return settings;
 };
 
@@ -316,11 +320,7 @@ export const makePresetBuildFromJSON = (
 		}
 
 		if (simSettings.player?.talentsString) {
-			buildConfig.talents = makePresetTalents(
-				name,
-				SavedTalents.create({ talentsString: simSettings.player?.talentsString }),
-				options,
-			);
+			buildConfig.talents = makePresetTalents(name, SavedTalents.create({ talentsString: simSettings.player?.talentsString }), options);
 		}
 
 		if (simSettings.player?.rotation && simSettings.player?.rotation.type !== APLRotationType.TypeAuto) {

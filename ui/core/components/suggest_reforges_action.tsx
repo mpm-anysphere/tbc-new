@@ -10,7 +10,7 @@ import { Class, GemColor, ItemSlot, Profession, PseudoStat, Race, Spec, Stat } f
 import { UIGem as Gem, ReforgeSettings, StatCapType } from '../proto/ui';
 import { EquippedItem } from '../proto_utils/equipped_item';
 import { Gear } from '../proto_utils/gear';
-import { gemMatchesSocket, getEmptyGemSocketIconUrl, getMetaGemCondition } from '../proto_utils/gems';
+import { PRIMARY_COLORS, gemMatchesSocket, getEmptyGemSocketIconUrl, getMetaGemCondition, socketToMatchingColors } from '../proto_utils/gems';
 import { statCapTypeNames } from '../proto_utils/names';
 import { translateSlotName } from '../../i18n/localization';
 import { pseudoStatIsCapped, StatCap, statIsCapped, Stats, UnitStat, UnitStatPresets } from '../proto_utils/stats';
@@ -1165,7 +1165,6 @@ export class ReforgeOptimizer {
 				}
 
 				const constraintKey = `${slot}_${socketIdx}`;
-
 				for (const gemColorKey of gemColorKeys) {
 					for (const gemData of gemsToInclude.get(gemColorKey)!) {
 						const variableKey = `${constraintKey}_${gemData.gem.id}`;
@@ -1177,14 +1176,13 @@ export class ReforgeOptimizer {
 							for (const [stat, value] of distributedSocketBonus.entries()) {
 								this.applyReforgeStat(coefficients, stat, value, preCapEPs);
 							}
-						}
-						// Performance optimisation to force socket bonus matching for Jewelcrafting gems.
-						else if (gemData.isJC) {
-							continue;
-						}
-
-						if (gemData.isJC) {
-							coefficients.set('JewelcraftingGem', 1);
+						} else if (!forceSocketBonus && PRIMARY_COLORS.includes(gemData.gem.color)) {
+							socketToMatchingColors
+								.get(socketColor)
+								?.filter(color => PRIMARY_COLORS.includes(color))
+								?.forEach(() => {
+									coefficients.set(`GemColor_${gemData.gem.color}`, 1);
+								});
 						}
 
 						if (gemData.isUnique) {
@@ -1204,7 +1202,7 @@ export class ReforgeOptimizer {
 		const gemsToInclude = new Map<GemColor, GemData[]>();
 
 		const hasJC = this.player.hasProfession(Profession.Jewelcrafting);
-		const epStats = this.simUI.individualConfig.epStats;
+		const epStats = [...this.simUI.individualConfig.epStats];
 
 		if (epStats.includes(Stat.StatAttackPower) && !epStats.includes(Stat.StatRangedAttackPower)) {
 			epStats.push(Stat.StatRangedAttackPower);
@@ -1352,9 +1350,6 @@ export class ReforgeOptimizer {
 				.forEach((_, socketIdx) => {
 					constraints.set(`${slot}_${socketIdx}`, lessEq(1));
 				});
-
-			// Enforce three Jewelcrafting gems.
-			constraints.set('JewelcraftingGem', lessEq(3));
 		}
 
 		return constraints;

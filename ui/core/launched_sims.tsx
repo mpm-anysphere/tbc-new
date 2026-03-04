@@ -15,11 +15,13 @@ export enum LaunchStatus {
 export type SimStatus = {
 	phase: Phase;
 	status: LaunchStatus;
+	oldSimLink?: string;
 };
 
 export const raidSimStatus: SimStatus = {
 	phase: Phase.Phase1,
 	status: LaunchStatus.Unlaunched,
+	oldSimLink: 'https://wowsims.github.io/tbc/raid/',
 };
 
 // This list controls which links are shown in the top-left dropdown menu.
@@ -32,14 +34,17 @@ export const simLaunchStatuses: Record<Spec, SimStatus> = {
 	[Spec.SpecBalanceDruid]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/balance_druid/',
 	},
 	[Spec.SpecFeralCatDruid]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/feral_druid/',
 	},
 	[Spec.SpecFeralBearDruid]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/feral_tank_druid/',
 	},
 	[Spec.SpecRestorationDruid]: {
 		phase: Phase.Phase1,
@@ -49,6 +54,7 @@ export const simLaunchStatuses: Record<Spec, SimStatus> = {
 	[Spec.SpecHunter]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/hunter/',
 	},
 	// Mage
 	[Spec.SpecMage]: {
@@ -63,23 +69,28 @@ export const simLaunchStatuses: Record<Spec, SimStatus> = {
 	[Spec.SpecProtectionPaladin]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/protection_paladin/',
 	},
 	[Spec.SpecRetributionPaladin]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/retribution_paladin/',
 	},
 	// Priest
 	[Spec.SpecDisciplinePriest]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/smite_priest/',
 	},
 	[Spec.SpecHolyPriest]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/smite_priest/',
 	},
 	[Spec.SpecShadowPriest]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/shadow_priest/',
 	},
 	// Rogue
 	[Spec.SpecRogue]: {
@@ -90,10 +101,12 @@ export const simLaunchStatuses: Record<Spec, SimStatus> = {
 	[Spec.SpecElementalShaman]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/elemental_shaman/',
 	},
 	[Spec.SpecEnhancementShaman]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/enhancement_shaman/',
 	},
 	[Spec.SpecRestorationShaman]: {
 		phase: Phase.Phase1,
@@ -103,6 +116,7 @@ export const simLaunchStatuses: Record<Spec, SimStatus> = {
 	[Spec.SpecWarlock]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
+		oldSimLink: 'https://wowsims.github.io/tbc/warlock/',
 	},
 	// Warrior
 	[Spec.SpecDpsWarrior]: {

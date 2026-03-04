@@ -80,7 +80,7 @@ export const ConjuredDarkRune = {
 };
 export const ConjuredHealthstone = {
 	actionId: ActionId.fromItemId(22105),
-	value: 2496,
+	value: 22105,
 };
 export const ConjuredRogueThistleTea = {
 	actionId: ActionId.fromItemId(7676),
@@ -163,23 +163,35 @@ export const SupWizardOil = {
 export const AdamantiteSharpeningMH = {
 	actionId: ActionId.fromItemId(23529),
 	value: 29453,
-	showWhen: (player: Player<any>) => !player.getGear().hasBluntMHWeapon(),
+	showWhen: (player: Player<any>) => player.getGear().hasSharpMHWeapon(),
 };
 export const AdamantiteWeightMH = {
 	actionId: ActionId.fromItemId(28421),
 	value: 34340,
 	showWhen: (player: Player<any>) => player.getGear().hasBluntMHWeapon(),
 };
+export const ConsecratedSharpeningStoneMH = {
+	actionId: ActionId.fromItemId(23122),
+	value: 28891,
+	showWhen: (player: Player<any>) => player.getGear().hasMHWeapon(),
+};
+
 export const AdamantiteSharpeningOH = {
 	actionId: ActionId.fromItemId(23529),
 	value: 29453,
-	showWhen: (player: Player<any>) => !player.getGear().hasBluntOHWeapon(),
+	showWhen: (player: Player<any>) => player.getGear().hasSharpOHWeapon(),
 };
 export const AdamantiteWeightOH = {
 	actionId: ActionId.fromItemId(28421),
 	value: 34340,
 	showWhen: (player: Player<any>) => player.getGear().hasBluntOHWeapon(),
 };
+export const ConsecratedSharpeningStoneOH = {
+	actionId: ActionId.fromItemId(23122),
+	value: 28891,
+	showWhen: (player: Player<any>) => player.getGear().hasOHWeapon(),
+};
+
 // Rogue Poisons
 export const RogueInstantPoison = {
 	actionId: ActionId.fromItemId(21927),
@@ -226,6 +238,7 @@ export const IMBUE_CONFIG_MH = [
 	{ config: SupWizardOil, stats: [Stat.StatSpellDamage] },
 	{ config: AdamantiteSharpeningMH, stats: [Stat.StatAttackPower] },
 	{ config: AdamantiteWeightMH, stats: [Stat.StatAttackPower] },
+	{ config: ConsecratedSharpeningStoneMH, stats: [Stat.StatAttackPower] },
 	{ config: RogueInstantPoison, stats: [] },
 	{ config: RogueDeadlyPoison, stats: [] },
 	{ config: RogueWoundPoison, stats: [] },
@@ -241,6 +254,7 @@ export const IMBUE_CONFIG_OH = [
 	{ config: SupWizardOil, stats: [Stat.StatSpellDamage] },
 	{ config: AdamantiteSharpeningOH, stats: [Stat.StatAttackPower] },
 	{ config: AdamantiteWeightOH, stats: [Stat.StatAttackPower] },
+	{ config: ConsecratedSharpeningStoneOH, stats: [Stat.StatAttackPower] },
 	{ config: RogueInstantPoison, stats: [] },
 	{ config: RogueDeadlyPoison, stats: [] },
 	{ config: RogueWoundPoison, stats: [] },
@@ -255,7 +269,7 @@ export const makeMHImbueInput = makeConsumeInputFactory({
 	showWhen: (player: Player<any>) => !player.getParty() || player.getParty()!.getBuffs().windfuryTotem == 0,
 	changedEvent: (player: Player<any>) => TypedEvent.onAny([player.getParty()!.changeEmitter]),
 });
-export const makeOHImbueinput = makeConsumeInputFactory({
+export const makeOHImbueInput = makeConsumeInputFactory({
 	consumesFieldName: 'ohImbueId',
 	showWhen: (player: Player<any>) => player.getGear().getEquippedItem(ItemSlot.ItemSlotOffHand)?.item.weaponSpeed !== undefined,
 });

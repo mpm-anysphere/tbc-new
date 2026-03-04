@@ -6,7 +6,7 @@ import (
 
 func (war *Warrior) registerHeroicStrike() {
 	spell := war.RegisterSpell(core.SpellConfig{
-		ActionID:       core.ActionID{SpellID: 30324},
+		ActionID:       core.ActionID{SpellID: 29707},
 		SpellSchool:    core.SpellSchoolPhysical,
 		ProcMask:       core.ProcMaskMeleeMH,
 		Flags:          core.SpellFlagMeleeMetrics,
@@ -148,7 +148,7 @@ func (war *Warrior) makeQueueSpellsAndAura(srcSpell *core.Spell) *core.Spell {
 
 // Returns true if the regular melee swing should be used, false otherwise.
 func (war *Warrior) TryHSOrCleave(sim *core.Simulation, mhSwingSpell *core.Spell) *core.Spell {
-	if !war.curQueueAura.IsActive() {
+	if !war.curQueueAura.IsActive() || (mhSwingSpell.ActionID.Tag != 1 && mhSwingSpell.ActionID.Tag != 12281) {
 		return mhSwingSpell
 	}
 

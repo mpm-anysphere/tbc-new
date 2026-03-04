@@ -688,7 +688,7 @@ const RAID_STATS_OPTIONS: RaidStatsOptions = {
 					effects: [
 						{
 							label: 'Thunder Clap',
-							actionId: ActionId.fromSpellId(6343),
+							actionId: ActionId.fromSpellId(25264),
 							playerData: playerClass(Class.ClassWarrior),
 						},
 						// {

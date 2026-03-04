@@ -1,89 +1,81 @@
 import { CHARACTER_LEVEL } from '../../../constants/mechanics';
 import { IndividualSimUI } from '../../../individual_sim_ui';
-import { ItemSlot, Spec } from '../../../proto/common';
+import { Spec } from '../../../proto/common';
 import { raceNames } from '../../../proto_utils/names';
-import { WOWHEAD_EXPANSION_ENV } from '../../../wowhead';
 import { IndividualWowheadGearPlannerImporter } from '../importers';
 import { IndividualExporter } from './individual_exporter';
 import i18n from '../../../../i18n/config';
 
-const c = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
-
-function writeBits(value: number): number[] {
-	let e = value;
-	let t = 0;
-	const bits: number[] = [];
-
-	for (let a = 1; a <= 5; a++) {
-		const n = 5 * a;
-		if (e < 1 << n) {
-			const nArray = [];
-			while (nArray.length < a) {
-				const t = e & 63;
-				e >>= 6;
-				nArray.unshift(t);
-			}
-			nArray[0] = nArray[0] | t;
-			bits.push(...nArray);
-			return bits;
-		}
-		e -= 1 << n;
-		t = (64 | t) >> 1;
-	}
-	throw new Error('Value too large to encode.');
-}
-
 function writeTalents(talentStr: string): number[] {
-	let t = 0;
-	for (let n = talentStr.length - 1; n >= 0; n--) (t <<= 2), (t |= 3 & Math.min(4, parseInt(talentStr.substring(n, n + 1))));
-	return writeBits(t);
+	const bits: number[] = [];
+	let t = (talentStr + '--').split('-', 3);
+	for (let e = 0; e < t.length; e++) {
+		for (let a = 0; a < t[e].length; a++) bits.push(parseInt(t[e].charAt(a)));
+		bits.push(15);
+	}
+	return bits;
 }
 
 // Function to write the hash (reverse of readHash)
 function writeHash(data: WowheadGearPlannerData): string {
 	let hash = '';
+	const enchantOffset = 128;
+	const randomEnchantOffset = 64;
 
 	// Initialize bits array
-	const bits: number[] = [4];
-
-	// Write the expansion environment ID
-	bits.push(...writeBits(WOWHEAD_EXPANSION_ENV));
-
-	// Gender (assuming genderId is 1 or 2)
-	bits.push(1);
+	const t = 3;
+	const hashArray: number[] = [t];
 
 	// Level
-	bits.push(...writeBits(data.level ?? 0));
-
-	// Spec Index
-	bits.push(data.specIndex ?? 0);
+	hashArray.push(data.level ?? 0);
 
 	// Talents
 	const talentBits = writeTalents(data.talents);
-	bits.push(...talentBits);
+	hashArray.push(Math.ceil(talentBits.length / 2));
+	for (let e = 0; e < talentBits.length; e += 2) {
+		hashArray.push((talentBits[e] << 4) | (talentBits[e + 1] || 0));
+	}
 
 	// Items
 	const items = data.items ?? [];
-	bits.push(...writeBits(items.length));
-	items.forEach(e => {
-		let t = 0;
-		const n = [];
-		if ((n.push(...writeBits(e.slotId ?? 0)), n.push(...writeBits(e.itemId ?? 0)), (t <<= 1), e.randomEnchantId)) {
-			t |= 1;
-			let s = e.randomEnchantId;
-			const r = s < 0 ? 1 : 0;
-			r && (s *= -1), (s <<= 1), (s |= r), n.push(...writeBits(s));
-		}
-		(t <<= 1), e.upgradeRank && ((t |= 1), n.push(...writeBits(e.upgradeRank))), (t <<= 1), e.reforge && ((t |= 1), n.push(...writeBits(e.reforge)));
-		const r: number[] = removeTrailingZeros((e.gemItemIds ?? []).slice(0, 8));
-		(t <<= 3), (t |= r.length), r.forEach(e => n.push(...writeBits(e)));
-		const l: number[] = removeTrailingZeros((e.enchantIds ?? []).slice(0, 4));
-		(t <<= 2), (t |= l.length), l.forEach(e => n.push(...writeBits(e))), bits.push(...writeBits(t)), bits.push(...n);
+	const itemArray: number[] = [];
+	items.forEach(item => {
+		itemArray.push(item.slotId);
 	});
+
+	for (let slotIndex = 0; slotIndex < itemArray.length; slotIndex++) {
+		let bits = itemArray[slotIndex];
+		const item = items[slotIndex];
+		const id = item.itemId;
+		const gems = item.gemItemIds || [];
+		const enchant = item.enchantId || 0;
+		const randomEnchant = item.randomEnchantId || 0;
+		if (enchant) bits |= enchantOffset;
+		if (randomEnchant) bits |= randomEnchantOffset;
+
+		hashArray.push(bits);
+		let _ = Object.keys(gems).length;
+		let f = (_ & 7) << 5;
+		hashArray.push((f | (id >> 16)) & 255, (id >> 8) & 255, id & 255);
+		if (enchant) hashArray.push((enchant >> 8) & 255, enchant & 255);
+		if (randomEnchant) hashArray.push((randomEnchant >> 8) & 255, randomEnchant & 255);
+
+		Object.keys(gems).forEach(e => {
+			const gemNumber = parseInt(e);
+			let t = (gemNumber & 7) << 5;
+			let a = gems[gemNumber];
+			hashArray.push((t | (a >> 16)) & 255, (a >> 8) & 255, a & 255);
+		});
+	}
 
 	// Encode bits into characters
 	let hashData = '';
-	for (let e = 0; e < bits.length; e++) hashData += c.charAt(bits[e]);
+
+	if (hashArray.length <= 3) {
+		return '';
+	}
+
+	hashData = btoa(String.fromCharCode.apply(null, hashArray)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 
 	// Append the hash data to the URL
 	if (hashData) {
@@ -93,18 +85,9 @@ function writeHash(data: WowheadGearPlannerData): string {
 	return hash;
 }
 
-function removeTrailingZeros(arr: number[]): number[] {
-	while (arr.length > 0 && arr[arr.length - 1] === 0) {
-		arr.pop();
-	}
-	return arr;
-}
-
 export interface WowheadGearPlannerData {
 	class?: string;
 	race?: string;
-	genderId?: number;
-	specIndex?: number;
 	level: number;
 	talents: string;
 	items: WowheadItemData[];
@@ -114,10 +97,8 @@ export interface WowheadItemData {
 	slotId: number;
 	itemId: number;
 	randomEnchantId?: number;
-	reforge?: number;
-	upgradeRank?: number;
-	gemItemIds?: number[];
-	enchantIds?: number[];
+	gemItemIds?: Record<number, number>;
+	enchantId?: number;
 }
 
 export function createWowheadGearPlannerLink(data: WowheadGearPlannerData): string {
@@ -147,7 +128,6 @@ export class IndividualWowheadGearPlannerExporter<SpecType extends Spec> extends
 
 		const data: WowheadGearPlannerData = {
 			level: CHARACTER_LEVEL,
-			specIndex: player.getPlayerSpec().specIndex,
 			talents: player.getTalentsString(),
 			items: [],
 		};
@@ -170,14 +150,14 @@ export class IndividualWowheadGearPlannerExporter<SpecType extends Spec> extends
 				if (item._randomSuffix?.id) {
 					itemData.randomEnchantId = item._randomSuffix.id;
 				}
-				itemData.enchantIds = [];
-				if (item._enchant?.spellId) {
-					itemData.enchantIds.push(item._enchant.spellId);
-				}
+				itemData.enchantId = item._enchant?.spellId;
 
 				if (item._gems) {
-					itemData.gemItemIds = item._gems.map(gem => {
-						return gem?.id ?? 0;
+					itemData.gemItemIds = {};
+					item._gems.map((gem, index) => {
+						if (gem?.id) {
+							itemData.gemItemIds![index] = gem.id;
+						}
 					});
 				}
 				data.items.push(itemData);

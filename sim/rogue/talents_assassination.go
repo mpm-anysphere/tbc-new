@@ -223,7 +223,7 @@ func (rogue *Rogue) registerFindWeakness() {
 	}).AttachSpellMod(core.SpellModConfig{
 		Kind:       core.SpellMod_DamageDone_Flat,
 		ClassMask:  RogueSpellsAll,
-		FloatValue: 0.2 * float64(rogue.Talents.FindWeakness),
+		FloatValue: 0.1 * float64(rogue.Talents.FindWeakness),
 	})
 
 	rogue.MakeProcTriggerAura(core.ProcTrigger{

@@ -163,7 +163,6 @@ func factory_StatBonusEffect(config ProcStatBonusEffect, extraSpell func(agent c
 					stats.FromProtoMap(effect.ScalingOptions[int32(0)].Stats),
 					time.Millisecond*time.Duration(effect.EffectDurationMs),
 				)
-
 			}
 
 			var dpm *core.DynamicProcManager
@@ -789,6 +788,7 @@ type SpellRankConfig struct {
 	Cost             int32
 	MinDamage        float64
 	MaxDamage        float64
+	DotTickDamage    float64
 	Coefficient      float64
 	ThreatMultiplier float64
 	FlatThreatBonus  float64

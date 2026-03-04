@@ -312,7 +312,7 @@ export const ShadowPriestDPS = {
 	raid: true,
 	float: true,
 	label: 'Shadow Priest DPS',
-	labelTooltip: 'Shadow Priest DPS for Mana Battery purposes',
+	labelTooltip: 'Shadow Priest DPS for Mana Battery purposes. 1000 DPS = 50 mana/sec(250 MP5).',
 	changedEvent: (player: Player<any>) => player.buffsChangeEmitter,
 	getValue: (player: Player<any>) => player.getBuffs().shadowPriestDps,
 	setValue: (eventID: EventID, player: Player<any>, newValue: number) => {

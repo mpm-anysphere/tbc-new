@@ -65,8 +65,9 @@ var ItemOverrides = []*proto.UIItem{
 
 // Keep these sorted by item ID.
 var ItemAllowList = map[int32]struct{}{
-	2140: {},
-	2505: {},
+	2140:  {},
+	2505:  {},
+	11815: {}, // Hand of Justice
 }
 
 // Keep these sorted by item ID.
@@ -401,6 +402,7 @@ var EnchantAllowList = []int32{
 	2564, // Weapon 15 Agi
 	2583, // Presence of Might
 	2647, // Enchant Bracer - Brawn
+	2659, // Enchant Chest - Exceptional Health
 }
 
 // Note: EffectId is required for all enchants, because they are

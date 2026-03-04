@@ -8,7 +8,7 @@ import (
 
 func (war *Warrior) registerRend() {
 	war.Rend = war.RegisterSpell(core.SpellConfig{
-		ActionID:       core.ActionID{SpellID: 772},
+		ActionID:       core.ActionID{SpellID: 25208},
 		SpellSchool:    core.SpellSchoolPhysical,
 		ClassSpellMask: SpellMaskRend,
 		ProcMask:       core.ProcMaskMeleeMHSpecial,

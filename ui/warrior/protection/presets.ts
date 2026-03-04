@@ -1,11 +1,16 @@
+import { OtherDefaults as SimUIOtherDefaults } from '../../core/individual_sim_ui';
 import * as PresetUtils from '../../core/preset_utils.js';
-import { ConsumesSpec, Profession, PseudoStat, Stat } from '../../core/proto/common.js';
+import { ConsumesSpec, HealingModel, Profession, PseudoStat, Stat } from '../../core/proto/common.js';
 import { SavedTalents } from '../../core/proto/ui.js';
 import { ProtectionWarrior_Options as ProtectionWarriorOptions, WarriorShout, WarriorStance } from '../../core/proto/warrior.js';
 import { Stats } from '../../core/proto_utils/stats';
 import * as WarriorPresets from '../presets';
 import GenericApl from './apls/default.apl.json';
 import P1BISGear from './gear_sets/p1_bis.gear.json';
+import P2BISGear from './gear_sets/p2_bis.gear.json';
+import P3BISGear from './gear_sets/p3_bis.gear.json';
+import P35BISGear from './gear_sets/p35_bis.gear.json';
+import P4BISGear from './gear_sets/p4_bis.gear.json';
 import PreraidBISGear from './gear_sets/preraid.gear.json';
 
 // Preset options for this spec.
@@ -14,6 +19,10 @@ import PreraidBISGear from './gear_sets/preraid.gear.json';
 
 export const PRERAID_BALANCED_PRESET = PresetUtils.makePresetGear('Pre-raid', PreraidBISGear);
 export const P1_PRESET = PresetUtils.makePresetGear('P1 - BIS', P1BISGear);
+export const P2_PRESET = PresetUtils.makePresetGear('P2 - BIS', P2BISGear);
+export const P3_PRESET = PresetUtils.makePresetGear('P3 - BIS', P3BISGear);
+export const P35_PRESET = PresetUtils.makePresetGear('P3.5 - BIS', P35BISGear);
+export const P4_PRESET = PresetUtils.makePresetGear('P4 - BIS', P4BISGear);
 
 export const ROTATION_DEFAULT = PresetUtils.makePresetAPLRotation('Generic', GenericApl);
 
@@ -22,18 +31,25 @@ export const P1_EP_PRESET = PresetUtils.makePresetEpWeights(
 	'P1 - Default',
 	Stats.fromMap(
 		{
-			[Stat.StatStamina]: 1.0,
-			[Stat.StatStrength]: 1.0,
-			[Stat.StatAgility]: 0.65,
-			[Stat.StatAttackPower]: 0.46,
-			[Stat.StatMeleeHitRating]: 0.57,
-			[Stat.StatMeleeCritRating]: 0.88,
-			[Stat.StatMeleeHasteRating]: 0.9,
-			[Stat.StatArmorPenetration]: 0.15,
-			[Stat.StatExpertiseRating]: 0.99,
+			[Stat.StatStrength]: 0.61,
+			[Stat.StatAgility]: 0.83,
+			[Stat.StatStamina]: 1.15,
+			[Stat.StatAttackPower]: 0.25,
+			[Stat.StatMeleeHitRating]: 0.35,
+			[Stat.StatMeleeCritRating]: 0.5,
+			[Stat.StatMeleeHasteRating]: 0.41,
+			[Stat.StatArmorPenetration]: 0.09,
+			[Stat.StatExpertiseRating]: 2.01,
+			[Stat.StatDefenseRating]: 0.41,
+			[Stat.StatBlockRating]: 0.01,
+			[Stat.StatBlockValue]: 0.57,
+			[Stat.StatParryRating]: 0.51,
+			[Stat.StatResilienceRating]: 0.02,
+			[Stat.StatArmor]: 0.06,
+			[Stat.StatBonusArmor]: 0.06,
 		},
 		{
-			[PseudoStat.PseudoStatMainHandDps]: 0.96,
+			[PseudoStat.PseudoStatMainHandDps]: 3.15,
 		},
 	),
 );
@@ -70,10 +86,18 @@ export const DefaultConsumables = ConsumesSpec.create({
 	scrollArm: true,
 });
 
-export const OtherDefaults = {
+export const OtherDefaults: Partial<SimUIOtherDefaults> = {
 	profession1: Profession.Engineering,
 	profession2: Profession.Blacksmithing,
 	distanceFromTarget: 0,
+	healingModel: HealingModel.create({
+		hps: 2200,
+		cadenceSeconds: 0.4,
+		cadenceVariation: 1.2,
+		absorbFrac: 0.02,
+		burstWindow: 6,
+		inspirationUptime: 0.25,
+	}),
 };
 
 export const P1_PRESET_BUILD = PresetUtils.makePresetBuild('P1', {

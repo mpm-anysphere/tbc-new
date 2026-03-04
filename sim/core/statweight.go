@@ -218,7 +218,7 @@ func buildStatWeightRequests(swr *proto.StatWeightsRequest) *proto.StatWeightReq
 			statModsHigh[stats.MeleeHitRating] = 0
 		} else if strings.Contains(statName, "Hit") {
 			statModsLow[stats.SpellHitRating] = 0
-			statModsLow[stats.SpellHitRating] = 0
+			statModsHigh[stats.SpellHitRating] = 0
 		} else if strings.Contains(statName, "MeleeCrit") {
 			statModsLow[stats.MeleeCritRating] = 0
 			statModsHigh[stats.MeleeCritRating] = 0
@@ -235,7 +235,7 @@ func buildStatWeightRequests(swr *proto.StatWeightsRequest) *proto.StatWeightReq
 		}
 
 		var lowSimRequest *proto.RaidSimRequest
-		if statModsLow[stat] > 0 {
+		if statModsLow[stat] != 0 {
 			lowSimRequest = googleProto.Clone(swBaseResponse.BaseRequest).(*proto.RaidSimRequest)
 			stat.AddToStatsProto(lowSimRequest.Raid.Parties[0].Players[0].BonusStats, statModsLow[stat])
 		}
@@ -321,7 +321,14 @@ func computeStatWeights(swcr *proto.StatWeightsCalcRequest) *proto.StatWeightsRe
 		calcWeightResults(baselinePlayer.Tmi, modPlayerLow.Tmi, modPlayerHigh.Tmi, &result.Tmi)
 		meanLow := (modPlayerLow.ChanceOfDeath - baselinePlayer.ChanceOfDeath) / statResult.StatData.ModLow
 		meanHigh := (modPlayerHigh.ChanceOfDeath - baselinePlayer.ChanceOfDeath) / statResult.StatData.ModHigh
-		result.PDeath.Weights.AddStat(stat, (meanLow+meanHigh)/2)
+
+		pDeathAvg := meanHigh
+		if hasLowMeasurement {
+			pDeathAvg += meanLow
+			pDeathAvg /= 2
+		}
+
+		result.PDeath.Weights.AddStat(stat, pDeathAvg)
 		result.PDeath.WeightsStdev.AddStat(stat, 0)
 	}
 

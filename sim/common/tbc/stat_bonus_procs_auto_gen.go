@@ -17,7 +17,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21142
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -32,7 +32,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18079
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -47,7 +47,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18079
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -62,7 +62,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18087
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -77,7 +77,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=15595
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -91,7 +91,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=16372
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -106,7 +106,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=16550
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -121,7 +121,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43588
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -137,7 +137,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=16621
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -152,7 +152,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18067
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -168,7 +168,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17252
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -183,7 +183,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17283
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -199,7 +199,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23930
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -214,7 +214,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17482
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -229,7 +229,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17330
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -244,7 +244,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17351
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -259,7 +259,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17496
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -274,7 +274,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21596
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -289,7 +289,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17619
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -304,7 +304,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17625
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -319,7 +319,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17668
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -334,7 +334,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18264
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -349,7 +349,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18385
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -364,7 +364,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18386
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -379,7 +379,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18388
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -394,7 +394,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18946
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -409,7 +409,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22683
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -424,7 +424,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=19380
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -439,7 +439,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=19380
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -454,7 +454,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -469,7 +469,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23049
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -484,7 +484,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23157
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -499,7 +499,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -515,7 +515,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -531,7 +531,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -546,7 +546,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23049
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -561,7 +561,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -576,7 +576,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -591,7 +591,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -606,7 +606,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -621,7 +621,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23049
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -636,7 +636,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -652,7 +652,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22801
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -667,7 +667,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23157
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -682,7 +682,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -697,7 +697,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -712,7 +712,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23049
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -727,7 +727,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -743,7 +743,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22801
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -758,7 +758,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43588
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -773,7 +773,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21347
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -788,7 +788,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21347
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -803,7 +803,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21347
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -818,7 +818,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=15438
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -833,7 +833,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23210
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -849,7 +849,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21186
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -864,7 +864,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=7712
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -879,7 +879,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21142
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -894,7 +894,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23046
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -909,7 +909,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23046
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -924,7 +924,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23046
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -939,7 +939,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23046
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -954,7 +954,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -969,7 +969,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -984,7 +984,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -999,7 +999,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1014,7 +1014,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21956
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1029,7 +1029,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21346
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1044,7 +1044,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21346
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1059,7 +1059,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21596
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1074,7 +1074,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21600
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1089,7 +1089,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=20885
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1104,7 +1104,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21346
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1119,7 +1119,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21346
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1134,7 +1134,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21596
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1149,7 +1149,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21600
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1164,7 +1164,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=20885
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1175,12 +1175,10 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// When the shield blocks it releases an electrical charge that damages all nearby enemies. This also has
-	// a chance of damaging the shield.
-	// https://www.wowhead.com/tbc/spell=22600
+	// https://www.wowhead.com/tbc/spell=22619
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1197,7 +1195,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=42184
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1212,7 +1210,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22849
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1227,7 +1225,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22855
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1242,7 +1240,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22854
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1257,7 +1255,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21347
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1272,7 +1270,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21601
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1287,7 +1285,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21348
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1303,7 +1301,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23132
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1318,7 +1316,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=14097
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1333,7 +1331,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43588
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1348,7 +1346,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18098
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1363,7 +1361,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=20885
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1378,7 +1376,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21599
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1393,7 +1391,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23266
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1408,7 +1406,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=16782
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1423,7 +1421,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=16782
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1438,7 +1436,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23682
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1454,7 +1452,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23684
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1469,7 +1467,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23687
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1484,7 +1482,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23701
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1500,7 +1498,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23721
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1515,7 +1513,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23724
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1531,7 +1529,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23725
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1547,7 +1545,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23726
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1562,7 +1560,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24428
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1577,7 +1575,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24188
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1592,7 +1590,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24191
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1607,7 +1605,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24429
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1622,7 +1620,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24430
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1637,7 +1635,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24436
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1652,7 +1650,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24434
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1667,7 +1665,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24432
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1683,7 +1681,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24198
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1698,7 +1696,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24241
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1713,7 +1711,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24268
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1728,7 +1726,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18207
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1744,7 +1742,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24574
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1760,7 +1758,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24661
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1776,7 +1774,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24658
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1791,7 +1789,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24571
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1806,7 +1804,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24531
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1821,7 +1819,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24532
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1836,7 +1834,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24499
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1851,7 +1849,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24291
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1866,7 +1864,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24292
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1881,7 +1879,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=14098
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1896,7 +1894,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=7712
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1911,7 +1909,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1926,7 +1924,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1941,7 +1939,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1956,7 +1954,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1971,7 +1969,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -1986,7 +1984,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2001,7 +1999,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2016,7 +2014,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23991
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2031,7 +2029,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23991
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2046,7 +2044,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2061,7 +2059,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2076,7 +2074,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2091,7 +2089,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2106,7 +2104,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2121,7 +2119,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2136,7 +2134,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2151,7 +2149,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=14097
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2166,7 +2164,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21595
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2181,7 +2179,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=25892
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2196,7 +2194,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=26168
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2212,7 +2210,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=35126
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2227,7 +2225,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=11789
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2243,7 +2241,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=26467
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2258,7 +2256,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=26400
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2274,7 +2272,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=26463
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2289,7 +2287,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21596
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2304,7 +2302,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=26606
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2319,7 +2317,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=26789
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2334,7 +2332,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27038
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2349,7 +2347,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27225
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2364,7 +2362,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27206
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2379,7 +2377,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27518
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2394,7 +2392,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=0
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2410,7 +2408,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2425,7 +2423,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27559
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2440,7 +2438,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27655
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2455,7 +2453,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27797
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2470,7 +2468,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27855
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2485,7 +2483,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27853
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2500,7 +2498,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27846
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2515,7 +2513,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27848
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2530,7 +2528,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27847
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2544,7 +2542,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31796
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2562,7 +2560,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28282
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2577,7 +2575,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23049
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2593,7 +2591,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22801
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2608,7 +2606,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2623,7 +2621,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23046
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2638,7 +2636,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2653,7 +2651,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2668,7 +2666,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2683,7 +2681,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28862
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2698,7 +2696,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28847
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2713,7 +2711,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28849
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2728,7 +2726,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28851
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2743,7 +2741,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28760
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2758,7 +2756,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43588
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2773,7 +2771,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28870
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2788,7 +2786,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28870
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2803,7 +2801,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28870
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2818,7 +2816,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22849
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2833,7 +2831,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=24197
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2848,7 +2846,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17319
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2863,7 +2861,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17319
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2878,7 +2876,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17319
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2893,7 +2891,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18098
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2908,7 +2906,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28876
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2923,7 +2921,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18098
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2938,7 +2936,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=18098
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2953,7 +2951,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28854
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2968,7 +2966,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28855
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2983,7 +2981,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28857
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -2998,7 +2996,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28856
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3013,7 +3011,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28853
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3029,7 +3027,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28852
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3045,7 +3043,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=29112
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3061,7 +3059,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=29151
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3076,7 +3074,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3091,7 +3089,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23046
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3106,7 +3104,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23049
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3121,7 +3119,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3136,7 +3134,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3151,7 +3149,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43588
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3166,7 +3164,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=29506
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3181,7 +3179,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34518
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3196,7 +3194,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34518
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3211,7 +3209,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=29602
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3226,7 +3224,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=29830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3241,7 +3239,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=51582
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3256,7 +3254,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=30458
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3272,7 +3270,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=30507
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3288,7 +3286,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46567
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3303,7 +3301,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=30997
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3318,7 +3316,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=30994
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3333,7 +3331,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=30999
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3348,7 +3346,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31000
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3363,7 +3361,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31002
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3378,7 +3376,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31023
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3393,7 +3391,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31024
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3408,7 +3406,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31033
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3423,7 +3421,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31026
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3438,7 +3436,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31035
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3453,7 +3451,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31036
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3468,7 +3466,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31045
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3483,7 +3481,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31771
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3498,7 +3496,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34263
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3513,7 +3511,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=31794
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3529,7 +3527,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34318
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3544,7 +3542,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3559,7 +3557,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32140
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3574,7 +3572,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3589,7 +3587,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32402
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3604,7 +3602,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32403
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3619,7 +3617,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32401
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3634,7 +3632,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32410
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3649,7 +3647,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32599
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3664,7 +3662,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32641
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3679,7 +3677,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32643
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3694,7 +3692,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33828
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3710,7 +3708,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3725,7 +3723,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3740,7 +3738,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33066
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3755,7 +3753,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34323
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3770,7 +3768,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33020
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3785,7 +3783,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33012
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3800,7 +3798,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33014
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3815,7 +3813,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3830,7 +3828,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34292
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3841,26 +3839,11 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Each successful block heals you for 120. Effect lasts 20s.
-	// https://www.wowhead.com/tbc/spell=33089
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 27529, ItemName: "Figurine of the Colossus"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
 	// Increases healing done by Healing Wave by up to 88.
 	// https://www.wowhead.com/tbc/spell=34294
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3875,7 +3858,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3890,7 +3873,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3905,7 +3888,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34253
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3916,26 +3899,11 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20s.
-	// https://www.wowhead.com/tbc/spell=39228
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 27770, ItemName: "Argussian Compass"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
 	// Increases the attack power bonus on Windfury Weapon attacks by 80.
 	// https://www.wowhead.com/tbc/spell=34244
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3950,7 +3918,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3965,7 +3933,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34246
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3980,7 +3948,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33394
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -3995,7 +3963,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33486
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4010,7 +3978,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34252
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4021,12 +3989,10 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Sometimes heals bearer of 120 damage when damaging an enemy in melee and chance on ranged hit to restore
-	// 172 mana to the bearer.
-	// https://www.wowhead.com/tbc/spell=33504
+	// https://www.wowhead.com/tbc/spell=39599
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4044,7 +4010,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33513
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4060,7 +4026,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33523
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4076,7 +4042,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33556
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4093,7 +4059,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33557
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4109,7 +4075,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33565
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4125,7 +4091,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37736
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4140,7 +4106,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33695
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4155,7 +4121,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33696
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4171,7 +4137,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33743
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4187,7 +4153,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33758
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4202,7 +4168,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4217,7 +4183,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4232,7 +4198,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34230
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4247,7 +4213,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34231
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4262,7 +4228,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4277,7 +4243,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=42367
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4292,7 +4258,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34135
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4307,7 +4273,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34132
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4322,7 +4288,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38346
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4337,7 +4303,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34241
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4352,7 +4318,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38322
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4367,7 +4333,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38321
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4382,7 +4348,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34580
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4397,7 +4363,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34587
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4413,7 +4379,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38332
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4429,7 +4395,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38320
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4444,7 +4410,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4459,7 +4425,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4474,7 +4440,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4489,7 +4455,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4505,7 +4471,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4520,7 +4486,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33020
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4535,7 +4501,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4550,7 +4516,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4565,7 +4531,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4580,7 +4546,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4595,7 +4561,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33066
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4610,7 +4576,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4626,7 +4592,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=29601
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4641,7 +4607,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37208
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4656,7 +4622,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34696
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4671,7 +4637,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4686,7 +4652,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4701,7 +4667,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4716,7 +4682,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=0
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4731,7 +4697,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4747,7 +4713,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4762,7 +4728,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33020
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4777,7 +4743,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4792,7 +4758,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4807,7 +4773,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4822,7 +4788,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4837,7 +4803,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33066
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4852,7 +4818,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4867,7 +4833,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=35352
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4882,7 +4848,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=35078
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4898,7 +4864,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=35126
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4913,7 +4879,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43588
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4928,7 +4894,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37742
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4943,7 +4909,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37740
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4958,7 +4924,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33693
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4973,7 +4939,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=35175
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -4988,7 +4954,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23990
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5004,7 +4970,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22801
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5019,7 +4985,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5035,7 +5001,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22801
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5050,7 +5016,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5065,7 +5031,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=36070
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5081,7 +5047,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=35126
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5096,7 +5062,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37738
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5111,7 +5077,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37737
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5126,7 +5092,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37739
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5141,7 +5107,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5156,7 +5122,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=36479
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5171,7 +5137,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=36479
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5187,7 +5153,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=36483
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5202,7 +5168,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=36413
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5217,7 +5183,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37198
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5232,7 +5198,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37507
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5247,7 +5213,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37174
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5262,7 +5228,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5277,7 +5243,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38324
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5292,7 +5258,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37243
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5307,7 +5273,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=0
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5323,7 +5289,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37447
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5338,7 +5304,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37649
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5353,7 +5319,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37651
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5368,7 +5334,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37652
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5383,7 +5349,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37877
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5399,7 +5365,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37896
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5414,7 +5380,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=27043
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5430,7 +5396,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37760
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5445,7 +5411,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37762
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5460,7 +5426,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37763
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5475,7 +5441,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38297
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5490,7 +5456,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38314
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5505,7 +5471,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5520,7 +5486,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38501
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5535,7 +5501,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5550,7 +5516,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5565,7 +5531,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5580,7 +5546,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5595,7 +5561,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5610,7 +5576,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5625,7 +5591,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5640,7 +5606,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5655,7 +5621,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5670,7 +5636,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5685,7 +5651,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37651
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5700,7 +5666,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=39446
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5715,7 +5681,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5730,7 +5696,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5745,7 +5711,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5760,7 +5726,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5775,7 +5741,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5790,7 +5756,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5806,7 +5772,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5821,7 +5787,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33020
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5836,7 +5802,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5851,7 +5817,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5866,7 +5832,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5881,7 +5847,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38501
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5896,7 +5862,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5911,7 +5877,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5926,7 +5892,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33066
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5941,7 +5907,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5956,7 +5922,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5971,7 +5937,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -5986,7 +5952,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6001,7 +5967,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33066
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6016,7 +5982,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6031,7 +5997,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6047,7 +6013,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6062,7 +6028,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6077,7 +6043,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6092,7 +6058,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33020
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6107,7 +6073,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6122,7 +6088,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6137,7 +6103,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6152,7 +6118,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6167,7 +6133,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6182,7 +6148,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6197,7 +6163,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=41037
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6212,7 +6178,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=41040
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6227,7 +6193,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=0
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6242,26 +6208,11 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=41042
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
 	//	{ItemID: 32368, ItemName: "Tome of the Lightbringer"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
-	// When struck in combat has a 2% chance of increasing your Armor by 2000 for 10 secs.
-	// https://www.wowhead.com/tbc/spell=40408
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 32375, ItemName: "Bulwark of Azzinoth"},
 	// })
 
 	// TODO: Manual implementation required
@@ -6273,7 +6224,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=39926
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6288,7 +6239,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=48403
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6304,7 +6255,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40459
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6320,7 +6271,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40442
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6335,7 +6286,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40487
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6350,7 +6301,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40483
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6366,7 +6317,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40470
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6382,7 +6333,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40438
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6398,7 +6349,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40463
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6413,7 +6364,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40460
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6428,7 +6379,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40480
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6443,7 +6394,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=37656
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6459,7 +6410,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=40972
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6474,7 +6425,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=12438
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6489,7 +6440,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=12438
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6504,7 +6455,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34128
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6519,7 +6470,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=42369
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6534,7 +6485,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=42371
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6549,7 +6500,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43742
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6564,7 +6515,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43747
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6580,7 +6531,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43743
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6595,7 +6546,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43752
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6610,7 +6561,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43751
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6625,7 +6576,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43749
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6640,7 +6591,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43736
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6655,7 +6606,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43738
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6670,7 +6621,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43740
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6685,7 +6636,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6701,7 +6652,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44835
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6716,7 +6667,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6731,7 +6682,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6746,7 +6697,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6761,7 +6712,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6777,7 +6728,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6792,7 +6743,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6807,7 +6758,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6822,7 +6773,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44297
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6837,7 +6788,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6852,7 +6803,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6867,7 +6818,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6882,7 +6833,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44297
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6897,7 +6848,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6912,7 +6863,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44301
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6927,7 +6878,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6942,7 +6893,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43873
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6957,7 +6908,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43699
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6972,7 +6923,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43725
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -6987,7 +6938,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43727
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7002,7 +6953,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43729
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7017,7 +6968,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43850
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7032,7 +6983,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43851
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7047,7 +6998,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43852
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7062,7 +7013,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43857
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7077,7 +7028,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43858
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7092,7 +7043,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43859
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7107,7 +7058,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43841
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7122,7 +7073,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43844
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7137,7 +7088,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43845
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7152,7 +7103,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43840
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7167,7 +7118,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43842
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7182,7 +7133,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43843
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7197,7 +7148,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43854
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7212,7 +7163,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43855
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7227,7 +7178,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43856
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7242,7 +7193,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43860
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7257,7 +7208,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43861
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7272,7 +7223,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=43862
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7287,7 +7238,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44972
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7304,7 +7255,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45042
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7319,7 +7270,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45052
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7334,7 +7285,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45055
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7345,32 +7296,17 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Collects 100 Holy Energy from healing spells you cast. Cannot collect more than 2000 Holy Energy.
-	// https://www.wowhead.com/tbc/spell=45062
+	// Release all accumulated Holy Energy to instantly heal current friendly target by the amount of Holy Energy
+	// accumulated.
+	// https://www.wowhead.com/tbc/spell=45064
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
 	//	{ItemID: 34471, ItemName: "Vial of the Sunwell"},
 	//	{ItemID: 34471, ItemName: "Vial of the Sunwell"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
-	// Melee attacks which reduce you below 35% health cause you to gain 152 dodge rating for 10s. Cannot occur
-	// more than once every 30 sec.
-	// https://www.wowhead.com/tbc/spell=45058
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 34473, ItemName: "Commendation of Kael'thas"},
 	// })
 
 	// TODO: Manual implementation required
@@ -7382,7 +7318,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45484
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7398,7 +7334,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45481
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7414,7 +7350,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45482
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7430,7 +7366,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=45483
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7445,7 +7381,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7461,7 +7397,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44835
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7476,7 +7412,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7491,7 +7427,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7506,7 +7442,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46088
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7521,7 +7457,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46090
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7536,7 +7472,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46100
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7551,7 +7487,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7566,7 +7502,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7582,7 +7518,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7597,7 +7533,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46091
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7612,7 +7548,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46093
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7627,7 +7563,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46095
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7642,7 +7578,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7657,7 +7593,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7672,7 +7608,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44297
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7687,7 +7623,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38522
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7702,7 +7638,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7717,7 +7653,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7732,7 +7668,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44297
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7747,7 +7683,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7762,7 +7698,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=44301
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7777,7 +7713,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46096
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7792,7 +7728,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46097
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7807,7 +7743,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46099
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7822,7 +7758,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7837,7 +7773,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46354
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7852,7 +7788,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33063
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7867,7 +7803,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7882,7 +7818,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23044
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7897,7 +7833,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33066
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7912,7 +7848,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7927,7 +7863,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7943,7 +7879,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32748
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7959,7 +7895,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=33830
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7975,7 +7911,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=28539
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -7991,7 +7927,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8006,7 +7942,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8021,7 +7957,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=32973
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8037,7 +7973,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8052,7 +7988,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=22778
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8067,7 +8003,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=23300
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8082,7 +8018,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46643
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8097,7 +8033,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=51582
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8112,7 +8048,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=46785
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8127,7 +8063,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17619
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8142,7 +8078,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17619
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8157,7 +8093,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17619
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8172,7 +8108,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=17619
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8187,7 +8123,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=50070
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8201,7 +8137,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=52172
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskEmpty,
+	//	ProcMask:           core.ProcMaskUnknown,
 	//	Outcome:            core.OutcomeEmpty,
 	//	RequireDamageDealt: false
 	// }, []shared.ItemVariant{
@@ -8212,7 +8148,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=16928
 	shared.NewStackingStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8292,7 +8228,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34513
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8303,7 +8239,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=34513
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8314,7 +8250,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21165
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8325,7 +8261,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21165
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8336,7 +8272,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=21165
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8459,7 +8395,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=38307
 	shared.NewStackingStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackOnSpellHitDealt,
-		ProcMask:           core.ProcMaskMeleeMHAuto | core.ProcMaskMeleeOHAuto | core.ProcMaskMeleeMHSpecial | core.ProcMaskMeleeOHSpecial,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8493,7 +8429,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=41261
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackEmpty,
-		ProcMask:           core.ProcMaskEmpty,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{
@@ -8505,7 +8441,7 @@ func RegisterAllProcs() {
 	// https://www.wowhead.com/tbc/spell=41263
 	shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 		Callback:           core.CallbackEmpty,
-		ProcMask:           core.ProcMaskEmpty,
+		ProcMask:           core.ProcMaskUnknown,
 		Outcome:            core.OutcomeLanded,
 		RequireDamageDealt: true,
 	}, []shared.ItemVariant{

@@ -514,7 +514,7 @@ func (war *Warrior) registerImprovedMortalStrike() {
 	war.AddStaticMod(core.SpellModConfig{
 		ClassMask:  SpellMaskMortalStrike,
 		Kind:       core.SpellMod_DamageDone_Flat,
-		FloatValue: float64(war.Talents.ImprovedMortalStrike),
+		FloatValue: 0.01 * float64(war.Talents.ImprovedMortalStrike),
 	})
 }
 
