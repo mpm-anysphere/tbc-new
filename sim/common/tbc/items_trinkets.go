@@ -348,7 +348,7 @@ func init() {
 			},
 		})
 
-		character.ItemSwap.RegisterProc(27683, procAura)
+		character.ItemSwap.RegisterProc(30621, procAura)
 	})
 
 	// Sextant of Unstable Currents
