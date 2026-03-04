@@ -294,7 +294,7 @@ export const runConcurrentStatWeights = async (
 		calcRequest.statSimResults.push(
 			StatWeightsStatResultData.create({
 				statData: statReqData.statData,
-				resultLow: lowRes || RaidSimResult.create(),
+				resultLow: lowRes,
 				resultHigh: highRes,
 			}),
 		);

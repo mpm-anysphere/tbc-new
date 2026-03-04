@@ -312,7 +312,6 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 			Type:  CooldownTypeDPS,
 		})
 	case 22788:
-
 		actionID := ActionID{ItemID: 22788}
 
 		flameCapProc := character.RegisterSpell(SpellConfig{
