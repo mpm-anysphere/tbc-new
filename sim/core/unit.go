@@ -369,12 +369,12 @@ func (unit *Unit) processDynamicBonus(sim *Simulation, bonus stats.Stats) {
 			unit.currentMana = unit.MaxMana()
 		}
 	}
-	if bonus[stats.MeleeHasteRating] > 0 {
+	if bonus[stats.MeleeHasteRating] != 0 {
 		unit.updateAttackSpeed()
 		unit.updateMeleeAndRangedHaste()
 		unit.AutoAttacks.UpdateSwingTimers(sim)
 	}
-	if bonus[stats.SpellHasteRating] > 0 {
+	if bonus[stats.SpellHasteRating] != 0 {
 		unit.updateCastSpeed()
 	}
 

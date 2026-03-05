@@ -16,7 +16,8 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	}
 
 	if debuffs.CurseOfElements != proto.TristateEffect_TristateEffectMissing {
-		MakePermanent(CurseOfElementsAura(target, IsImproved(debuffs.CurseOfElements)))
+		ranks := GetTristateValueInt32(debuffs.CurseOfElements, 0, 3)
+		MakePermanent(CurseOfElementsAura(target, ranks))
 	}
 
 	if debuffs.CurseOfRecklessness {
@@ -106,7 +107,7 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	}
 
 	if debuffs.ShadowEmbrace {
-		MakePermanent(ShadowEmbraceAura(target))
+		MakePermanent(ShadowEmbraceAura(target, 5))
 	}
 
 	if debuffs.ShadowWeaving {
@@ -170,11 +171,8 @@ func BloodFrenzyAura(target *Unit, points int32) *Aura {
 }
 
 // Damage Taken Debuffs
-func CurseOfElementsAura(target *Unit, improved bool) *Aura {
-	multiplier := 1.10
-	if improved {
-		multiplier += 0.03
-	}
+func CurseOfElementsAura(target *Unit, ranks int32) *Aura {
+	multiplier := 1.10 + 0.01*float64(ranks)
 
 	return damageTakenDebuff(target, "Curse of Elements", 27228,
 		[]stats.SchoolIndex{
@@ -342,18 +340,6 @@ func HuntersMarkAura(target *Unit, improved bool) *Aura {
 func ImprovedScorchAura(target *Unit, startingStacks int32) *Aura {
 	fireBonus := 0.03
 
-	dynamicMods := make(map[int32]*SpellMod, len(target.Env.AllUnits))
-
-	for _, unit := range target.Env.AllUnits {
-		if unit.Type == PlayerUnit || unit.Type == PetUnit {
-			dynamicMods[unit.UnitIndex] = unit.AddDynamicMod(SpellModConfig{
-				Kind:       SpellMod_DamageDone_Pct,
-				FloatValue: 0,
-				School:     SpellSchoolFire,
-			})
-		}
-	}
-
 	return target.GetOrRegisterAura(Aura{
 		Label:     "Improved Scorch",
 		ActionID:  ActionID{SpellID: 12873},
@@ -363,15 +349,10 @@ func ImprovedScorchAura(target *Unit, startingStacks int32) *Aura {
 			aura.SetStacks(sim, startingStacks)
 		},
 		OnStacksChange: func(aura *Aura, sim *Simulation, oldStacks int32, newStacks int32) {
-			for _, unit := range sim.AllUnits {
-				if unit.Type == PlayerUnit || unit.Type == PetUnit {
-					dynamicMods[unit.UnitIndex].Activate()
-					dynamicMods[unit.UnitIndex].UpdateFloatValue(fireBonus * float64(newStacks))
-				}
-			}
+			target.PseudoStats.SchoolDamageDealtMultiplier[stats.SchoolIndexFire] /= 1.0 + fireBonus*float64(oldStacks)
+			target.PseudoStats.SchoolDamageDealtMultiplier[stats.SchoolIndexFire] *= 1.0 + fireBonus*float64(newStacks)
 		},
 	})
-
 }
 
 func ImprovedSealOfTheCrusaderAura(target *Unit) *Aura {
@@ -380,7 +361,6 @@ func ImprovedSealOfTheCrusaderAura(target *Unit) *Aura {
 		ActionID: ActionID{SpellID: 20337},
 		Duration: time.Second * 60,
 	}).AttachAdditivePseudoStatBuff(&target.PseudoStats.ReducedCritTakenChance, -3)
-
 }
 
 func ImprovedShadowBoltAura(target *Unit, uptime float64, points int32) *Aura {
@@ -518,8 +498,8 @@ func ScreechAura(target *Unit) *Aura {
 	return statsDebuff(target, "Screech", 27051, stats.Stats{stats.AttackPower: -210}, time.Second*4)
 }
 
-func ShadowEmbraceAura(target *Unit) *Aura {
-	return damageDealtDebuff(target, "Shadow Embrace", 32394, []stats.SchoolIndex{stats.SchoolIndexPhysical}, 0.95, NeverExpires)
+func ShadowEmbraceAura(target *Unit, ranks int32) *Aura {
+	return damageDealtDebuff(target, "Shadow Embrace", 32394, []stats.SchoolIndex{stats.SchoolIndexPhysical}, 1.0-(.01*float64(ranks)), NeverExpires)
 }
 
 func ShadowWeavingAura(target *Unit) *Aura {

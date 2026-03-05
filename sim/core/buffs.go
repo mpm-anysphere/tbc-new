@@ -145,19 +145,19 @@ func applyBuffEffects(agent Agent, raidBuffs *proto.RaidBuffs, partyBuffs *proto
 
 	// Party Buffs
 	if partyBuffs.AtieshDruid > 0 {
-		AtieshAura(char, proto.Class_ClassDruid.Enum(), float64(partyBuffs.AtieshDruid))
+		AtieshAura(char, proto.Class_ClassDruid, float64(partyBuffs.AtieshDruid))
 	}
 
 	if partyBuffs.AtieshMage > 0 {
-		AtieshAura(char, proto.Class_ClassMage.Enum(), float64(partyBuffs.AtieshMage))
+		AtieshAura(char, proto.Class_ClassMage, float64(partyBuffs.AtieshMage))
 	}
 
 	if partyBuffs.AtieshPriest > 0 {
-		AtieshAura(char, proto.Class_ClassPriest.Enum(), float64(partyBuffs.AtieshPriest))
+		AtieshAura(char, proto.Class_ClassPriest, float64(partyBuffs.AtieshPriest))
 	}
 
 	if partyBuffs.AtieshWarlock > 0 {
-		AtieshAura(char, proto.Class_ClassWarlock.Enum(), float64(partyBuffs.AtieshWarlock))
+		AtieshAura(char, proto.Class_ClassWarlock, float64(partyBuffs.AtieshWarlock))
 	}
 
 	if partyBuffs.BattleShout != proto.TristateEffect_TristateEffectMissing {
@@ -325,8 +325,8 @@ func ArcaneBrillianceAura(char *Character) *Aura {
 func DivineSpiritAura(char *Character, improved bool) *Aura {
 	spiritBuff := stats.Stats{stats.Spirit: 50}
 
-	dsSDStatDep := char.NewDynamicStatDependency(stats.Spirit, stats.SpellDamage, 1.1)
-	dsHPStatDep := char.NewDynamicStatDependency(stats.Spirit, stats.HealingPower, 1.1)
+	dsSDStatDep := char.NewDynamicStatDependency(stats.Spirit, stats.SpellDamage, 0.1)
+	dsHPStatDep := char.NewDynamicStatDependency(stats.Spirit, stats.HealingPower, 0.1)
 
 	return char.GetOrRegisterAura(Aura{
 		Label:      "Divine Spirit Buff",
@@ -825,9 +825,9 @@ func WrathOfAirTotemAura(char *Character, improved bool) *Aura {
 //	Item Buffs
 ////////////////////////////
 
-func AtieshAura(char *Character, class *proto.Class, numStaves float64) *Aura {
+func AtieshAura(char *Character, class proto.Class, numStaves float64) *Aura {
 	switch class {
-	case proto.Class_ClassDruid.Enum():
+	case proto.Class_ClassDruid:
 		return makeStatBuff(char, BuffConfig{
 			Label:    "Power of the Guardian - Druid",
 			ActionID: ActionID{SpellID: 28145},
@@ -835,7 +835,7 @@ func AtieshAura(char *Character, class *proto.Class, numStaves float64) *Aura {
 				{stats.MP5, 11 * numStaves, false},
 			},
 		})
-	case proto.Class_ClassMage.Enum():
+	case proto.Class_ClassMage:
 		return makeStatBuff(char, BuffConfig{
 			Label:    "Power of the Guardian - Mage",
 			ActionID: ActionID{SpellID: 28142},
@@ -843,7 +843,7 @@ func AtieshAura(char *Character, class *proto.Class, numStaves float64) *Aura {
 				{stats.SpellCritRating, 28 * numStaves, false},
 			},
 		})
-	case proto.Class_ClassPriest.Enum():
+	case proto.Class_ClassPriest:
 		return makeStatBuff(char, BuffConfig{
 			Label:    "Power of the Guardian - Priest",
 			ActionID: ActionID{SpellID: 28144},
@@ -921,7 +921,7 @@ func EyeOfTheNightAura(char *Character) *Aura {
 		Label:    "Eye of the Night",
 		ActionID: ActionID{SpellID: 31033},
 		Stats: []StatConfig{
-			{stats.SpellDamage, 33, false},
+			{stats.SpellDamage, 34, false},
 		},
 	})
 }

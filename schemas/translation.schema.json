@@ -4581,7 +4581,7 @@
                     "tooltip"
                   ]
                 },
-                "warlock_next_exhale_target": {
+                "warlock_cast_assigned_curse": {
                   "type": "object",
                   "properties": {
                     "label": {
@@ -4626,7 +4626,7 @@
                 "custom_rotation",
                 "optimal_rotation_action",
                 "guardian_hotw_dps_rotation",
-                "warlock_next_exhale_target"
+				"warlock_cast_assigned_curse"
               ]
             },
             "values": {
@@ -6221,23 +6221,7 @@
                     "tooltip"
                   ]
                 },
-                "warlock_hand_of_guldan_in_flight": {
-                  "type": "object",
-                  "properties": {
-                    "label": {
-                      "type": "string"
-                    },
-                    "tooltip": {
-                      "type": "string"
-                    }
-                  },
-                  "additionalProperties": false,
-                  "required": [
-                    "label",
-                    "tooltip"
-                  ]
-                },
-                "affliction_current_snapshot": {
+				"warlock_assigned_curse_is_active": {
                   "type": "object",
                   "properties": {
                     "label": {
@@ -6492,8 +6476,7 @@
                 "totem_remaining_time",
                 "cat_excess_energy",
                 "cat_new_savage_roar_duration",
-                "warlock_hand_of_guldan_in_flight",
-                "affliction_current_snapshot",
+				"warlock_assigned_curse_is_active",
                 "protection_paladin_damage_taken_last_global",
                 "aura_remaining_icd",
                 "aura_icd_is_ready",

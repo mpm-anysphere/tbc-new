@@ -390,13 +390,13 @@ func (rogue *Rogue) registerShadowstep() {
 		ActionID: actionID,
 		Duration: time.Second * 10,
 		OnSpellHitDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
-			if spell.ClassSpellMask&RogueSpellsAll != 0 {
+			if spell.ClassSpellMask&RogueSpellActives != 0 {
 				aura.Deactivate(sim)
 			}
 		},
 	}).AttachSpellMod(core.SpellModConfig{
 		Kind:       core.SpellMod_DamageDone_Flat,
-		ClassMask:  RogueSpellsAll,
+		ClassMask:  RogueSpellActives,
 		FloatValue: 0.2,
 	})
 
