@@ -46,7 +46,6 @@ func (warlock *Warlock) registerCurseOfAgony() {
 
 			TickLength:               2 * time.Second,
 			NumberOfTicks:            12,
-			AffectedByCastSpeed:      false,
 			PeriodicDamageMultiplier: 1,
 
 			OnSnapshot: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {

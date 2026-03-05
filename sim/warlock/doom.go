@@ -47,7 +47,6 @@ func (warlock *Warlock) registerCurseOfDoom() {
 			},
 			NumberOfTicks:            1,
 			TickLength:               1 * time.Minute,
-			AffectedByCastSpeed:      false,
 			BonusCoefficient:         doomCoeff,
 			PeriodicDamageMultiplier: 1,
 
