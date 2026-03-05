@@ -31,6 +31,7 @@ func (war *Warrior) registerArmsTalents() {
 	// Tier 5
 	war.registerPoleaxeSpecialization()
 	war.registerDeathWish()
+	war.registerMaceSpecialization()
 	war.registerSwordSpecialization()
 
 	// Tier 6
@@ -347,6 +348,47 @@ func (war *Warrior) registerDeathWish() {
 	war.AddMajorCooldown(core.MajorCooldown{
 		Spell: deathWishSpell,
 		Type:  core.CooldownTypeDPS,
+	})
+}
+
+func (war *Warrior) registerMaceSpecialization() {
+	if war.Talents.MaceSpecialization == 0 {
+		return
+	}
+
+	actionID := core.ActionID{SpellID: 5530}
+	rageMetrics := war.NewRageMetrics(actionID)
+
+	spell := war.RegisterSpell(core.SpellConfig{
+		ActionID: core.ActionID{SpellID: 5530},
+
+		ApplyEffects: func(sim *core.Simulation, _ *core.Unit, spell *core.Spell) {
+			war.AddRage(sim, 7, rageMetrics)
+		},
+	})
+
+	newMaceSpecializationDPM := func() *core.DynamicProcManager {
+		return war.NewStaticLegacyPPMManager(
+			0.3*float64(war.Talents.MaceSpecialization), // 5/5 has 1.5 PPM - No data for any other ranks, so this is an estimate
+			war.GetProcMaskForTypes(proto.WeaponType_WeaponTypeMace),
+		)
+	}
+
+	dpm := newMaceSpecializationDPM()
+
+	war.MakeProcTriggerAura(core.ProcTrigger{
+		Name:               "Mace Specialization",
+		DPM:                dpm,
+		TriggerImmediately: true,
+		Outcome:            core.OutcomeLanded,
+		Callback:           core.CallbackOnSpellHitDealt,
+		Handler: func(sim *core.Simulation, _ *core.Spell, result *core.SpellResult) {
+			spell.Cast(sim, result.Target)
+		},
+	})
+
+	war.RegisterItemSwapCallback(core.AllMeleeWeaponSlots(), func(sim *core.Simulation, slot proto.ItemSlot) {
+		dpm = newMaceSpecializationDPM()
 	})
 }
 
