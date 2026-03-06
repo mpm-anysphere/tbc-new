@@ -42,7 +42,7 @@ func (rogue *Rogue) registerAmbushSpell() {
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			rogue.BreakStealth(sim)
 			baseDamage := baseDamage +
-				spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower())
+				spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower(target))
 
 			result := spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialNoBlockDodgeParry)
 

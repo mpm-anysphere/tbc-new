@@ -333,9 +333,9 @@ func (rogue *Rogue) newMutilateHitSpell(isMH bool) *core.Spell {
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			baseDamage := mutBaseDamage
 			if isMH {
-				baseDamage += spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower())
+				baseDamage += spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower(target))
 			} else {
-				baseDamage += spell.Unit.OHNormalizedWeaponDamage(sim, spell.MeleeAttackPower())
+				baseDamage += spell.Unit.OHNormalizedWeaponDamage(sim, spell.MeleeAttackPower(target))
 			}
 
 			oldMultiplier := spell.DamageMultiplier
