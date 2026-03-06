@@ -1,6 +1,6 @@
 import { Player } from '../../core/player';
 import * as PresetUtils from '../../core/preset_utils';
-import { ConsumesSpec, Debuffs, HandType, ItemSlot, Profession, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
+import { ConsumesSpec, Debuffs, HandType, ItemSlot, PartyBuffs, Profession, PseudoStat, Race, Spec, Stat, TristateEffect } from '../../core/proto/common';
 import { SavedTalents } from '../../core/proto/ui';
 import { DpsWarrior_Options as WarriorOptions, WarriorShout, WarriorStance } from '../../core/proto/warrior';
 import { Stats } from '../../core/proto_utils/stats';
@@ -107,7 +107,7 @@ export const P2_FURY_EP_PRESET = PresetUtils.makePresetEpWeights(
 			[Stat.StatAgility]: 0.75,
 			[Stat.StatAttackPower]: 0.45,
 			[Stat.StatMeleeHitRating]: 0.56,
-			[Stat.StatMeleeCritRating]: 0.90,
+			[Stat.StatMeleeCritRating]: 0.9,
 			[Stat.StatMeleeHasteRating]: 0.86,
 			[Stat.StatArmorPenetration]: 0.2,
 			[Stat.StatExpertiseRating]: 1.31,
@@ -129,7 +129,7 @@ export const P1_ARMS_EP_PRESET = PresetUtils.makePresetEpWeights(
 			[Stat.StatAttackPower]: 0.46,
 			[Stat.StatMeleeHitRating]: 0.5,
 			[Stat.StatMeleeCritRating]: 0.95,
-			[Stat.StatMeleeHasteRating]: 0.80,
+			[Stat.StatMeleeHasteRating]: 0.8,
 			[Stat.StatArmorPenetration]: 0.19,
 			[Stat.StatExpertiseRating]: 1.46,
 		},
@@ -189,9 +189,11 @@ export const ArmsKebabTalents = {
 export const DefaultOptions = WarriorOptions.create({
 	classOptions: {
 		queueDelay: 250,
-		startingRage: 0,
+		startingRage: 50,
 		defaultShout: WarriorShout.WarriorShoutBattle,
 		defaultStance: WarriorStance.WarriorStanceBerserker,
+		hasBsT2: true,
+		stanceSnapshot: true,
 	},
 });
 
@@ -233,6 +235,10 @@ export const P1_PLAYER_SETTINGS: PresetUtils.PresetSettings = {
 export const P2_PLAYER_SETTINGS: PresetUtils.PresetSettings = {
 	name: 'P2',
 	playerOptions: OtherDefaults,
+	partyBuffs: PartyBuffs.create({
+		...WarriorPresets.DefaultPartyBuffs,
+		leaderOfThePack: TristateEffect.TristateEffectImproved,
+	}),
 	debuffs: Debuffs.create({
 		...WarriorPresets.DefaultDebuffs,
 		...defaultExposeWeaknessSettings(Phase.Phase2),
@@ -248,6 +254,7 @@ export const P3_PLAYER_SETTINGS: PresetUtils.PresetSettings = {
 		...OtherDefaults,
 		profession2: Profession.Jewelcrafting,
 	},
+	partyBuffs: P2_PLAYER_SETTINGS.partyBuffs,
 	debuffs: Debuffs.create({
 		...WarriorPresets.DefaultDebuffs,
 		...defaultExposeWeaknessSettings(Phase.Phase3),
@@ -263,6 +270,7 @@ export const P35_PLAYER_SETTINGS: PresetUtils.PresetSettings = {
 		...OtherDefaults,
 		profession2: Profession.Jewelcrafting,
 	},
+	partyBuffs: P2_PLAYER_SETTINGS.partyBuffs,
 	debuffs: Debuffs.create({
 		...WarriorPresets.DefaultDebuffs,
 		...defaultExposeWeaknessSettings(Phase.Phase4),
@@ -278,6 +286,7 @@ export const P4_PLAYER_SETTINGS: PresetUtils.PresetSettings = {
 		...OtherDefaults,
 		profession2: Profession.Jewelcrafting,
 	},
+	partyBuffs: P2_PLAYER_SETTINGS.partyBuffs,
 	debuffs: Debuffs.create({
 		...WarriorPresets.DefaultDebuffs,
 		...defaultExposeWeaknessSettings(Phase.Phase5),
