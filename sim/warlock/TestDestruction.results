@@ -774,6 +774,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDestruction-AllItems-SpellstrikeInfusion"
+ value: {
+  dps: 1906.44114
+  tps: 1696.42746
+ }
+}
+dps_results: {
  key: "TestDestruction-AllItems-SpyglassoftheHiddenFleet-30620"
  value: {
   dps: 1940.54686
@@ -947,6 +954,13 @@ dps_results: {
  value: {
   dps: 1998.40408
   tps: 1777.67922
+ }
+}
+dps_results: {
+ key: "TestDestruction-AllItems-WrathofSpellfire"
+ value: {
+  dps: 2283.82891
+  tps: 2011.98005
  }
 }
 dps_results: {

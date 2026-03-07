@@ -802,6 +802,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestRogue-AllItems-SpellstrikeInfusion"
+ value: {
+  dps: 1737.20802
+  tps: 1233.41769
+ }
+}
+dps_results: {
  key: "TestRogue-AllItems-SpyglassoftheHiddenFleet-30620"
  value: {
   dps: 1928.18686
@@ -968,6 +975,13 @@ dps_results: {
  value: {
   dps: 1955.75741
   tps: 1388.58776
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-WrathofSpellfire"
+ value: {
+  dps: 1745.16228
+  tps: 1239.06522
  }
 }
 dps_results: {

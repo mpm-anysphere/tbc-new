@@ -114,7 +114,7 @@ var ItemSetBurningRage = core.NewItemSet(core.ItemSet{
 	},
 })
 
-// Leatherworking - Mail Caster
+// Leatherworking - Dragonscale
 var ItemSetNetherstrikeArmor = core.NewItemSet(core.ItemSet{
 	ID:   617,
 	Name: "Netherstrike Armor",
@@ -127,7 +127,7 @@ var ItemSetNetherstrikeArmor = core.NewItemSet(core.ItemSet{
 	},
 })
 
-// Leatherworking - Leather Caster
+// Leatherworking - Tribal
 var ItemSetWindhawkArmor = core.NewItemSet(core.ItemSet{
 	ID:   618,
 	Name: "Windhawk Armor",
@@ -136,6 +136,45 @@ var ItemSetWindhawkArmor = core.NewItemSet(core.ItemSet{
 			setBonusAura.
 				AttachStatBuff(stats.MP5, 8).
 				ExposeToAPL(41591)
+		},
+	},
+})
+
+// Tailoring - Spellstrike
+var ItemSetSpellstrikeInfusion = core.NewItemSet(core.ItemSet{
+	ID:   559,
+	Name: "Spellstrike Infusion",
+	Bonuses: map[int32]core.ApplySetBonus{
+		2: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Gives a chance when your harmful spells land to increase the damage of your spells and effects by 92 for 10 sec.
+			// Spell Damage Bonus - 32108
+			character := agent.GetCharacter()
+			bonusPower := character.NewTemporaryStatsAura("Lesser Spell Blasting", core.ActionID{SpellID: 32108}, stats.Stats{stats.SpellDamage: 92}, time.Second*10)
+
+			setBonusAura.AttachProcTrigger(core.ProcTrigger{
+				Name:            "Spellstrike Infusion 2pc",
+				ProcChance:      0.05,
+				ProcMask:        core.ProcMaskSpellOrSpellProc,
+				Callback:        core.CallbackOnSpellHitDealt,
+				ClassSpellsOnly: true,
+				Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+					bonusPower.Activate(sim)
+				},
+			})
+		},
+	},
+})
+
+// Tailoring - Spellfire
+var ItemSetWrathOfSpellfire = core.NewItemSet(core.ItemSet{
+	ID:   559,
+	Name: "Wrath of Spellfire",
+	Bonuses: map[int32]core.ApplySetBonus{
+		2: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Increases spell damage by up to 7% of your total Intellect.
+			character := agent.GetCharacter()
+			statDep := character.Unit.NewDynamicStatDependency(stats.Intellect, stats.SpellDamage, 1.07)
+			setBonusAura.AttachStatDependency(statDep)
 		},
 	},
 })

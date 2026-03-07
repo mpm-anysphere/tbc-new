@@ -893,6 +893,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDpsWarrior-AllItems-SpellstrikeInfusion"
+ value: {
+  dps: 1818.82804
+  tps: 1376.75732
+  dtps: 7.21755
+ }
+}
+dps_results: {
  key: "TestDpsWarrior-AllItems-SpyglassoftheHiddenFleet-30620"
  value: {
   dps: 2027.52872
@@ -1073,6 +1081,14 @@ dps_results: {
  value: {
   dps: 2053.3845
   tps: 1552.98515
+  dtps: 7.2778
+ }
+}
+dps_results: {
+ key: "TestDpsWarrior-AllItems-WrathofSpellfire"
+ value: {
+  dps: 1830.54765
+  tps: 1385.04431
   dtps: 7.2778
  }
 }
