@@ -1,6 +1,17 @@
 import * as PresetUtils from '../../core/preset_utils';
-import { APLRotation_Type as APLRotationType } from '../../core/proto/apl.js';
-import { Class, ConsumesSpec, Debuffs, IndividualBuffs, PartyBuffs, Profession, PseudoStat, RaidBuffs, Stat, TristateEffect } from '../../core/proto/common';
+import {
+	Class,
+	ConsumesSpec,
+	Debuffs,
+	IndividualBuffs,
+	PartyBuffs,
+	Profession,
+	PseudoStat,
+	Race,
+	RaidBuffs,
+	Stat,
+	TristateEffect,
+} from '../../core/proto/common';
 import { HunterOptions_PetType as PetType, Hunter_Options as HunterOptions, HunterOptions_Ammo, HunterOptions_QuiverBonus } from '../../core/proto/hunter';
 import { SavedTalents } from '../../core/proto/ui';
 import { Stats } from '../../core/proto_utils/stats';
@@ -58,55 +69,62 @@ export const DefaultOptions = HunterOptions.create({
 		quiverBonus: HunterOptions_QuiverBonus.Speed15,
 		petType: PetType.Ravager,
 		petUptime: 1,
-		petSingleAbility: true,
+		petSingleAbility: false,
 	},
 });
 
 export const DefaultIndividualBuffs = IndividualBuffs.create({
 	blessingOfKings: true,
 	blessingOfMight: TristateEffect.TristateEffectImproved,
+	blessingOfWisdom: TristateEffect.TristateEffectImproved,
 	unleashedRage: true,
 });
 
 export const DefaultPartyBuffs = PartyBuffs.create({
-	ferociousInspiration: 2,
+	battleShout: TristateEffect.TristateEffectImproved,
 	braidedEterniumChain: true,
+	ferociousInspiration: 1,
 	graceOfAirTotem: TristateEffect.TristateEffectImproved,
+	leaderOfThePack: TristateEffect.TristateEffectImproved,
 	strengthOfEarthTotem: TristateEffect.TristateEffectImproved,
 	windfuryTotem: TristateEffect.TristateEffectImproved,
-	battleShout: TristateEffect.TristateEffectImproved,
-	leaderOfThePack: TristateEffect.TristateEffectImproved,
-	trueshotAura: true,
 });
 
 export const DefaultRaidBuffs = RaidBuffs.create({
 	...defaultRaidBuffMajorDamageCooldowns(Class.ClassWarrior),
-	powerWordFortitude: TristateEffect.TristateEffectImproved,
+	arcaneBrilliance: true,
+	divineSpirit: TristateEffect.TristateEffectImproved,
 	giftOfTheWild: TristateEffect.TristateEffectImproved,
+	powerWordFortitude: TristateEffect.TristateEffectImproved,
+	shadowProtection: true,
 });
 
 export const DefaultDebuffs = Debuffs.create({
-	improvedSealOfTheCrusader: true,
-	misery: true,
 	bloodFrenzy: true,
-	giftOfArthas: true,
-	mangle: true,
-	exposeArmor: TristateEffect.TristateEffectImproved,
-	faerieFire: TristateEffect.TristateEffectImproved,
-	sunderArmor: true,
 	curseOfRecklessness: true,
-	huntersMark: TristateEffect.TristateEffectImproved,
+	exposeArmor: TristateEffect.TristateEffectImproved,
 	exposeWeaknessUptime: 0.9,
 	exposeWeaknessHunterAgility: 1080,
+	faerieFire: TristateEffect.TristateEffectImproved,
+	giftOfArthas: true,
+	huntersMark: TristateEffect.TristateEffectImproved,
+	improvedSealOfTheCrusader: true,
+	insectSwarm: true,
+	judgementOfLight: true,
+	judgementOfWisdom: true,
+	mangle: true,
+	misery: true,
+	sunderArmor: true,
 });
 
 export const DefaultConsumables = ConsumesSpec.create({
-	flaskId: 22854, // Flask of Relentless Assault
+	battleElixirId: 22831, // Elixir of Major Agility
 	foodId: 27659, // Warp Burger
 	potId: 22838, // Haste Potion
-	conjuredId: 5512,
+	conjuredId: 12662,
 	explosiveId: 30217,
 	drumsId: 351355,
+	petFoodId: 33874, // Kibler's Bits
 	petScrollAgi: true,
 	petScrollStr: true,
 	superSapper: true,
@@ -120,4 +138,5 @@ export const OtherDefaults = {
 	iterationCount: 25000,
 	profession1: Profession.Engineering,
 	profession2: Profession.Blacksmithing,
+	race: Race.RaceOrc,
 };
