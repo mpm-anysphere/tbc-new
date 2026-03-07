@@ -4,7 +4,7 @@ import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_u
 import { Player } from '../../core/player';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation } from '../../core/proto/apl';
-import { Faction, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
+import { Faction, HandType, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
 import { StatCapType } from '../../core/proto/ui';
 import { StatCap, UnitStat } from '../../core/proto_utils/stats';
 import * as HunterInputs from './inputs';
@@ -60,9 +60,9 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 	itemSwapSlots: [ItemSlot.ItemSlotMainHand, ItemSlot.ItemSlotOffHand, ItemSlot.ItemSlotRanged, ItemSlot.ItemSlotTrinket1, ItemSlot.ItemSlotTrinket2],
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.P1_2H_GEARSET.gear,
+		gear: Presets.P1_BM_2H_6P_GEARSET.gear,
 		// Default EP weights for sorting gear in the gear picker.
-		epWeights: Presets.P1_EP_PRESET.epWeights,
+		epWeights: Presets.P1_BM_EP_PRESET.epWeights,
 		softCapBreakpoints: (() => {
 			const rangedHitSoftCapConfig = StatCap.fromPseudoStat(PseudoStat.PseudoStatMeleeHitPercent, {
 				breakpoints: [9],
@@ -94,6 +94,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 	// Inputs to include in the 'Other' section on the settings tab.
 	otherInputs: {
 		inputs: [
+			other_inputs.TotemTwisting,
 			HunterInputs.PetUptime(),
 			HunterInputs.PetSingleAbility(),
 			other_inputs.InputDelay,
@@ -107,18 +108,36 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 	},
 
 	presets: {
-		epWeights: [Presets.P1_EP_PRESET],
+		epWeights: [Presets.P1_BM_EP_PRESET, Presets.P1_SV_EP_PRESET],
 		// Preset talents that the user can quickly select.
 		talents: [Presets.BMTalents, Presets.SVTalents],
 		// Preset rotations that the user can quickly select.
-		rotations: [Presets.DEFAULT_APL],
+		rotations: [Presets.WEAVE_APL, Presets.TURRET_APL],
 		// Preset gear configurations that the user can quickly select.
-		builds: [],
-		gear: [Presets.P1_2H_GEARSET],
+		builds: [
+			Presets.P1_PRESET_BUILD_PRE_RAID,
+			Presets.P1_PRESET_BUILD_BM_2H,
+			Presets.P1_PRESET_BUILD_BM_DW,
+			Presets.P1_PRESET_BUILD_SV_2H,
+			Presets.P1_PRESET_BUILD_SV_DW,
+		],
+		gear: [
+			Presets.P1_PreRaid_GEARSET,
+			Presets.P1_BM_2H_6P_GEARSET,
+			Presets.P1_BM_2H_9P_GEARSET,
+			Presets.P1_BM_DW_6P_GEARSET,
+			Presets.P1_BM_DW_9P_GEARSET,
+			Presets.P1_SV_2H_3P_GEARSET,
+			Presets.P1_SV_2H_6P_GEARSET,
+			Presets.P1_SV_DW_3P_GEARSET,
+			Presets.P1_SV_DW_6P_GEARSET,
+		],
 	},
 
-	autoRotation: (_: Player<Spec.SpecHunter>): APLRotation => {
-		return Presets.DEFAULT_APL.rotation.rotation!;
+	autoRotation: (player: Player<Spec.SpecHunter>): APLRotation => {
+		const gear = player.getGear();
+		const mainHandType = gear.getEquippedItem(ItemSlot.ItemSlotMainHand)?.item.handType;
+		return mainHandType == HandType.HandTypeTwoHand ? Presets.WEAVE_APL.rotation.rotation! : Presets.TURRET_APL.rotation.rotation!;
 	},
 
 	raidSimPresets: [
@@ -126,20 +145,19 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 			spec: Spec.SpecHunter,
 			talents: Presets.BMTalents.data,
 			specOptions: Presets.DefaultOptions,
-
 			consumables: Presets.DefaultConsumables,
 			defaultFactionRaces: {
 				[Faction.Unknown]: Race.RaceUnknown,
-				[Faction.Alliance]: Race.RaceDraenei,
+				[Faction.Alliance]: Race.RaceNightElf,
 				[Faction.Horde]: Race.RaceOrc,
 			},
 			defaultGear: {
 				[Faction.Unknown]: {},
 				[Faction.Alliance]: {
-					1: Presets.P1_2H_GEARSET.gear,
+					1: Presets.P1_BM_2H_6P_GEARSET.gear,
 				},
 				[Faction.Horde]: {
-					1: Presets.P1_2H_GEARSET.gear,
+					1: Presets.P1_BM_2H_6P_GEARSET.gear,
 				},
 			},
 			otherDefaults: Presets.OtherDefaults,
