@@ -387,7 +387,6 @@ export class ReforgeOptimizer {
 				validatedWeights = validatedWeights.withStat(parentStat, 0);
 				continue;
 			}
-			console.log(parentStat, children, specificSchoolWeights);
 
 			// If all children have 0 EP, then loop through children and check whether a cap has been configured for that child.
 			for (const childStat of children) {

@@ -248,7 +248,6 @@ func FromUnitStatsProto(unitStatsMessage *proto.UnitStats) Stats {
 		pseudoStatsMessage := unitStatsMessage.PseudoStats
 		simStats[PhysicalHitPercent] = pseudoStatsMessage[proto.PseudoStat_PseudoStatMeleeHitPercent]
 		simStats[SpellHitPercent] = pseudoStatsMessage[proto.PseudoStat_PseudoStatSpellHitPercent]
-		simStats[SpellHitPercent] = pseudoStatsMessage[proto.PseudoStat_PseudoStatSpellHitPercent]
 		simStats[PhysicalCritPercent] = pseudoStatsMessage[proto.PseudoStat_PseudoStatMeleeCritPercent]
 		simStats[SpellCritPercent] = pseudoStatsMessage[proto.PseudoStat_PseudoStatSpellCritPercent]
 		simStats[BlockPercent] = pseudoStatsMessage[proto.PseudoStat_PseudoStatBlockPercent]

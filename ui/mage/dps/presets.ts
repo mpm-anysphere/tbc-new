@@ -35,15 +35,15 @@ export const P1_EP_PRESET = PresetUtils.makePresetEpWeights(
 			[Stat.StatSpellDamage]: 1,
 			[Stat.StatArcaneDamage]: 0.96,
 			[Stat.StatFrostDamage]: 0.01,
-			[Stat.StatSpellHitRating]: 2.2,
+			[Stat.StatSpellHitRating]: 2.27,
 			[Stat.StatSpellCritRating]: 0.76,
 			[Stat.StatSpellHasteRating]: 0.78,
 			[Stat.StatSpellPenetration]: 0,
 			[Stat.StatMP5]: 0.29,
 		},
 		{
-			[PseudoStat.PseudoStatSchoolHitPercentArcane]: 2.18,
-			[PseudoStat.PseudoStatSchoolHitPercentFrost]: 0.02,
+			[PseudoStat.PseudoStatSchoolHitPercentArcane]: 2.24,
+			[PseudoStat.PseudoStatSchoolHitPercentFrost]: 0.03,
 		},
 	),
 );
