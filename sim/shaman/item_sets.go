@@ -8,7 +8,23 @@ import (
 	"github.com/wowsims/tbc/sim/core/stats"
 )
 
+var ItemSetTidefuryRegalia = core.NewItemSet(core.ItemSet{
+	ID:   630,
+	Name: "Tidefury Regalia",
+	Bonuses: map[int32]core.ApplySetBonus{
+		2: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Your Chain Lightning Spell now only loses 17% of its damage per jump.
+			// Implemented in chain_lightning.go
+		},
+		4: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Your Water Shield ability grants an additional 56 mana each time it triggers and an additional 3 mana per 5 sec.
+			// Implemented in shields.go
+		},
+	},
+})
+
 var ItemSetCycloneRegalia = core.NewItemSet(core.ItemSet{
+	ID:   632,
 	Name: "Cyclone Regalia",
 	Bonuses: map[int32]core.ApplySetBonus{
 		2: func(agent core.Agent, setBonusAura *core.Aura) {
@@ -52,6 +68,7 @@ var ItemSetCycloneRegalia = core.NewItemSet(core.ItemSet{
 })
 
 var ItemSetCataclysmRegalia = core.NewItemSet(core.ItemSet{
+	ID:   635,
 	Name: "Cataclysm Regalia",
 	Bonuses: map[int32]core.ApplySetBonus{
 		2: func(agent core.Agent, setBonusAura *core.Aura) {

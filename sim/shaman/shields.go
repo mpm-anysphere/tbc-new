@@ -36,8 +36,13 @@ func (shaman *Shaman) startShieldProcPeriodicAction(sim *core.Simulation) {
 }
 
 func (shaman *Shaman) registerWaterShieldSpell() {
-	actionID := core.ActionID{SpellID: 33736}
+	manaReturned := 204.0
+	mp5 := 50.0
+	if shaman.CouldHaveSetBonus(ItemSetTidefuryRegalia, 4) {
+		manaReturned += 56
+	}
 
+	actionID := core.ActionID{SpellID: 33736}
 	waterShieldManaMetrics := shaman.NewManaMetrics(actionID)
 
 	shaman.WaterShieldAura = shaman.RegisterAura(core.Aura{
@@ -52,9 +57,9 @@ func (shaman *Shaman) registerWaterShieldSpell() {
 		ClassSpellMask: SpellMaskShieldSelfProc,
 		Handler: func(sim *core.Simulation, _ *core.Spell, _ *core.SpellResult) {
 			shaman.WaterShieldAura.RemoveStack(sim)
-			shaman.AddMana(sim, 204, waterShieldManaMetrics)
+			shaman.AddMana(sim, manaReturned, waterShieldManaMetrics)
 		},
-	}).AttachStatBuff(stats.MP5, 50)
+	}).AttachStatBuff(stats.MP5, mp5)
 
 	shaman.RegisterSpell(core.SpellConfig{
 		ActionID:    actionID,

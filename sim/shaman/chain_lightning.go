@@ -35,7 +35,7 @@ func (shaman *Shaman) newChainLightningSpell(config shared.SpellRankConfig, isEl
 		BonusCoefficient:    config.Coefficient,
 		SpellSchool:         core.SpellSchoolNature,
 		Overloads:           &shaman.ChainLightningOverloads,
-		BounceReduction:     0.7,
+		BounceReduction:     0.7 + core.TernaryFloat64(shaman.CouldHaveSetBonus(ItemSetTidefuryRegalia, 2), 0.13, 0),
 		ClassSpellMask:      core.TernaryInt64(isElementalOverload, SpellMaskChainLightningOverload, SpellMaskChainLightning),
 		BaseCastTime:        time.Second * 2,
 	}
