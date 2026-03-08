@@ -235,7 +235,7 @@ func (warlock *Warlock) applyContagion() {
 	}
 
 	warlock.AddStaticMod(core.SpellModConfig{
-		Kind:       core.SpellMod_DotDamageDone_Pct,
+		Kind:       core.SpellMod_DamageDone_Flat,
 		FloatValue: 0.01 * float64(warlock.Talents.Contagion),
 		ClassMask:  WarlockContagionSpells,
 	})
