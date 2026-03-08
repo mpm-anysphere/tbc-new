@@ -329,7 +329,7 @@ func (hunter *Hunter) registerAimedShot() {
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
 				GCD:      core.GCDDefault,
-				CastTime: time.Millisecond * 2500,
+				CastTime: time.Millisecond * 3000,
 			},
 			CD: core.Cooldown{
 				Timer:    hunter.NewTimer(),
