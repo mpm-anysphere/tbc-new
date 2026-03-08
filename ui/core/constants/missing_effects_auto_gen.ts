@@ -2905,13 +2905,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		34334, // Thori'dal, the Stars' Fury
-		[
-			"Increases ranged attack speed by 15%. Does not stack with quiver or ammo pouch haste effects.", // 44972 - https://www.wowhead.com/tbc/spell=44972
-			"Thori'dal generates magical arrows when the bow string is drawn. Does not use ammo.", // 46699 - https://www.wowhead.com/tbc/spell=46699
-		]
-	],
-	[
 		34429, // Shifting Naaru Sliver
 		[
 			"Conjures a Power Circle lasting for 15s. While standing in this circle, the caster gains up to 320 spell damage and healing.", // 45042 - https://www.wowhead.com/tbc/spell=45042
