@@ -933,6 +933,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-RodoftheSunKing-29996"
+ value: {
+  dps: 717.40844
+  tps: 1337.1199
+  dtps: 1300.36595
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-Romulo'sPoisonVial-28579"
  value: {
   dps: 708.86035
