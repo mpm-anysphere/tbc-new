@@ -164,6 +164,6 @@ func init() {
 			},
 		}))
 
-		shaman.ItemSwap.RegisterProc(28248, aura)
+		shaman.ItemSwap.RegisterProc(27815, aura)
 	})
 }
