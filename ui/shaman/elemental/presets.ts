@@ -1,6 +1,18 @@
 import { Encounter } from '../../core/encounter';
 import * as PresetUtils from '../../core/preset_utils.js';
-import { Class, ConsumesSpec, Debuffs, IndividualBuffs, PartyBuffs, Profession, Race, RaidBuffs, Stat, TristateEffect } from '../../core/proto/common.js';
+import {
+	Class,
+	ConsumesSpec,
+	Debuffs,
+	IndividualBuffs,
+	PartyBuffs,
+	Profession,
+	PseudoStat,
+	Race,
+	RaidBuffs,
+	Stat,
+	TristateEffect,
+} from '../../core/proto/common.js';
 import { ElementalShaman_Options as ElementalShamanOptions } from '../../core/proto/shaman.js';
 import { SavedTalents } from '../../core/proto/ui.js';
 import { Stats } from '../../core/proto_utils/stats';
@@ -31,15 +43,20 @@ export const ROTATION_PRESET_DEFAULT = PresetUtils.makePresetAPLRotation('Defaul
 // Preset options for EP weights
 export const EP_PRESET_DEFAULT = PresetUtils.makePresetEpWeights(
 	'Default',
-	Stats.fromMap({
-		[Stat.StatIntellect]: 0.33,
-		[Stat.StatSpellDamage]: 1.0,
-		[Stat.StatNatureDamage]: 1.0,
-		[Stat.StatSpellCritRating]: 0.78,
-		[Stat.StatSpellHasteRating]: 1.22,
-		[Stat.StatSpellHitRating]: 0.33,
-		[Stat.StatMP5]: 0.08,
-	}),
+	Stats.fromMap(
+		{
+			[Stat.StatIntellect]: 0.25,
+			[Stat.StatSpellDamage]: 1.0,
+			[Stat.StatNatureDamage]: 1.0,
+			[Stat.StatSpellCritRating]: 0.85,
+			[Stat.StatSpellHasteRating]: 1.18,
+			[Stat.StatSpellHitRating]: 2.12,
+			[Stat.StatMP5]: 0,
+		},
+		{
+			[PseudoStat.PseudoStatSchoolHitPercentNature]: 2.12,
+		},
+	),
 );
 
 // https://wowhead.com/tbc/talent-calc and copy the numbers in the url.

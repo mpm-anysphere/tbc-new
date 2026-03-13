@@ -76,8 +76,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-AldorRegalia"
  value: {
-  dps: 1694.26212
-  tps: 1155.2298
+  dps: 1692.2482
+  tps: 1154.85652
  }
 }
 dps_results: {
@@ -118,8 +118,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-ArcanoweaveVestments"
  value: {
-  dps: 1642.72434
-  tps: 1141.07201
+  dps: 1654.75192
+  tps: 1148.15627
  }
 }
 dps_results: {
@@ -587,8 +587,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-ImbuedNetherweave"
  value: {
-  dps: 1719.04016
-  tps: 1186.33801
+  dps: 1723.89928
+  tps: 1189.88496
  }
 }
 dps_results: {
@@ -629,15 +629,15 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-Mana-EtchedRegalia"
  value: {
-  dps: 1542.60116
-  tps: 1068.08966
+  dps: 1546.674
+  tps: 1068.99569
  }
 }
 dps_results: {
  key: "TestArcane-AllItems-MasqueradeGown-28578"
  value: {
-  dps: 1837.008
-  tps: 1252.62052
+  dps: 1833.11579
+  tps: 1250.12093
  }
 }
 dps_results: {
@@ -671,8 +671,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-NetherweaveVestments"
  value: {
-  dps: 1472.93741
-  tps: 1029.77165
+  dps: 1474.39358
+  tps: 1031.61232
  }
 }
 dps_results: {
@@ -734,8 +734,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-RobeoftheElderScribes-28602"
  value: {
-  dps: 1872.52397
-  tps: 1281.58458
+  dps: 1863.08638
+  tps: 1271.88685
  }
 }
 dps_results: {
@@ -790,8 +790,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-Shadow'sEmbrace"
  value: {
-  dps: 1685.56459
-  tps: 1175.58121
+  dps: 1691.76603
+  tps: 1177.54948
  }
 }
 dps_results: {
@@ -825,8 +825,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-SoulclothEmbrace"
  value: {
-  dps: 1664.36984
-  tps: 1147.29889
+  dps: 1671.12446
+  tps: 1151.0092
  }
 }
 dps_results: {
@@ -952,8 +952,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-TirisfalRegalia"
  value: {
-  dps: 1923.3368
-  tps: 1323.19671
+  dps: 1916.95064
+  tps: 1315.96529
  }
 }
 dps_results: {
@@ -1008,8 +1008,8 @@ dps_results: {
 dps_results: {
  key: "TestArcane-AllItems-WrathofSpellfire"
  value: {
-  dps: 1814.89142
-  tps: 1243.24024
+  dps: 1810.51289
+  tps: 1238.67842
  }
 }
 dps_results: {
