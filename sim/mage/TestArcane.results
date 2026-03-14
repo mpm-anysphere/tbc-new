@@ -1057,22 +1057,22 @@ dps_results: {
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 754.13194
-  tps: 1085.82565
+  dps: 801.64467
+  tps: 1140.2873
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 754.13194
-  tps: 508.02322
+  dps: 801.64467
+  tps: 540.57636
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Orc-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
-  dps: 1117.91723
-  tps: 751.66352
+  dps: 1158.34989
+  tps: 776.12239
  }
 }
 dps_results: {
@@ -1099,22 +1099,22 @@ dps_results: {
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 756.78953
-  tps: 1088.47613
+  dps: 803.2192
+  tps: 1142.56389
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 756.78953
-  tps: 511.74858
+  dps: 803.2192
+  tps: 543.17919
  }
 }
 dps_results: {
  key: "TestArcane-Settings-Troll-p1Arcane-Arcane-arcane-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
-  dps: 1129.67081
-  tps: 757.31799
+  dps: 1171.91419
+  tps: 787.38695
  }
 }
 dps_results: {
