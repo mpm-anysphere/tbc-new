@@ -1,36 +1,21 @@
 {
 	"type": "TypeAPL",
-	"prepullActions": [{ "action": { "castSpell": { "spellId": { "spellId": 27044, "rank": 8 } } }, "doAtValue": { "const": { "val": "-20s" } } }],
 	"priorityList": [
-		{
-			"action": {
-				"condition": {
-					"and": {
-						"vals": [
-							{ "cmp": { "op": "OpLt", "lhs": { "currentManaPercent": {} }, "rhs": { "const": { "val": "30%" } } } },
-							{ "auraIsInactive": { "auraId": { "spellId": 34074 } } }
-						]
-					}
-				},
-				"castSpell": { "spellId": { "spellId": 34074 } }
-			}
-		},
-		{
-			"action": {
-				"condition": {
-					"and": {
-						"vals": [
-							{ "cmp": { "op": "OpGe", "lhs": { "currentManaPercent": {} }, "rhs": { "const": { "val": "50%" } } } },
-							{ "auraIsInactive": { "auraId": { "spellId": 27044, "rank": 8 } } }
-						]
-					}
-				},
-				"castSpell": { "spellId": { "spellId": 27044, "rank": 8 } }
-			}
-		},
+		{ "action": { "groupReference": { "groupName": "Mana management" } } },
 		{ "action": { "autocastOtherCooldowns": {} } },
 		{ "action": { "castSpell": { "spellId": { "spellId": 34026 } } } },
-		{ "action": { "castSpell": { "spellId": { "spellId": 27021, "rank": 6 } } } },
+		{
+			"action": {
+				"condition": {
+					"cmp": {
+						"op": "OpLe",
+						"lhs": { "spellCastTime": { "spellId": { "spellId": 27021, "rank": 6 } } },
+						"rhs": { "autoTimeToNext": { "autoType": "RangedAuto" } }
+					}
+				},
+				"castSpell": { "spellId": { "spellId": 27021, "rank": 6 } }
+			}
+		},
 		{ "action": { "castSpell": { "spellId": { "spellId": 27019, "rank": 9 } } } },
 		{
 			"action": {
@@ -38,17 +23,48 @@
 					"cmp": {
 						"op": "OpLe",
 						"lhs": { "spellCastTime": { "spellId": { "spellId": 34120, "rank": 1 } } },
-						"rhs": {
-							"math": {
-								"op": "OpSub",
-								"lhs": { "autoSwingTime": { "autoType": "Ranged" } },
-								"rhs": { "autoTimeSinceLast": { "autoType": "RangedAuto" } }
-							}
-						}
+						"rhs": { "autoTimeToNext": { "autoType": "RangedAuto" } }
 					}
 				},
 				"castSpell": { "spellId": { "spellId": 34120, "rank": 1 } }
 			}
 		}
+	],
+	"groups": [
+		{
+			"name": "Mana management",
+			"actions": [
+				{
+					"action": {
+						"condition": {
+							"and": {
+								"vals": [
+									{ "auraIsInactive": { "auraId": { "spellId": 34074 } } },
+									{ "cmp": { "op": "OpLt", "lhs": { "currentManaPercent": {} }, "rhs": { "variableRef": { "name": "ManaLow" } } } }
+								]
+							}
+						},
+						"castSpell": { "spellId": { "spellId": 34074 } }
+					}
+				},
+				{
+					"action": {
+						"condition": {
+							"and": {
+								"vals": [
+									{ "auraIsInactive": { "auraId": { "spellId": 27044, "rank": 8 } } },
+									{ "cmp": { "op": "OpGe", "lhs": { "currentManaPercent": {} }, "rhs": { "variableRef": { "name": "ManaHigh" } } } }
+								]
+							}
+						},
+						"castSpell": { "spellId": { "spellId": 27044, "rank": 8 } }
+					}
+				}
+			]
+		}
+	],
+	"valueVariables": [
+		{ "name": "ManaLow", "value": { "const": { "val": "30%" } } },
+		{ "name": "ManaHigh", "value": { "const": { "val": "50%" } } }
 	]
 }

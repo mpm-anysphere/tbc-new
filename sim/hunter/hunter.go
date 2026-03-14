@@ -200,7 +200,7 @@ func (hunter *Hunter) RegisterRangedSpell(config core.SpellConfig) *core.Spell {
 	if config.Cast.ModifyCast == nil {
 		config.Cast.ModifyCast = func(sim *core.Simulation, spell *core.Spell, cast *core.Cast) {
 			cast.CastTime = spell.CastTime()
-			hunter.AutoAttacks.StopRangedUntil(sim, sim.CurrentTime+cast.CastTime)
+			hunter.AutoAttacks.DelayRangedUntil(sim, sim.CurrentTime+cast.CastTime+core.SpellBatchWindow)
 		}
 	}
 
