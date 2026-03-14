@@ -35,7 +35,7 @@ character_stats_results: {
   final_stats: 6284.99
   final_stats: 0
   final_stats: 11470.6
-  final_stats: 7504.7175
+  final_stats: 7210.7175
   final_stats: 143.7
   final_stats: 33.75
   final_stats: 33.75
@@ -1259,22 +1259,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1499.66035
-  tps: 893.68672
+  dps: 1499.40436
+  tps: 916.92675
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 767.44732
-  tps: 693.08519
+  dps: 768.04124
+  tps: 694.78665
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 820.1723
-  tps: 702.02373
+  tps: 703.17543
  }
 }
 dps_results: {
@@ -1301,22 +1301,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1519.45239
-  tps: 1016.73598
+  dps: 1514.39137
+  tps: 1047.03134
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 781.89836
-  tps: 714.37465
+  dps: 780.83518
+  tps: 714.98514
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 829.86718
-  tps: 727.60094
+  tps: 733.49508
  }
 }
 dps_results: {
@@ -1343,22 +1343,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1528.07904
-  tps: 922.1054
+  dps: 1527.78865
+  tps: 945.31104
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 795.99996
-  tps: 721.63784
+  dps: 796.59976
+  tps: 723.34517
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Draenei-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 849.52059
-  tps: 731.37202
+  tps: 732.52372
  }
 }
 dps_results: {
@@ -1385,22 +1385,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1539.86617
-  tps: 898.36272
+  dps: 1540.08766
+  tps: 906.8553
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 773.3751
-  tps: 695.95375
+  dps: 774.87616
+  tps: 697.96797
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 829.413
-  tps: 705.28605
+  tps: 706.44105
  }
 }
 dps_results: {
@@ -1427,22 +1427,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1568.05543
-  tps: 1027.25475
+  dps: 1567.41148
+  tps: 1064.886
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 795.10737
-  tps: 723.23763
+  dps: 799.08319
+  tps: 729.62016
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 848.38699
-  tps: 738.31823
+  tps: 746.90906
  }
 }
 dps_results: {
@@ -1469,22 +1469,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1568.28073
-  tps: 926.77729
+  dps: 1568.51106
+  tps: 935.27869
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 802.00565
-  tps: 724.58429
+  dps: 803.56743
+  tps: 726.65923
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Orc-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 858.84142
-  tps: 734.71447
+  tps: 735.86947
  }
 }
 dps_results: {
@@ -1511,22 +1511,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1497.02398
-  tps: 896.85095
+  dps: 1494.10307
+  tps: 903.03287
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 767.01358
-  tps: 693.24926
+  dps: 765.82725
+  tps: 692.63383
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-DefaultTalents-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 818.17784
-  tps: 700.43098
+  tps: 702.33303
  }
 }
 dps_results: {
@@ -1553,22 +1553,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1514.85831
-  tps: 1017.74437
+  dps: 1510.00413
+  tps: 1032.41568
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 777.01044
-  tps: 708.6042
+  dps: 778.52957
+  tps: 712.83802
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-Sub-Elemental-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 830.64676
-  tps: 726.40373
+  tps: 732.87396
  }
 }
 dps_results: {
@@ -1595,22 +1595,22 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 1525.37111
-  tps: 925.19808
+  dps: 1522.33161
+  tps: 931.26141
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 795.56464
-  tps: 721.80032
+  dps: 794.31707
+  tps: 721.12364
  }
 }
 dps_results: {
  key: "TestEnhancement-Settings-Troll-p1-Sub-Restoration ILS-Standard-default-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
   dps: 847.42248
-  tps: 729.67563
+  tps: 731.57768
  }
 }
 dps_results: {
