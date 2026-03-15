@@ -529,6 +529,18 @@ export class ActionId {
 					name += ' (Explosion)';
 				}
 				break;
+			case 'Improved Corruption and Immolate':
+				if (this.spellId === 37380) {
+					name = 'T4 4PC';
+				} else if (this.spellId === 37384) {
+					name = 'T5 4PC';
+				}
+				break;
+			case 'Improved Shadow Bolt and Incinerate':
+				if (this.spellId === 38393) {
+					name = 'T6 4PC';
+				}
+				break;
 			case 'Thunderfury':
 				if (tag == 1) {
 					name += ' (ST)';

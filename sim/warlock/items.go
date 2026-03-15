@@ -53,7 +53,7 @@ var ItemSetOblivionRaiment = core.NewItemSet(core.ItemSet{
 				RemoveCustom: func(mod *core.SpellMod, spell *core.Spell) {
 					warlock.SeedOfCorruptionBonusDamage -= 180
 				},
-			})
+			}).ExposeToAPL(37376)
 
 		},
 	},
@@ -96,7 +96,7 @@ var ItemSetVoidheartRaiment = core.NewItemSet(core.ItemSet{
 				Kind:      core.SpellMod_DotNumberOfTicks_Flat,
 				IntValue:  1,
 				ClassMask: WarlockSpellCorruption | WarlockSpellImmolateDot,
-			})
+			}).ExposeToAPL(37380)
 		},
 	},
 })
@@ -173,7 +173,7 @@ var ItemSetCorruptorRaiment = core.NewItemSet(core.ItemSet{
 						dot.SnapshotBaseDamage = newBaseDamage + snapShotterBonusCoeff
 					}
 				},
-			})
+			}).ExposeToAPL(37384)
 		},
 	},
 })
@@ -205,7 +205,7 @@ var ItemSetMaleficRaiment = core.NewItemSet(core.ItemSet{
 				Kind:       core.SpellMod_DamageDone_Flat,
 				FloatValue: 0.06,
 				ClassMask:  WarlockSpellShadowBolt | WarlockSpellIncinerate,
-			})
+			}).ExposeToAPL(38393)
 		},
 	},
 })
