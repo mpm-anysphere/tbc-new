@@ -438,6 +438,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDestruction-AllItems-EnchantBoots-Cat'sSwiftness-2939"
+ value: {
+  dps: 2028.6147
+  tps: 1765.97494
+ }
+}
+dps_results: {
  key: "TestDestruction-AllItems-EnchantGloves-Threat-2613"
  value: {
   dps: 2008.59209

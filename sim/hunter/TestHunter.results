@@ -525,6 +525,22 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestHunter-AllItems-EnchantBoots-Boar'sSpeed-2940"
+ value: {
+  dps: 2268.56039
+  tps: 1789.83023
+  dtps: 12.56801
+ }
+}
+dps_results: {
+ key: "TestHunter-AllItems-EnchantBoots-Cat'sSwiftness-2939"
+ value: {
+  dps: 2274.14706
+  tps: 1793.7447
+  dtps: 12.63409
+ }
+}
+dps_results: {
  key: "TestHunter-AllItems-EnchantCloak-Subtlety-2621"
  value: {
   dps: 2370.99328
@@ -1168,9 +1184,9 @@ dps_results: {
 dps_results: {
  key: "TestHunter-AllItems-SwiftWindfireDiamond"
  value: {
-  dps: 2343.66532
-  tps: 1865.27076
-  dtps: 12.34821
+  dps: 2241.83432
+  tps: 1762.15571
+  dtps: 12.41264
  }
 }
 dps_results: {

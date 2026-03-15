@@ -459,6 +459,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-AllItems-EnchantBoots-Boar'sSpeed-2940"
+ value: {
+  dps: 1965.39222
+  tps: 1833.6594
+ }
+}
+dps_results: {
+ key: "TestEnhancement-AllItems-EnchantBoots-Cat'sSwiftness-2939"
+ value: {
+  dps: 1972.61652
+  tps: 1840.89465
+ }
+}
+dps_results: {
  key: "TestEnhancement-AllItems-EnchantCloak-Subtlety-2621"
  value: {
   dps: 1954.75221

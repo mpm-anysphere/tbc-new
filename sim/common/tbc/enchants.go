@@ -165,4 +165,18 @@ func init() {
 		character := agent.GetCharacter()
 		character.AddStat(stats.RangedCritPercent, 28.0/core.PhysicalCritRatingPerCritPercent)
 	})
+
+	movementSpeedEnchants := []int32{
+		2939, // Enchant Boots - Cat's Swiftness
+		2940, // Enchant Boots - Boar's Speed
+	}
+
+	for _, enchantID := range movementSpeedEnchants {
+		core.NewEnchantEffect(enchantID, func(agent core.Agent) {
+			character := agent.GetCharacter()
+			aura := character.NewPassiveMovementSpeedAura("Minor Run Speed", core.ActionID{SpellID: 13889}, 0.08)
+
+			character.ItemSwap.RegisterEnchantProc(enchantID, aura)
+		})
+	}
 }

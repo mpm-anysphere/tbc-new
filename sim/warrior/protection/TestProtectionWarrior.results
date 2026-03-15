@@ -581,6 +581,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-EnchantBoots-Cat'sSwiftness-2939"
+ value: {
+  dps: 770.17454
+  tps: 1417.59998
+  dtps: 1307.31204
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-EnchantCloak-Subtlety-2621"
  value: {
   dps: 765.71031

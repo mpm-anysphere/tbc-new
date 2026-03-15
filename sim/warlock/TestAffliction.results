@@ -438,6 +438,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAffliction-AllItems-EnchantBoots-Cat'sSwiftness-2939"
+ value: {
+  dps: 1763.31072
+  tps: 1166.02841
+ }
+}
+dps_results: {
  key: "TestAffliction-AllItems-EnchantGloves-Threat-2613"
  value: {
   dps: 1742.96438

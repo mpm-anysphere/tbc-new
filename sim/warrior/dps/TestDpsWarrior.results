@@ -493,6 +493,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDpsWarrior-AllItems-EnchantBoots-Boar'sSpeed-2940"
+ value: {
+  dps: 2073.80894
+  tps: 1566.07812
+  dtps: 7.2778
+ }
+}
+dps_results: {
  key: "TestDpsWarrior-AllItems-EnchantCloak-Subtlety-2621"
  value: {
   dps: 2069.75507
