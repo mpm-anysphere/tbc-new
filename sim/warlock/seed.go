@@ -26,13 +26,13 @@ func (warlock *Warlock) registerSeed() {
 		ActionID:       actionID.WithTag(2), // actually 27285
 		SpellSchool:    core.SpellSchoolShadow,
 		ProcMask:       core.ProcMaskSpellDamage,
-		Flags:          core.SpellFlagPassiveSpell,
+		Flags:          core.SpellFlagPassiveSpell | core.SpellFlagIgnoreAttackerModifiers,
 		ClassSpellMask: WarlockSpellSeedOfCorruptionExplosion,
 
 		DamageMultiplier: 1,
 		CritMultiplier:   warlock.DefaultSpellCritMultiplier(),
 		ThreatMultiplier: 1,
-		BonusCoefficient: seedExplosionCoeff,
+		BonusCoefficient: 0,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			targetCount := sim.Environment.ActiveTargetCount()
@@ -55,7 +55,12 @@ func (warlock *Warlock) registerSeed() {
 
 			maxDamagePerMob := 13580 / float64(maxHits+1)
 			for _, result := range results {
-				spell.CalcAndDealDamage(sim, result.Target, min(maxDamagePerMob, warlock.CalcAndRollDamageRange(sim, 1110, 1290)+warlock.SeedOfCorruptionBonusDamage), core.Ternary(result.Landed(), spell.OutcomeMagicCrit, spell.OutcomeAlwaysMiss))
+				attackTable := spell.Unit.AttackTables[target.UnitIndex]
+				baseDamage := warlock.CalcAndRollDamageRange(sim, 1110, 1290) + warlock.SeedOfCorruptionBonusDamage
+				baseDamage += seedExplosionCoeff * spell.BonusDamage(attackTable)
+				attackerMultiplier := spell.AttackerDamageMultiplier(attackTable, false)
+				baseDamage *= attackerMultiplier
+				spell.CalcAndDealDamage(sim, result.Target, min(maxDamagePerMob, baseDamage), core.Ternary(result.Landed(), spell.OutcomeMagicCrit, spell.OutcomeAlwaysMiss))
 			}
 		},
 	})
