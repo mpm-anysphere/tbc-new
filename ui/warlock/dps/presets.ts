@@ -162,7 +162,7 @@ export const DefaultDebuffs = Debuffs.create({
 	sunderArmor: true,
 	screech: true,
 	faerieFire: TristateEffect.TristateEffectImproved,
-	curseOfRecklessness: true,
+	curseOfRecklessness: false,
 	shadowEmbrace: true,
 	curseOfElements: TristateEffect.TristateEffectImproved,
 	bloodFrenzy: true,
