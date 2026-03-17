@@ -258,7 +258,11 @@ export class ActionId {
 		}
 		const tooltipData = await ActionId.getTooltipData(this, { signal: options?.signal });
 
-		const baseName = tooltipData['name'] || spellIdNameOverrides.get(this.spellId) || (this.spellId ? `Spell ${this.spellId}` : '');
+		const baseName =
+			tooltipData['name'] ||
+			spellIdNameOverrides.get(this.spellId) ||
+			itemIdNameOverrides.get(this.itemId) ||
+			(this.spellId ? `Spell ${this.spellId}` : this.itemId ? `Item ${this.itemId}` : '');
 		let name = baseName;
 
 		let tag = this.tag;
@@ -864,6 +868,11 @@ const spellIdNameOverrides: Map<number, string> = new Map([
 	[27164, 'Judgement of Wisdom'],
 	[27166, 'Seal of Wisdom'],
 	[27173, 'Consecration'],
+]);
+
+const itemIdNameOverrides: Map<number, string> = new Map([
+	[10646, 'Goblin Sapper Charge'],
+	[23827, 'Super Sapper Charge'],
 ]);
 
 export const defaultTargetIcon = 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg';
