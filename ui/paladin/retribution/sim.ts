@@ -3,7 +3,7 @@ import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_u
 import { Player } from '../../core/player.js';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation, APLRotation_Type } from '../../core/proto/apl.js';
-import { Debuffs, Faction, IndividualBuffs, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat } from '../../core/proto/common.js';
+import { Debuffs, Drums, Faction, IndividualBuffs, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat, TristateEffect } from '../../core/proto/common.js';
 import { Stats, UnitStat } from '../../core/proto_utils/stats.js';
 import { defaultRaidBuffMajorDamageCooldowns } from '../../core/proto_utils/utils';
 import * as PaladinInputs from '../inputs.js';
@@ -55,7 +55,6 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 		raidBuffs: RaidBuffs.create({
 			...defaultRaidBuffMajorDamageCooldowns(),
 			arcaneBrilliance: true,
-			powerWordFortitude: 2,
 			divineSpirit: 2,
 			giftOfTheWild: 2,
 			bloodlust: true,
@@ -67,6 +66,9 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 			windfuryTotem: 2,
 			totemTwisting: true,
 			leaderOfThePack: 1,
+			braidedEterniumChain: true,
+			manaSpringTotem: TristateEffect.TristateEffectRegular,
+			drums: Drums.DrumsOfBattle,
 		}),
 		individualBuffs: IndividualBuffs.create({
 			blessingOfKings: true,
@@ -79,10 +81,15 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 			improvedSealOfTheCrusader: true,
 			bloodFrenzy: true,
 			exposeArmor: 2,
+			sunderArmor: true,
 			faerieFire: 2,
 			curseOfRecklessness: true,
 			huntersMark: 2,
 			misery: true,
+			curseOfElements: 1,
+			isbUptime: 0.95,
+			exposeWeaknessUptime: 0.95,
+			exposeWeaknessHunterAgility: 1200,
 		}),
 		rotationType: APLRotation_Type.TypeAuto,
 	},

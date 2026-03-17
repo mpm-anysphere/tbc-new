@@ -65,6 +65,17 @@ func (ret *RetributionPaladin) ApplyTalents() {
 
 func (ret *RetributionPaladin) Reset(sim *core.Simulation) {
 	ret.Paladin.Reset(sim)
+
+	// Legacy parity opener: start with Seal of the Crusader active so we can
+	// immediately cast Judgement of the Crusader at pull.
+	if ret.SealOfTheCrusaderAura != nil {
+		if ret.CurrentSeal != nil {
+			ret.CurrentSeal.Deactivate(sim)
+		}
+		ret.CurrentSeal = ret.SealOfTheCrusaderAura
+		ret.SealOfTheCrusaderAura.Activate(sim)
+	}
+
 	ret.AutoAttacks.CancelAutoSwing(sim)
 	ret.openerCompleted = false
 }

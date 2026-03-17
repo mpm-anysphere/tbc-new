@@ -23,15 +23,23 @@ func (ret *RetributionPaladin) ExecuteCustomRotation(sim *core.Simulation) {
 func (ret *RetributionPaladin) openingRotation(sim *core.Simulation) {
 	target := ret.CurrentTarget
 
-	// Open with JoW for mana support, then proceed into SoB-based twisting.
-	if !ret.JudgementOfWisdomAura.IsActive() {
-		if ret.CurrentSeal != ret.SealOfWisdomAura {
-			if ret.SealOfWisdom.CanCast(sim, target) {
-				ret.SealOfWisdom.Cast(sim, target)
+	// Open with Judgement of the Crusader for throughput parity.
+	if !ret.JudgementOfTheCrusaderAura.IsActive() {
+		if ret.CurrentSeal != ret.SealOfTheCrusaderAura {
+			if ret.SealOfTheCrusader.CanCast(sim, target) {
+				ret.SealOfTheCrusader.Cast(sim, target)
 				return
 			}
-		} else if ret.CanJudgementOfWisdom(sim, target) {
-			ret.JudgementOfWisdom.Cast(sim, target)
+		} else if ret.CanJudgementOfTheCrusader(sim, target) {
+			ret.JudgementOfTheCrusader.Cast(sim, target)
+			return
+		}
+	}
+
+	// Cast Seal of Command first, then Seal of Blood to begin twist cadence.
+	if !ret.SealOfCommandAura.IsActive() {
+		if ret.SealOfCommand.CanCast(sim, target) {
+			ret.SealOfCommand.Cast(sim, target)
 			return
 		}
 	}

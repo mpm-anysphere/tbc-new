@@ -130,7 +130,7 @@ func (paladin *Paladin) CanJudgementOfWisdom(sim *core.Simulation, target *core.
 }
 
 func (paladin *Paladin) registerJudgementOfTheCrusaderSpell(cdTimer *core.Timer) {
-	paladin.JudgementOfTheCrusaderAura = core.ImprovedSealOfTheCrusaderAura(paladin.CurrentTarget)
+	paladin.JudgementOfTheCrusaderAura = paladin.makeJudgementOfTheCrusaderAura(paladin.CurrentTarget)
 
 	paladin.JudgementOfTheCrusader = paladin.RegisterSpell(core.SpellConfig{
 		ActionID:    core.ActionID{SpellID: 27159},
@@ -196,6 +196,34 @@ func (paladin *Paladin) registerJudgements() {
 	paladin.registerJudgementOfBloodSpell(cdTimer)
 	paladin.registerJudgementOfWisdomSpell(cdTimer)
 	paladin.registerJudgementOfTheCrusaderSpell(cdTimer)
+}
+
+func (paladin *Paladin) makeJudgementOfTheCrusaderAura(target *core.Unit) *core.Aura {
+	critBonusPct := float64(paladin.Talents.ImprovedSealOfTheCrusader)
+	holyBonus := 219.0
+
+	// Legacy TBC item interaction.
+	switch paladin.Ranged().ID {
+	case 23203:
+		holyBonus += 33
+	case 27949:
+		holyBonus += 47
+	}
+
+	return target.GetOrRegisterAura(core.Aura{
+		Label:    "Judgement of the Crusader",
+		Tag:      "Judgement of the Crusader",
+		ActionID: core.ActionID{SpellID: 27159},
+		Duration: time.Second * 20,
+		OnGain: func(aura *core.Aura, sim *core.Simulation) {
+			target.PseudoStats.BonusSpellDamageTaken += holyBonus
+			target.PseudoStats.BonusSpellCritPercentTaken += critBonusPct
+		},
+		OnExpire: func(aura *core.Aura, sim *core.Simulation) {
+			target.PseudoStats.BonusSpellDamageTaken -= holyBonus
+			target.PseudoStats.BonusSpellCritPercentTaken -= critBonusPct
+		},
+	})
 }
 
 func retSealCost(spell *core.Spell) float64 {
