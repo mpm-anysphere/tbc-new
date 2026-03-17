@@ -8,7 +8,7 @@ import { IndividualSimUI } from '../../core/individual_sim_ui';
 import { Input } from '../../core/components/input';
 import { buildIconInput } from '../../core/components/icon_inputs';
 import { EventID } from '../../core/typed_event';
-import { TristateEffect } from '../../core/proto/common';
+import clsx from 'clsx';
 
 // Configuration for spec-specific UI elements on the settings tab.
 // These don't need to be in a separate file but it keeps things cleaner.
@@ -56,22 +56,16 @@ export function CursesSection(parentElem: HTMLElement, simUI: IndividualSimUI<an
 		header: { title: 'Curses' },
 	});
 
-	const curses = Input.newGroupContainer();
-	curses.classList.add('curses-toggle-container', 'icon-group');
+	const curses = Input.newGroupContainer(clsx('curses-toggle-container', 'icon-group'));
+	const tmp = (<></>) as HTMLElement;
 
-	contentBlock.bodyElement.appendChild(curses);
+	buildIconInput(tmp, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Agony, 27218));
+	buildIconInput(tmp, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Doom, 603));
+	buildIconInput(tmp, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Elements, 1490));
+	buildIconInput(tmp, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Recklessness, 704));
 
-	buildIconInput(curses, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Agony, 27218));
-
-	buildIconInput(curses, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Doom, 603));
-
-	buildIconInput(curses, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Elements, 1490));
-
-	buildIconInput(curses, simUI.player, makeCursePicker(WarlockOptions_CurseOptions.Recklessness, 704));
-
-	contentBlock.bodyElement.querySelectorAll('.input-root').forEach(elem => {
-		elem.classList.add('input-inline');
-	});
+	curses.appendChild(tmp);
+	contentBlock.bodyElement.replaceChildren(curses);
 
 	return contentBlock;
 }
@@ -79,6 +73,7 @@ export function CursesSection(parentElem: HTMLElement, simUI: IndividualSimUI<an
 const makeCursePicker = <SpecType extends WarlockSpecs>(curse: WarlockOptions_CurseOptions, spellId: number) =>
 	InputHelpers.makeClassOptionsBooleanIconInput<SpecType>({
 		fieldName: 'curseOptions',
+		extraCssClasses: ['input-inline'],
 		actionId: () => ActionId.fromSpellId(spellId),
 
 		getValue: (player: Player<SpecType>) => player.getClassOptions().curseOptions === curse,
@@ -88,20 +83,6 @@ const makeCursePicker = <SpecType extends WarlockSpecs>(curse: WarlockOptions_Cu
 
 			const newOptions = player.getClassOptions();
 			newOptions.curseOptions = curse;
-
-			const raid = player.getRaid();
-			const debuffs = raid?.getDebuffs();
-			if (raid && debuffs) {
-				switch (curse) {
-					case WarlockOptions_CurseOptions.Elements:
-						debuffs.curseOfElements = TristateEffect.TristateEffectMissing;
-						break;
-					case WarlockOptions_CurseOptions.Recklessness:
-						debuffs.curseOfRecklessness = false;
-						break;
-				}
-				raid.setDebuffs(eventID, debuffs);
-			}
 
 			player.setClassOptions(eventID, newOptions);
 		},
