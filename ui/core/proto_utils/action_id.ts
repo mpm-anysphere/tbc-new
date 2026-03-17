@@ -258,7 +258,7 @@ export class ActionId {
 		}
 		const tooltipData = await ActionId.getTooltipData(this, { signal: options?.signal });
 
-		const baseName = tooltipData['name'];
+		const baseName = tooltipData['name'] || spellIdNameOverrides.get(this.spellId) || (this.spellId ? `Spell ${this.spellId}` : '');
 		let name = baseName;
 
 		let tag = this.tag;
@@ -849,6 +849,21 @@ const spellIdTooltipOverrides: Map<string, ActionIdOverride> = new Map([
 
 	// Warrior
 	[JSON.stringify({ spellId: 12723, tag: 1 }), { spellId: 26654 }], // Sweeping Strikes (Normalized)
+]);
+
+// Some IDs (especially classic/TBC-only variants) may be missing icon/name records
+// in the local UI DB. Keep metric rows readable when tooltip fetches fail.
+const spellIdNameOverrides: Map<number, string> = new Map([
+	[31892, 'Seal of Blood'],
+	[31893, 'Seal of Blood'],
+	[31898, 'Judgement of Blood'],
+	[20375, 'Seal of Command'],
+	[20424, 'Seal of Command'],
+	[27158, 'Seal of the Crusader'],
+	[27159, 'Judgement of the Crusader'],
+	[27164, 'Judgement of Wisdom'],
+	[27166, 'Seal of Wisdom'],
+	[27173, 'Consecration'],
 ]);
 
 export const defaultTargetIcon = 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg';
