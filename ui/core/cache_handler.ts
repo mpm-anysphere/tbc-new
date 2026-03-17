@@ -23,6 +23,10 @@ export class CacheHandler<T> {
 		if (this.keysToKeep) this.keepMostRecent();
 	}
 
+	delete(id: string) {
+		this.data.delete(id);
+	}
+
 	private keepMostRecent() {
 		if (this.keysToKeep && this.data.size > this.keysToKeep) {
 			const keys = [...this.data.keys()];

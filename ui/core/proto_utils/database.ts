@@ -358,25 +358,48 @@ export class Database {
 
 	static async getItemIconData(itemId: number, options: { signal?: AbortSignal } = {}): Promise<IconData> {
 		const db = await Database.get({ signal: options?.signal });
-		const data = db.itemIcons[itemId];
-		const cacheKey = `item-${itemId}`;
-		if (!data?.icon) {
-			if (!iconRequestCache.has(cacheKey)) iconRequestCache.set(cacheKey, Database.getWowheadItemTooltipData(itemId, { signal: options?.signal }));
-			db.itemIcons[itemId] = await iconRequestCache.get(cacheKey)!;
+		let data = db.itemIcons[itemId];
+		if (!data?.name && !data?.icon) {
+			const consumable = db.consumables.get(itemId);
+			if (consumable) {
+				data = IconData.create({
+					id: itemId,
+					name: consumable.name,
+					icon: consumable.icon,
+				});
+				db.itemIcons[itemId] = data;
+			}
 		}
-		return db.itemIcons[itemId];
+		const cacheKey = `item-${itemId}`;
+		if (!data?.icon || !data?.name) {
+			if (!iconRequestCache.has(cacheKey)) iconRequestCache.set(cacheKey, Database.getWowheadItemTooltipData(itemId, { signal: options?.signal }));
+			const fetched = await iconRequestCache.get(cacheKey)!;
+			if (fetched?.icon || fetched?.name) {
+				db.itemIcons[itemId] = fetched;
+			} else {
+				// Avoid permanently caching aborted/failed empty fetches.
+				iconRequestCache.delete(cacheKey);
+			}
+		}
+		return db.itemIcons[itemId] || IconData.create({ id: itemId });
 	}
 
 	static async getSpellIconData(spellId: number, options: { signal?: AbortSignal } = {}): Promise<IconData> {
 		const db = await Database.get({ signal: options?.signal });
 		const data = db.spellIcons[spellId];
 		const cacheKey = `spell-${spellId}`;
-		if (!data?.icon) {
+		if (!data?.icon || !data?.name) {
 			if (!iconRequestCache.has(cacheKey)) iconRequestCache.set(cacheKey, Database.getWowheadSpellTooltipData(spellId, { signal: options?.signal }));
-			db.spellIcons[spellId] = await iconRequestCache.get(cacheKey)!;
+			const fetched = await iconRequestCache.get(cacheKey)!;
+			if (fetched?.icon || fetched?.name) {
+				db.spellIcons[spellId] = fetched;
+			} else {
+				// Avoid permanently caching aborted/failed empty fetches.
+				iconRequestCache.delete(cacheKey);
+			}
 		}
 
-		return db.spellIcons[spellId];
+		return db.spellIcons[spellId] || IconData.create({ id: spellId });
 	}
 
 	private static async getWowheadItemTooltipData(id: number, options: { signal?: AbortSignal } = {}): Promise<IconData> {
