@@ -45,6 +45,7 @@ type Paladin struct {
 	JudgementOfWisdomAura      *core.Aura
 
 	SpiritualAttunementMetrics *core.ResourceMetrics
+	SanctifiedJudgementMetrics *core.ResourceMetrics
 
 	DefensiveCooldownAuras []*core.Aura
 }

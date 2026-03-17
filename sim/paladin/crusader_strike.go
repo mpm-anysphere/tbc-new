@@ -30,7 +30,7 @@ func (paladin *Paladin) registerCrusaderStrikeSpell() {
 			},
 		},
 
-		DamageMultiplier: 1.1 * paladin.WeaponSpecializationMultiplier(),
+		DamageMultiplier: 1.1,
 		CritMultiplier:   paladin.DefaultMeleeCritMultiplier(),
 		ThreatMultiplier: 1,
 

@@ -49,57 +49,72 @@ func (ret *RetributionPaladin) openingRotation(sim *core.Simulation) {
 
 func (ret *RetributionPaladin) mainRotation(sim *core.Simulation) {
 	target := ret.CurrentTarget
-	if !ret.GCD.IsReady(sim) {
-		ret.WaitUntil(sim, ret.GCD.ReadyAt())
+	socActive := ret.SealOfCommandAura.IsActive()
+	if ret.CurrentMana() <= 1000 && !socActive {
+		ret.lowManaRotation(sim)
 		return
 	}
+
+	gcdCD := ret.GCD.TimeToReady(sim)
+	crusaderStrikeCD := ret.CrusaderStrike.TimeToReady(sim)
+	nextCrusaderStrikeAt := ret.CrusaderStrike.CD.ReadyAt()
+	judgementCD := ret.JudgementOfBlood.TimeToReady(sim)
+	nextJudgementAt := ret.JudgementOfBlood.CD.ReadyAt()
 
 	nextSwingAt := ret.AutoAttacks.NextAttackAt()
 	timeTilNextSwing := nextSwingAt - sim.CurrentTime
 	spellGCD := ret.SpellGCD()
 
-	// Complete an active twist by restoring SoB within the twist window.
-	if ret.SealOfCommandAura.IsActive() {
-		if timeTilNextSwing <= paladin.TwistWindow+time.Millisecond*50 &&
-			ret.SealOfBlood.CanCast(sim, target) {
-			ret.SealOfBlood.Cast(sim, target)
-			return
-		}
+	sobActive := ret.SealOfBloodAura.IsActive()
+	inTwistWindow := sim.CurrentTime >= nextSwingAt-paladin.TwistWindow && sim.CurrentTime < nextSwingAt
+	latestTwistStart := nextSwingAt - spellGCD
+	possibleTwist := timeTilNextSwing > spellGCD+gcdCD
+	willTwist := possibleTwist && (nextSwingAt+spellGCD <= nextCrusaderStrikeAt)
 
-		if timeTilNextSwing > paladin.TwistWindow {
-			ret.WaitUntil(sim, nextSwingAt-paladin.TwistWindow)
-		} else {
-			ret.WaitUntil(sim, nextSwingAt)
-		}
-		return
-	}
-
-	// Start a new twist cycle by swapping to SoC shortly before the next swing.
-	if ret.SealOfBloodAura.IsActive() &&
-		timeTilNextSwing > spellGCD &&
-		timeTilNextSwing <= spellGCD+paladin.TwistWindow &&
-		ret.SealOfCommand.CanCast(sim, target) {
-		ret.SealOfCommand.Cast(sim, target)
-		return
-	}
-
-	if ret.CurrentSeal == nil || !ret.CurrentSeal.IsActive() {
-		if ret.SealOfBlood.CanCast(sim, target) {
-			ret.SealOfBlood.Cast(sim, target)
-			return
-		}
-	}
-
-	if ret.CanJudgementOfBlood(sim, target) {
+	if judgementCD == 0 && sobActive && willTwist {
 		ret.JudgementOfBlood.Cast(sim, target)
-		return
+		sobActive = false
 	}
 
-	if ret.CrusaderStrike.CanCast(sim, target) {
-		ret.CrusaderStrike.Cast(sim, target)
-		return
+	if gcdCD == 0 {
+		if socActive && inTwistWindow {
+			if ret.SealOfBlood.CanCast(sim, target) {
+				ret.SealOfBlood.Cast(sim, target)
+				return
+			}
+		} else if crusaderStrikeCD == 0 && !willTwist && (sobActive || spellGCD < timeTilNextSwing) {
+			ret.CrusaderStrike.Cast(sim, target)
+			return
+		} else if willTwist && !socActive && nextJudgementAt > latestTwistStart {
+			if ret.SealOfCommand.CanCast(sim, target) {
+				ret.SealOfCommand.Cast(sim, target)
+				return
+			}
+		} else if !sobActive && !socActive && !willTwist {
+			if ret.SealOfBlood.CanCast(sim, target) {
+				ret.SealOfBlood.Cast(sim, target)
+				return
+			}
+		} else if !willTwist && !socActive &&
+			timeTilNextSwing+ret.AutoAttacks.MainhandSwingSpeed() > spellGCD*2 &&
+			spellGCD < crusaderStrikeCD {
+			ret.useFillers(sim, target)
+			return
+		}
 	}
 
+	nextEvent := minAtLeast(
+		sim.CurrentTime+time.Millisecond*50,
+		nextSwingAt,
+		latestTwistStart,
+		ret.GCD.ReadyAt(),
+		nextJudgementAt,
+		nextCrusaderStrikeAt,
+	)
+	ret.WaitUntil(sim, nextEvent)
+}
+
+func (ret *RetributionPaladin) useFillers(sim *core.Simulation, target *core.Unit) {
 	if ret.Exorcism.CanCast(sim, target) &&
 		ret.CanExorcism(target) &&
 		ret.CurrentManaPercent() > 0.4 {
@@ -111,18 +126,43 @@ func (ret *RetributionPaladin) mainRotation(sim *core.Simulation) {
 		ret.Consecration.CanCast(sim, target) &&
 		ret.CurrentManaPercent() > 0.6 {
 		ret.Consecration.Cast(sim, target)
-		return
+	}
+}
+
+func (ret *RetributionPaladin) lowManaRotation(sim *core.Simulation) {
+	target := ret.CurrentTarget
+	sobExpiration := ret.SealOfBloodAura.ExpiresAt()
+	nextSwingAt := ret.AutoAttacks.NextAttackAt()
+
+	manaRegenAt := core.NeverExpires
+	if sim.CurrentTime+time.Second >= sobExpiration {
+		sobAndJudgeCost := ret.SealOfBlood.Cost.GetCurrentCost() + ret.JudgementOfBlood.Cost.GetCurrentCost()
+		if ret.CanJudgementOfBlood(sim, target) && ret.CurrentMana() >= sobAndJudgeCost {
+			ret.JudgementOfBlood.Cast(sim, target)
+		}
+
+		if ret.GCD.IsReady(sim) {
+			if !ret.SealOfBlood.Cast(sim, target) {
+				manaRegenAt = sim.CurrentTime + ret.TimeUntilManaRegen(ret.SealOfBlood.CurCast.Cost)
+			}
+		}
+	} else if ret.GCD.IsReady(sim) && ret.CrusaderStrike.CD.IsReady(sim) {
+		spellGCD := ret.SpellGCD()
+		sobAndCSCost := ret.SealOfBlood.Cost.GetCurrentCost() + ret.CrusaderStrike.Cost.GetCurrentCost()
+
+		if !(spellGCD+sim.CurrentTime > nextSwingAt && sobExpiration < nextSwingAt) &&
+			(ret.CurrentMana() >= sobAndCSCost) {
+			ret.CrusaderStrike.Cast(sim, target)
+		}
 	}
 
 	nextEvent := minAtLeast(
 		sim.CurrentTime+time.Millisecond*100,
-		ret.NextGCDAt(),
+		ret.GCD.ReadyAt(),
 		ret.CrusaderStrike.CD.ReadyAt(),
-		ret.JudgementOfBlood.CD.ReadyAt(),
-		nextSwingAt-paladin.TwistWindow,
-		nextSwingAt,
+		manaRegenAt,
+		sobExpiration-time.Second,
 	)
-
 	ret.WaitUntil(sim, nextEvent)
 }
 

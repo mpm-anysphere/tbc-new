@@ -11,6 +11,10 @@ const (
 	TwistWindow  = time.Millisecond * 400
 )
 
+func (paladin *Paladin) sealCost(baseCost int32) int32 {
+	return int32(float64(baseCost) * (1 - 0.03*float64(paladin.Talents.Benediction)))
+}
+
 func (paladin *Paladin) setupSealOfBlood() {
 	procActionID := core.ActionID{SpellID: 31893}
 
@@ -62,7 +66,7 @@ func (paladin *Paladin) setupSealOfBlood() {
 		ProcMask:    core.ProcMaskEmpty,
 		Flags:       core.SpellFlagHelpful,
 		ManaCost: core.ManaCostOptions{
-			FlatCost: 210,
+			FlatCost: paladin.sealCost(210),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
@@ -134,7 +138,7 @@ func (paladin *Paladin) setupSealOfCommand() {
 		ProcMask:    core.ProcMaskEmpty,
 		Flags:       core.SpellFlagHelpful,
 		ManaCost: core.ManaCostOptions{
-			FlatCost: 65,
+			FlatCost: paladin.sealCost(65),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
@@ -166,7 +170,7 @@ func (paladin *Paladin) setupSealOfTheCrusader() {
 		ProcMask:    core.ProcMaskEmpty,
 		Flags:       core.SpellFlagHelpful,
 		ManaCost: core.ManaCostOptions{
-			FlatCost: 210,
+			FlatCost: paladin.sealCost(210),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
@@ -198,7 +202,7 @@ func (paladin *Paladin) setupSealOfWisdom() {
 		ProcMask:    core.ProcMaskEmpty,
 		Flags:       core.SpellFlagHelpful,
 		ManaCost: core.ManaCostOptions{
-			FlatCost: 270,
+			FlatCost: paladin.sealCost(270),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
@@ -257,7 +261,7 @@ func (paladin *Paladin) setupSealOfRighteousness() {
 		ProcMask:    core.ProcMaskEmpty,
 		Flags:       core.SpellFlagHelpful,
 		ManaCost: core.ManaCostOptions{
-			FlatCost: 260,
+			FlatCost: paladin.sealCost(260),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{

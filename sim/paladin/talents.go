@@ -28,7 +28,20 @@ func (paladin *Paladin) ApplyTalents() {
 		paladin.MultiplyStat(stats.Intellect, bonus)
 	}
 
+	paladin.PseudoStats.SchoolDamageDealtMultiplier[stats.SchoolIndexPhysical] *= paladin.WeaponSpecializationMultiplier()
+	paladin.applyCrusade()
 	paladin.applyVengeance()
+}
+
+func (paladin *Paladin) applyCrusade() {
+	if paladin.CurrentTarget == nil || paladin.Talents.Crusade == 0 {
+		return
+	}
+
+	switch paladin.CurrentTarget.MobType {
+	case proto.MobType_MobTypeHumanoid, proto.MobType_MobTypeDemon, proto.MobType_MobTypeUndead, proto.MobType_MobTypeElemental:
+		paladin.PseudoStats.DamageDealtMultiplier *= 1 + 0.01*float64(paladin.Talents.Crusade)
+	}
 }
 
 func (paladin *Paladin) applyVengeance() {

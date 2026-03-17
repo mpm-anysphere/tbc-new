@@ -11,6 +11,27 @@ const (
 	JudgementCD       = time.Second * 10
 )
 
+func (paladin *Paladin) judgementCost() int32 {
+	return int32(float64(JudgementManaCost) * (1 - 0.03*float64(paladin.Talents.Benediction)))
+}
+
+func (paladin *Paladin) sanctifiedJudgement(sim *core.Simulation, sealCost float64) {
+	if paladin.Talents.SanctifiedJudgement == 0 {
+		return
+	}
+
+	procChance := 0.33 * float64(paladin.Talents.SanctifiedJudgement)
+	if paladin.Talents.SanctifiedJudgement == 3 {
+		procChance = 1
+	}
+	if sim.RandomFloat("Sanctified Judgement") < procChance {
+		if paladin.SanctifiedJudgementMetrics == nil {
+			paladin.SanctifiedJudgementMetrics = paladin.NewManaMetrics(core.ActionID{SpellID: 31930})
+		}
+		paladin.AddMana(sim, sealCost*0.8, paladin.SanctifiedJudgementMetrics)
+	}
+}
+
 func (paladin *Paladin) canJudgement(sim *core.Simulation) bool {
 	return paladin.CurrentSeal != nil && paladin.CurrentSeal.IsActive() && paladin.JudgementOfBlood.IsReady(sim)
 }
@@ -23,7 +44,7 @@ func (paladin *Paladin) registerJudgementOfBloodSpell(cdTimer *core.Timer) {
 		Flags:       core.SpellFlagMeleeMetrics,
 
 		ManaCost: core.ManaCostOptions{
-			FlatCost: JudgementManaCost,
+			FlatCost: paladin.judgementCost(),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{GCD: core.GCDDefault},
@@ -48,6 +69,7 @@ func (paladin *Paladin) registerJudgementOfBloodSpell(cdTimer *core.Timer) {
 			}
 
 			if paladin.SealOfBloodAura != nil && paladin.SealOfBloodAura.IsActive() {
+				paladin.sanctifiedJudgement(sim, retSealCost(paladin.SealOfBlood))
 				paladin.SealOfBloodAura.Deactivate(sim)
 				if paladin.CurrentSeal == paladin.SealOfBloodAura {
 					paladin.CurrentSeal = nil
@@ -72,7 +94,7 @@ func (paladin *Paladin) registerJudgementOfWisdomSpell(cdTimer *core.Timer) {
 		ProcMask:    core.ProcMaskEmpty,
 
 		ManaCost: core.ManaCostOptions{
-			FlatCost: JudgementManaCost,
+			FlatCost: paladin.judgementCost(),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{GCD: core.GCDDefault},
@@ -91,6 +113,7 @@ func (paladin *Paladin) registerJudgementOfWisdomSpell(cdTimer *core.Timer) {
 			spell.DealOutcome(sim, result)
 
 			if paladin.SealOfWisdomAura != nil && paladin.SealOfWisdomAura.IsActive() {
+				paladin.sanctifiedJudgement(sim, retSealCost(paladin.SealOfWisdom))
 				paladin.SealOfWisdomAura.Deactivate(sim)
 				if paladin.CurrentSeal == paladin.SealOfWisdomAura {
 					paladin.CurrentSeal = nil
@@ -115,7 +138,7 @@ func (paladin *Paladin) registerJudgementOfTheCrusaderSpell(cdTimer *core.Timer)
 		ProcMask:    core.ProcMaskEmpty,
 
 		ManaCost: core.ManaCostOptions{
-			FlatCost: JudgementManaCost,
+			FlatCost: paladin.judgementCost(),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{GCD: core.GCDDefault},
@@ -134,6 +157,7 @@ func (paladin *Paladin) registerJudgementOfTheCrusaderSpell(cdTimer *core.Timer)
 			spell.DealOutcome(sim, result)
 
 			if paladin.SealOfTheCrusaderAura != nil && paladin.SealOfTheCrusaderAura.IsActive() {
+				paladin.sanctifiedJudgement(sim, retSealCost(paladin.SealOfTheCrusader))
 				paladin.SealOfTheCrusaderAura.Deactivate(sim)
 				if paladin.CurrentSeal == paladin.SealOfTheCrusaderAura {
 					paladin.CurrentSeal = nil
@@ -172,5 +196,12 @@ func (paladin *Paladin) registerJudgements() {
 	paladin.registerJudgementOfBloodSpell(cdTimer)
 	paladin.registerJudgementOfWisdomSpell(cdTimer)
 	paladin.registerJudgementOfTheCrusaderSpell(cdTimer)
+}
+
+func retSealCost(spell *core.Spell) float64 {
+	if spell == nil {
+		return 0
+	}
+	return float64(spell.Cost.BaseCost)
 }
 
