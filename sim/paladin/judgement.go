@@ -223,6 +223,14 @@ func (paladin *Paladin) makeJudgementOfTheCrusaderAura(target *core.Unit) *core.
 			target.PseudoStats.BonusSpellDamageTaken -= holyBonus
 			target.PseudoStats.BonusSpellCritPercentTaken -= critBonusPct
 		},
+		OnSpellHitTaken: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+			if !result.Landed() || !spell.ProcMask.Matches(core.ProcMaskMelee) {
+				return
+			}
+			if spell.ActionID.SpellID == 35395 {
+				aura.Refresh(sim)
+			}
+		},
 	})
 }
 

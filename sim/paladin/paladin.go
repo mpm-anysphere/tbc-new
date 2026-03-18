@@ -6,7 +6,7 @@ import (
 	"github.com/wowsims/tbc/sim/core/stats"
 )
 
-var TalentTreeSizes = [3]int{20, 23, 22}
+var TalentTreeSizes = [3]int{20, 22, 22}
 
 type Paladin struct {
 	core.Character
