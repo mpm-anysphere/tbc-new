@@ -81,6 +81,10 @@ func (paladin *Paladin) setupSealOfBlood() {
 }
 
 func (paladin *Paladin) setupSealOfCommand() {
+	if !paladin.Talents.SealOfCommand {
+		return
+	}
+
 	procActionID := core.ActionID{SpellID: 20424}
 	dpm := paladin.NewLegacyPPMManager(7.0, core.ProcMaskMeleeMH)
 	icd := core.Cooldown{

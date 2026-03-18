@@ -7,6 +7,10 @@ import (
 )
 
 func (paladin *Paladin) registerCrusaderStrikeSpell() {
+	if !paladin.Talents.CrusaderStrike {
+		return
+	}
+
 	paladin.CrusaderStrike = paladin.RegisterSpell(core.SpellConfig{
 		ActionID:    core.ActionID{SpellID: 35395},
 		SpellSchool: core.SpellSchoolPhysical,

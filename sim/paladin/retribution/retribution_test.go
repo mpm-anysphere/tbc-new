@@ -105,6 +105,98 @@ func TestRetributionSealTwisting(t *testing.T) {
 	}
 }
 
+func TestRetributionDefaultTalentsOutperformNoTalents(t *testing.T) {
+	if !core.WITH_DB {
+		t.Skip("requires -tags=with_db")
+	}
+	ensureRetributionRegistered()
+
+	defaultDPS := runRetSingleTargetDPS(t, DefaultTalents, 300)
+	noTalentDPS := runRetSingleTargetDPS(t, "", 300)
+
+	if defaultDPS <= noTalentDPS {
+		t.Fatalf("expected default talents DPS (%.2f) to exceed no-talents DPS (%.2f)", defaultDPS, noTalentDPS)
+	}
+}
+
+func TestRetributionNoTalentBuildSkipsTalentLockedSpells(t *testing.T) {
+	if !core.WITH_DB {
+		t.Skip("requires -tags=with_db")
+	}
+	ensureRetributionRegistered()
+
+	gear := core.GetGearSet("../../../ui/paladin/retribution/gear_sets", "preraid").GearSet
+	rotation := core.GetAplRotation("../../../ui/paladin/retribution/apls", "default").Rotation
+	player := core.WithSpec(&proto.Player{
+		Class:              proto.Class_ClassPaladin,
+		Race:               proto.Race_RaceBloodElf,
+		Equipment:          gear,
+		TalentsString:      "",
+		Consumables:        DefaultConsumables,
+		Buffs:              core.FullIndividualBuffs,
+		Rotation:           rotation,
+		DistanceFromTarget: 5,
+		Profession1:        proto.Profession_Engineering,
+		Profession2:        proto.Profession_Blacksmithing,
+	}, DefaultOptions)
+
+	result := core.RunRaidSim(&proto.RaidSimRequest{
+		Raid:      core.SinglePlayerRaidProto(player, core.FullPartyBuffs, core.FullRaidBuffs, core.FullDebuffs),
+		Encounter: core.MakeSingleTargetEncounter(60),
+		SimOptions: &proto.SimOptions{
+			Iterations: 1,
+			IsTest:     true,
+			Debug:      true,
+			RandomSeed: 101,
+		},
+	})
+	if result.GetError() != nil && result.GetError().GetMessage() != "" {
+		t.Fatalf("raid sim failed: %s", result.GetError().GetMessage())
+	}
+
+	logs := result.GetLogs()
+	if strings.Contains(logs, "{SpellID: 35395}") {
+		t.Fatalf("expected no Crusader Strike casts without Crusader Strike talent, logs:\n%s", logs)
+	}
+	if strings.Contains(logs, "{SpellID: 20375}") {
+		t.Fatalf("expected no Seal of Command casts without Seal of Command talent, logs:\n%s", logs)
+	}
+}
+
+func runRetSingleTargetDPS(t *testing.T, talents string, iterations int32) float64 {
+	t.Helper()
+
+	gear := core.GetGearSet("../../../ui/paladin/retribution/gear_sets", "preraid").GearSet
+	rotation := core.GetAplRotation("../../../ui/paladin/retribution/apls", "default").Rotation
+	player := core.WithSpec(&proto.Player{
+		Class:              proto.Class_ClassPaladin,
+		Race:               proto.Race_RaceBloodElf,
+		Equipment:          gear,
+		TalentsString:      talents,
+		Consumables:        DefaultConsumables,
+		Buffs:              core.FullIndividualBuffs,
+		Rotation:           rotation,
+		DistanceFromTarget: 5,
+		Profession1:        proto.Profession_Engineering,
+		Profession2:        proto.Profession_Blacksmithing,
+	}, DefaultOptions)
+
+	result := core.RunRaidSim(&proto.RaidSimRequest{
+		Raid:      core.SinglePlayerRaidProto(player, core.FullPartyBuffs, core.FullRaidBuffs, core.FullDebuffs),
+		Encounter: core.MakeSingleTargetEncounter(180),
+		SimOptions: &proto.SimOptions{
+			Iterations: iterations,
+			IsTest:     true,
+			RandomSeed: 101,
+		},
+	})
+	if result.GetError() != nil && result.GetError().GetMessage() != "" {
+		t.Fatalf("raid sim failed: %s", result.GetError().GetMessage())
+	}
+
+	return result.GetRaidMetrics().GetDps().GetAvg()
+}
+
 var registerRetributionOnce sync.Once
 
 func ensureRetributionRegistered() {
@@ -121,15 +213,14 @@ var DefaultOptions = &proto.Player_RetributionPaladin{
 	},
 }
 
-var DefaultTalents = ""
+var DefaultTalents = "5-503201-0523005130033125231051"
 
 var DefaultConsumables = &proto.ConsumesSpec{
-	FlaskId:      22854,  // Flask of Relentless Assault
-	FoodId:       27658,  // Roasted Clefthoof
-	PotId:        22838,  // Haste Potion
-	ConjuredId:   12662,  // Demonic Rune
+	FlaskId:      22854, // Flask of Relentless Assault
+	FoodId:       27658, // Roasted Clefthoof
+	PotId:        22838, // Haste Potion
+	ConjuredId:   12662, // Demonic Rune
 	SuperSapper:  true,
 	GoblinSapper: true,
 	DrumsId:      351355, // Greater Drums of Battle
 }
-
