@@ -31,7 +31,7 @@ func (paladin *Paladin) registerCrusaderStrikeSpell() {
 		},
 
 		DamageMultiplier: 1.1,
-		CritMultiplier:   paladin.DefaultMeleeCritMultiplier(),
+		CritMultiplier:   paladin.MeleeCritMultiplier(),
 		ThreatMultiplier: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
@@ -41,4 +41,3 @@ func (paladin *Paladin) registerCrusaderStrikeSpell() {
 		},
 	})
 }
-

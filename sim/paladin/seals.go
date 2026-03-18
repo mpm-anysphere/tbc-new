@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/wowsims/tbc/sim/core"
+	"github.com/wowsims/tbc/sim/core/stats"
 )
 
 const (
@@ -25,7 +26,7 @@ func (paladin *Paladin) setupSealOfBlood() {
 		Flags:       core.SpellFlagMeleeMetrics | core.SpellFlagPassiveSpell,
 
 		DamageMultiplier: 0.35 * paladin.WeaponSpecializationMultiplier(),
-		CritMultiplier:   paladin.DefaultMeleeCritMultiplier(),
+		CritMultiplier:   paladin.MeleeCritMultiplier(),
 		ThreatMultiplier: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
@@ -94,7 +95,7 @@ func (paladin *Paladin) setupSealOfCommand() {
 		Flags:       core.SpellFlagMeleeMetrics | core.SpellFlagPassiveSpell,
 
 		DamageMultiplier: 0.7 * paladin.WeaponSpecializationMultiplier(),
-		CritMultiplier:   paladin.DefaultMeleeCritMultiplier(),
+		CritMultiplier:   paladin.MeleeCritMultiplier(),
 		ThreatMultiplier: 1,
 		BonusCoefficient: 0.29,
 
@@ -152,12 +153,28 @@ func (paladin *Paladin) setupSealOfCommand() {
 }
 
 func (paladin *Paladin) setupSealOfTheCrusader() {
+	apBonus := 495.0
+	switch paladin.Ranged().ID {
+	case 23203:
+		apBonus += 48
+	case 27949:
+		apBonus += 68
+	}
+
 	paladin.SealOfTheCrusaderAura = paladin.RegisterAura(core.Aura{
 		Label:    "Seal of the Crusader" + paladin.Label,
 		Tag:      "Seal",
 		ActionID: core.ActionID{SpellID: 27158},
 		Duration: SealDuration,
+		OnGain: func(aura *core.Aura, sim *core.Simulation) {
+			paladin.AddStatDynamic(sim, stats.AttackPower, apBonus)
+			paladin.MultiplyMeleeSpeed(sim, 1.4)
+			paladin.AutoAttacks.MHConfig().DamageMultiplier *= 0.6
+		},
 		OnExpire: func(aura *core.Aura, sim *core.Simulation) {
+			paladin.AddStatDynamic(sim, stats.AttackPower, -apBonus)
+			paladin.MultiplyMeleeSpeed(sim, 1/1.4)
+			paladin.AutoAttacks.MHConfig().DamageMultiplier /= 0.6
 			if paladin.CurrentSeal == aura {
 				paladin.CurrentSeal = nil
 			}
@@ -225,7 +242,7 @@ func (paladin *Paladin) setupSealOfRighteousness() {
 		Flags:       core.SpellFlagMeleeMetrics | core.SpellFlagPassiveSpell,
 
 		DamageMultiplier: paladin.WeaponSpecializationMultiplier(),
-		CritMultiplier:   paladin.DefaultMeleeCritMultiplier(),
+		CritMultiplier:   paladin.MeleeCritMultiplier(),
 		ThreatMultiplier: 1,
 		BonusCoefficient: 0.1,
 
@@ -290,4 +307,3 @@ func (paladin *Paladin) UpdateSeal(sim *core.Simulation, newSeal *core.Aura) {
 		newSeal.Activate(sim)
 	}
 }
-

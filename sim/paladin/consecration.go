@@ -46,7 +46,7 @@ func (paladin *Paladin) RegisterConsecrationSpell(rank int32) {
 		},
 
 		DamageMultiplier: 1,
-		CritMultiplier:   paladin.DefaultSpellCritMultiplier(),
+		CritMultiplier:   paladin.SpellCritMultiplier(),
 		ThreatMultiplier: 1,
 
 		Dot: core.DotConfig{
@@ -70,4 +70,3 @@ func (paladin *Paladin) RegisterConsecrationSpell(rank int32) {
 		},
 	})
 }
-

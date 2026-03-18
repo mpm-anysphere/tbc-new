@@ -34,13 +34,9 @@ func (paladin *Paladin) ApplyTalents() {
 }
 
 func (paladin *Paladin) applyCrusade() {
-	if paladin.CurrentTarget == nil || paladin.Talents.Crusade == 0 {
-		return
-	}
-
-	switch paladin.CurrentTarget.MobType {
-	case proto.MobType_MobTypeHumanoid, proto.MobType_MobTypeDemon, proto.MobType_MobTypeUndead, proto.MobType_MobTypeElemental:
-		paladin.PseudoStats.DamageDealtMultiplier *= 1 + 0.01*float64(paladin.Talents.Crusade)
+	multiplier := paladin.crusadeMultiplier()
+	if multiplier != 1 {
+		paladin.PseudoStats.DamageDealtMultiplier *= multiplier
 	}
 }
 
@@ -86,3 +82,23 @@ func (paladin *Paladin) WeaponSpecializationMultiplier() float64 {
 	return 1 + 0.01*float64(paladin.Talents.OneHandedWeaponSpecialization)
 }
 
+func (paladin *Paladin) crusadeMultiplier() float64 {
+	if paladin.CurrentTarget == nil || paladin.Talents.Crusade == 0 {
+		return 1
+	}
+
+	switch paladin.CurrentTarget.MobType {
+	case proto.MobType_MobTypeHumanoid, proto.MobType_MobTypeDemon, proto.MobType_MobTypeUndead, proto.MobType_MobTypeElemental:
+		return 1 + 0.01*float64(paladin.Talents.Crusade)
+	default:
+		return 1
+	}
+}
+
+func (paladin *Paladin) MeleeCritMultiplier() float64 {
+	return paladin.DefaultMeleeCritMultiplier() * paladin.crusadeMultiplier()
+}
+
+func (paladin *Paladin) SpellCritMultiplier() float64 {
+	return paladin.DefaultSpellCritMultiplier() * paladin.crusadeMultiplier()
+}

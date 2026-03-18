@@ -112,7 +112,7 @@ func (ret *RetributionPaladin) mainRotation(sim *core.Simulation) {
 	}
 
 	nextEvent := minAtLeast(
-		sim.CurrentTime+time.Millisecond*50,
+		sim.CurrentTime,
 		nextSwingAt,
 		latestTwistStart,
 		ret.GCD.ReadyAt(),
@@ -165,7 +165,7 @@ func (ret *RetributionPaladin) lowManaRotation(sim *core.Simulation) {
 	}
 
 	nextEvent := minAtLeast(
-		sim.CurrentTime+time.Millisecond*100,
+		sim.CurrentTime,
 		ret.GCD.ReadyAt(),
 		ret.CrusaderStrike.CD.ReadyAt(),
 		manaRegenAt,
@@ -182,8 +182,10 @@ func minAtLeast(base time.Duration, values ...time.Duration) time.Duration {
 		}
 	}
 	if next == time.Duration(1<<63-1) {
-		return base
+		return base + time.Millisecond
+	}
+	if next <= base {
+		return base + time.Millisecond
 	}
 	return next
 }
-

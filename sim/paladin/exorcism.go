@@ -27,7 +27,7 @@ func (paladin *Paladin) registerExorcismSpell() {
 		},
 
 		DamageMultiplier: 1,
-		CritMultiplier:   paladin.DefaultSpellCritMultiplier(),
+		CritMultiplier:   paladin.SpellCritMultiplier(),
 		ThreatMultiplier: 1,
 		BonusCoefficient: 1.0,
 
@@ -42,4 +42,3 @@ func (paladin *Paladin) registerExorcismSpell() {
 func (paladin *Paladin) CanExorcism(target *core.Unit) bool {
 	return target.MobType == proto.MobType_MobTypeUndead || target.MobType == proto.MobType_MobTypeDemon
 }
-

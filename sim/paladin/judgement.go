@@ -55,13 +55,14 @@ func (paladin *Paladin) registerJudgementOfBloodSpell(cdTimer *core.Timer) {
 		},
 
 		DamageMultiplier: paladin.WeaponSpecializationMultiplier(),
-		CritMultiplier:   paladin.DefaultMeleeCritMultiplier(),
+		CritMultiplier:   paladin.MeleeCritMultiplier(),
 		ThreatMultiplier: 1,
-		BonusCoefficient: 0.43,
+		BonusCoefficient: 0.429,
+		BonusCritPercent: float64(paladin.Talents.Fanaticism) * 3,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			baseDamage := paladin.CalcAndRollDamageRange(sim, 295, 0.10) + 0.43*spell.SpellDamage(target)
-			result := spell.CalcDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialNoBlockDodgeParry)
+			baseDamage := paladin.CalcAndRollDamageRange(sim, 295, 0.10) + 0.429*spell.SpellDamage(target)
+			result := spell.CalcDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialCritOnly)
 			spell.DealDamage(sim, result)
 
 			if paladin.SpiritualAttunementMetrics != nil && result.Landed() {
@@ -105,7 +106,7 @@ func (paladin *Paladin) registerJudgementOfWisdomSpell(cdTimer *core.Timer) {
 		},
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			result := spell.CalcOutcome(sim, target, spell.OutcomeMagicHitNoHitCounter)
+			result := spell.CalcOutcome(sim, target, spell.OutcomeAlwaysHitNoHitCounter)
 			if result.Landed() {
 				paladin.JudgementOfWisdomAura.Activate(sim)
 				paladin.CurrentJudgement = paladin.JudgementOfWisdomAura
@@ -149,7 +150,7 @@ func (paladin *Paladin) registerJudgementOfTheCrusaderSpell(cdTimer *core.Timer)
 		},
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			result := spell.CalcOutcome(sim, target, spell.OutcomeMagicHitNoHitCounter)
+			result := spell.CalcOutcome(sim, target, spell.OutcomeAlwaysHitNoHitCounter)
 			if result.Landed() {
 				paladin.JudgementOfTheCrusaderAura.Activate(sim)
 				paladin.CurrentJudgement = paladin.JudgementOfTheCrusaderAura
@@ -240,4 +241,3 @@ func retSealCost(spell *core.Spell) float64 {
 	}
 	return float64(spell.Cost.BaseCost)
 }
-
