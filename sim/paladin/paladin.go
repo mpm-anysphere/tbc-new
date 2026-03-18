@@ -6,59 +6,48 @@ import (
 	"github.com/wowsims/tbc/sim/core/stats"
 )
 
-var TalentTreeSizes = [3]int{20, 23, 22}
+var TalentTreeSizes = [3]int{20, 22, 22}
 
 type Paladin struct {
 	core.Character
 
 	Seal proto.PaladinSeal
-	// HolyPower HolyPowerBar
 
 	Talents *proto.PaladinTalents
 
-	// Used for CS/HotR
-	sharedBuilderTimer *core.Timer
-
 	CurrentSeal *core.Aura
+	// Tracks the currently active judged debuff we are responsible for.
+	CurrentJudgement *core.Aura
 
-	// Pets
-	// AncientGuardian *AncientGuardianPet
+	AvengingWrathAura *core.Aura
 
-	AvengersShield *core.Spell
+	CrusaderStrike *core.Spell
+	Consecration   *core.Spell
 	Exorcism       *core.Spell
-	HammerOfWrath  *core.Spell
-	Judgment       *core.Spell
 
-	AncientPowerAura        *core.Aura
-	AvengingWrathAura       *core.Aura
-	BastionOfGloryAura      *core.Aura
-	BastionOfPowerAura      *core.Aura
-	DivineCrusaderAura      *core.Aura
-	DivineFavorAura         *core.Aura
-	DivineProtectionAura    *core.Aura
-	DivinePurposeAura       *core.Aura
-	GoakAura                *core.Aura
-	InfusionOfLightAura     *core.Aura
-	SealOfInsightAura       *core.Aura
-	SealOfJusticeAura       *core.Aura
+	JudgementOfBlood       *core.Spell
+	JudgementOfWisdom      *core.Spell
+	JudgementOfTheCrusader *core.Spell
+
+	SealOfBlood         *core.Spell
+	SealOfCommand       *core.Spell
+	SealOfTheCrusader   *core.Spell
+	SealOfWisdom        *core.Spell
 	SealOfRighteousnessAura *core.Aura
-	SealOfTruthAura         *core.Aura
-	SelflessHealerAura      *core.Aura
-	TheArtOfWarAura         *core.Aura
+	SealOfRighteousness     *core.Spell
 
-	// Item sets
-	T11Ret4pc                *core.Aura
-	T15Ret4pc                *core.Aura
-	T15Ret4pcTemplarsVerdict *core.Spell
+	SealOfBloodAura      *core.Aura
+	SealOfCommandAura    *core.Aura
+	SealOfTheCrusaderAura *core.Aura
+	SealOfWisdomAura     *core.Aura
 
-	HolyAvengerActionIDFilter  []core.ActionID
-	JudgmentsOfTheWiseActionID core.ActionID
-	DefensiveCooldownAuras     []*core.Aura
+	JudgementOfTheCrusaderAura *core.Aura
+	JudgementOfWisdomAura      *core.Aura
 
-	DynamicHolyPowerSpent                        float64
-	BastionOfGloryMultiplier                     float64
-	ShieldOfTheRighteousAdditiveMultiplier       float64
-	ShieldOfTheRighteousMultiplicativeMultiplier float64
+	SpiritualAttunementMetrics *core.ResourceMetrics
+	SanctifiedJudgementMetrics *core.ResourceMetrics
+
+	DefensiveCooldownAuras []*core.Aura
 }
 
 // Implemented by each Paladin spec.
@@ -77,47 +66,72 @@ func (paladin *Paladin) GetPaladin() *Paladin {
 func (paladin *Paladin) AddRaidBuffs(_ *proto.RaidBuffs) {
 }
 
-func (paladin *Paladin) AddPartyBuffs(_ *proto.PartyBuffs) {
+func (paladin *Paladin) AddPartyBuffs(partyBuffs *proto.PartyBuffs) {
+	if paladin.Talents.SanctityAura {
+		effect := core.MakeTristateValue(true, paladin.Talents.ImprovedSanctityAura == 2)
+		if partyBuffs.SanctityAura < effect {
+			partyBuffs.SanctityAura = effect
+		}
+		return
+	}
+
+	if paladin.Talents.ImprovedDevotionAura > 0 {
+		effect := core.MakeTristateValue(true, paladin.Talents.ImprovedDevotionAura == 5)
+		if partyBuffs.DevotionAura < effect {
+			partyBuffs.DevotionAura = effect
+		}
+		return
+	}
+
+	if paladin.Talents.ImprovedRetributionAura > 0 {
+		effect := core.MakeTristateValue(true, paladin.Talents.ImprovedRetributionAura == 2)
+		if partyBuffs.RetributionAura < effect {
+			partyBuffs.RetributionAura = effect
+		}
+	}
 }
 
 func (paladin *Paladin) Initialize() {
 	paladin.registerSpells()
-	// paladin.addMistsPvpGloves()
 }
 
 func (paladin *Paladin) registerSpells() {
-	// paladin.registerAvengingWrath()
-	// paladin.registerCrusaderStrike()
-	// paladin.registerDevotionAura()
-	// paladin.registerDivineProtection()
-	// paladin.registerFlashOfLight()
-	// paladin.registerForbearance()
-	// paladin.registerGuardianOfAncientKings()
-	// paladin.registerHammerOfTheRighteous()
-	// paladin.registerHammerOfWrath()
-	// paladin.registerJudgment()
-	// paladin.registerLayOnHands()
-	// paladin.registerSanctityOfBattle()
-	// paladin.registerSealOfInsight()
-	// paladin.registerSealOfRighteousness()
-	// paladin.registerSealOfTruth()
-	// paladin.registerWordOfGlory()
+	paladin.setupSealOfBlood()
+	paladin.setupSealOfCommand()
+	paladin.setupSealOfTheCrusader()
+	paladin.setupSealOfWisdom()
+	paladin.setupSealOfRighteousness()
+	paladin.setupJudgementRefresh()
+
+	paladin.registerCrusaderStrikeSpell()
+	paladin.registerExorcismSpell()
+	paladin.registerJudgements()
+	paladin.registerSpiritualAttunement()
 }
 
 func (paladin *Paladin) Reset(sim *core.Simulation) {
+	if paladin.CurrentSeal != nil {
+		paladin.CurrentSeal.Deactivate(sim)
+		paladin.CurrentSeal = nil
+	}
+	if paladin.CurrentJudgement != nil {
+		paladin.CurrentJudgement.Deactivate(sim)
+		paladin.CurrentJudgement = nil
+	}
+
 	switch paladin.Seal {
 	case proto.PaladinSeal_Truth:
-		paladin.CurrentSeal = paladin.SealOfTruthAura
-		paladin.SealOfTruthAura.Activate(sim)
+		paladin.CurrentSeal = paladin.SealOfBloodAura
+		paladin.SealOfBloodAura.Activate(sim)
+	case proto.PaladinSeal_Justice:
+		paladin.CurrentSeal = paladin.SealOfCommandAura
+		paladin.SealOfCommandAura.Activate(sim)
 	case proto.PaladinSeal_Insight:
-		paladin.CurrentSeal = paladin.SealOfInsightAura
-		paladin.SealOfInsightAura.Activate(sim)
+		paladin.CurrentSeal = paladin.SealOfWisdomAura
+		paladin.SealOfWisdomAura.Activate(sim)
 	case proto.PaladinSeal_Righteousness:
 		paladin.CurrentSeal = paladin.SealOfRighteousnessAura
 		paladin.SealOfRighteousnessAura.Activate(sim)
-	case proto.PaladinSeal_Justice:
-		paladin.CurrentSeal = paladin.SealOfJusticeAura
-		paladin.SealOfJusticeAura.Activate(sim)
 	}
 }
 
@@ -125,6 +139,10 @@ func (paladin *Paladin) OnEncounterStart(sim *core.Simulation) {
 }
 
 func NewPaladin(character *core.Character, talentsStr string, options *proto.PaladinOptions) *Paladin {
+	if options == nil {
+		options = &proto.PaladinOptions{}
+	}
+
 	paladin := &Paladin{
 		Character: *character,
 		Talents:   &proto.PaladinTalents{},
@@ -159,15 +177,6 @@ func NewPaladin(character *core.Character, talentsStr string, options *proto.Pal
 	paladin.AddStatDependency(stats.BonusArmor, stats.Armor, 1)
 
 	return paladin
-}
-
-func (paladin *Paladin) CanTriggerHolyAvengerHpGain(actionID core.ActionID) {
-	paladin.HolyAvengerActionIDFilter = append(paladin.HolyAvengerActionIDFilter, actionID)
-}
-
-// Shared cooldown for CS and HotR
-func (paladin *Paladin) BuilderCooldown() *core.Timer {
-	return paladin.Character.GetOrInitTimer(&paladin.sharedBuilderTimer)
 }
 
 func (paladin *Paladin) AddDefensiveCooldownAura(aura *core.Aura) {

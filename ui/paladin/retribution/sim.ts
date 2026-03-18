@@ -3,7 +3,7 @@ import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_u
 import { Player } from '../../core/player.js';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation, APLRotation_Type } from '../../core/proto/apl.js';
-import { Debuffs, Faction, IndividualBuffs, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat, UnitStats } from '../../core/proto/common.js';
+import { Debuffs, Drums, Faction, IndividualBuffs, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat, TristateEffect } from '../../core/proto/common.js';
 import { Stats, UnitStat } from '../../core/proto_utils/stats.js';
 import { defaultRaidBuffMajorDamageCooldowns } from '../../core/proto_utils/utils';
 import * as PaladinInputs from '../inputs.js';
@@ -18,30 +18,24 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 	// All stats for which EP should be calculated.
 	epStats: [
 		Stat.StatStrength,
-		Stat.StatSpellDamage,
 		Stat.StatAgility,
 		Stat.StatAttackPower,
 		Stat.StatArmorPenetration,
 		Stat.StatMeleeHitRating,
 		Stat.StatMeleeHasteRating,
 		Stat.StatMeleeCritRating,
-		Stat.StatArmorPenetration,
 		Stat.StatExpertiseRating,
-		Stat.StatMana,
 	],
-	epPseudoStats: [PseudoStat.PseudoStatMainHandDps, PseudoStat.PseudoStatOffHandDps],
+	epPseudoStats: [PseudoStat.PseudoStatMainHandDps],
 	// Reference stat against which to calculate EP. I think all classes use either spell power or attack power.
 	epReferenceStat: Stat.StatStrength,
 	// Which stats to display in the Character Stats section, at the bottom of the left-hand sidebar.
 	displayStats: UnitStat.createDisplayStatArray(
-		[Stat.StatStrength, Stat.StatAgility, Stat.StatIntellect, Stat.StatAttackPower, Stat.StatSpellDamage, Stat.StatMana, Stat.StatHealth, Stat.StatStamina],
+		[Stat.StatStrength, Stat.StatAgility, Stat.StatIntellect, Stat.StatAttackPower, Stat.StatMana, Stat.StatHealth, Stat.StatStamina],
 		[
 			PseudoStat.PseudoStatMeleeHitPercent,
 			PseudoStat.PseudoStatMeleeCritPercent,
 			PseudoStat.PseudoStatMeleeHastePercent,
-			PseudoStat.PseudoStatSpellHastePercent,
-			PseudoStat.PseudoStatSpellCritPercent,
-			PseudoStat.PseudoStatSpellHitPercent,
 		],
 	),
 
@@ -60,10 +54,43 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 		// Default raid/party buffs settings.
 		raidBuffs: RaidBuffs.create({
 			...defaultRaidBuffMajorDamageCooldowns(),
+			arcaneBrilliance: true,
+			divineSpirit: 2,
+			giftOfTheWild: 2,
+			bloodlust: true,
 		}),
-		partyBuffs: PartyBuffs.create({}),
-		individualBuffs: IndividualBuffs.create({}),
-		debuffs: Debuffs.create({}),
+		partyBuffs: PartyBuffs.create({
+			battleShout: 2,
+			strengthOfEarthTotem: 2,
+			graceOfAirTotem: 2,
+			windfuryTotem: 2,
+			totemTwisting: true,
+			leaderOfThePack: 1,
+			braidedEterniumChain: true,
+			manaSpringTotem: TristateEffect.TristateEffectRegular,
+			drums: Drums.DrumsOfBattle,
+		}),
+		individualBuffs: IndividualBuffs.create({
+			blessingOfKings: true,
+			blessingOfMight: 2,
+			blessingOfSalvation: true,
+			unleashedRage: true,
+		}),
+		debuffs: Debuffs.create({
+			judgementOfWisdom: true,
+			improvedSealOfTheCrusader: true,
+			bloodFrenzy: true,
+			exposeArmor: 2,
+			sunderArmor: true,
+			faerieFire: 2,
+			curseOfRecklessness: true,
+			huntersMark: 2,
+			misery: true,
+			curseOfElements: 1,
+			isbUptime: 0.95,
+			exposeWeaknessUptime: 0.95,
+			exposeWeaknessHunterAgility: 1200,
+		}),
 		rotationType: APLRotation_Type.TypeAuto,
 	},
 

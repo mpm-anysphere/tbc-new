@@ -258,7 +258,11 @@ export class ActionId {
 		}
 		const tooltipData = await ActionId.getTooltipData(this, { signal: options?.signal });
 
-		const baseName = tooltipData['name'];
+		const baseName =
+			tooltipData['name'] ||
+			spellIdNameOverrides.get(this.spellId) ||
+			itemIdNameOverrides.get(this.itemId) ||
+			(this.spellId ? `Spell ${this.spellId}` : this.itemId ? `Item ${this.itemId}` : '');
 		let name = baseName;
 
 		let tag = this.tag;
@@ -849,6 +853,39 @@ const spellIdTooltipOverrides: Map<string, ActionIdOverride> = new Map([
 
 	// Warrior
 	[JSON.stringify({ spellId: 12723, tag: 1 }), { spellId: 26654 }], // Sweeping Strikes (Normalized)
+]);
+
+// Some IDs (especially classic/TBC-only variants) may be missing icon/name records
+// in the local UI DB. Keep metric rows readable when tooltip fetches fail.
+const spellIdNameOverrides: Map<number, string> = new Map([
+	[10314, 'Exorcism'],
+	[27155, 'Seal of Righteousness'],
+	[27156, 'Seal of Righteousness'],
+	[27157, 'Judgement of Righteousness'],
+	[31892, 'Seal of Blood'],
+	[31893, 'Seal of Blood'],
+	[31898, 'Judgement of Blood'],
+	[20375, 'Seal of Command'],
+	[20424, 'Seal of Command'],
+	[27160, 'Seal of Light'],
+	[27163, 'Judgement of Light'],
+	[27158, 'Seal of the Crusader'],
+	[27159, 'Judgement of the Crusader'],
+	[27164, 'Judgement of Wisdom'],
+	[27166, 'Seal of Wisdom'],
+	[27173, 'Consecration'],
+	[31884, 'Avenging Wrath'],
+	[31930, 'Sanctified Judgement'],
+	[33776, 'Spiritual Attunement'],
+	[35395, 'Crusader Strike'],
+	[351355, 'Greater Drums of Battle'],
+]);
+
+const itemIdNameOverrides: Map<number, string> = new Map([
+	[12662, 'Demonic Rune'],
+	[22838, 'Haste Potion'],
+	[10646, 'Goblin Sapper Charge'],
+	[23827, 'Super Sapper Charge'],
 ]);
 
 export const defaultTargetIcon = 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg';

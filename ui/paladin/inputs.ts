@@ -12,11 +12,11 @@ export const StartingSealSelection = <SpecType extends PaladinSpecs>() =>
 	InputHelpers.makeClassOptionsEnumIconInput<SpecType, PaladinSeal>({
 		fieldName: 'seal',
 		values: [
-			{ actionId: ActionId.fromSpellId(31801), value: PaladinSeal.Truth },
-			{ actionId: ActionId.fromSpellId(20154), value: PaladinSeal.Righteousness },
-			{ actionId: ActionId.fromSpellId(20165), value: PaladinSeal.Insight },
+			{ actionId: ActionId.fromSpellId(31892), value: PaladinSeal.Truth },
+			{ actionId: ActionId.fromSpellId(27155), value: PaladinSeal.Righteousness },
+			{ actionId: ActionId.fromSpellId(27166), value: PaladinSeal.Insight },
 			{
-				actionId: ActionId.fromSpellId(20164),
+				actionId: ActionId.fromSpellId(20375),
 				value: PaladinSeal.Justice,
 				showWhen: player => player.isSpec(Spec.SpecRetributionPaladin),
 			},
